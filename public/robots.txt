@@ -1,3 +1,11 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt for kxbyte.co.ke
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://kxbyte.co.ke/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 10

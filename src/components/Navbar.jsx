@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { FaInstagram, FaTwitter, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import { FiX, FiArrowRight } from 'react-icons/fi';
 import logo from '../assets/images/logo2.png';
 import '../styles/Navbar.css';
 
@@ -30,11 +32,38 @@ const Navbar = () => {
   }, []);
 
   const navItems = ['Home', 'Services', 'About Us', 'Contact'];
+  
+  // Map nav items to section IDs
+  const getSectionId = (item) => {
+    const mapping = {
+      'Home': 'home',
+      'Services': 'services',
+      'About Us': 'about',
+      'Contact': 'contact'
+    };
+    return mapping[item];
+  };
+
+  // Smooth scroll function
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setMenuOpen(false);
+    }
+  };
 
   return (
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-        <a href="#home" className="navbar__logo">
+        <a 
+          href="#home" 
+          className="navbar__logo"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('home');
+          }}
+        >
           <img src={logo} alt="KXByte logo" className="navbar__logo-img" />
           <span className="navbar__logo-text">KX<em>BYTE</em></span>
         </a>
@@ -42,7 +71,13 @@ const Navbar = () => {
         <ul className="navbar__links">
           {navItems.map((item) => (
             <li key={item}>
-              <a href={`#${item.toLowerCase().replace(' ', '')}`}>
+              <a 
+                href={`#${getSectionId(item)}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(getSectionId(item));
+                }}
+              >
                 {item}
                 <span className="navbar__link-dot" />
               </a>
@@ -51,11 +86,12 @@ const Navbar = () => {
         </ul>
 
         <div className="navbar__right">
-          <button className="navbar__cta">
+          <button 
+            className="navbar__cta"
+            onClick={() => scrollToSection('contact')}
+          >
             <span>Get a Quote</span>
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <FiArrowRight />
           </button>
 
           <button
@@ -68,14 +104,12 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Redesigned Mobile Drawer - Clean, no weird numbers */}
+      {/* Light Theme Mobile Drawer with Icons */}
       <div className={`mobile-drawer ${menuOpen ? 'open' : ''}`}>
         <div className="mobile-drawer__inner">
           {/* Close button */}
           <button className="mobile-drawer__close" onClick={() => setMenuOpen(false)}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
+            <FiX size={24} />
           </button>
 
           {/* Logo in drawer */}
@@ -84,11 +118,17 @@ const Navbar = () => {
             <span>KXBYTE</span>
           </div>
 
-          {/* Navigation links - clean, no numbers */}
+          {/* Navigation links */}
           <ul className="mobile-drawer__nav">
             {navItems.map((item) => (
               <li key={item}>
-                <a href={`#${item.toLowerCase().replace(' ', '')}`} onClick={() => setMenuOpen(false)}>
+                <a 
+                  href={`#${getSectionId(item)}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(getSectionId(item));
+                  }}
+                >
                   {item}
                 </a>
               </li>
@@ -96,20 +136,58 @@ const Navbar = () => {
           </ul>
 
           {/* CTA Button */}
-          <button className="mobile-drawer__cta" onClick={() => setMenuOpen(false)}>
+          <button 
+            className="mobile-drawer__cta" 
+            onClick={() => {
+              scrollToSection('contact');
+            }}
+          >
             Get a Quote
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
+            <FiArrowRight />
           </button>
 
-          {/* Contact info - FIXED: Added proper href values */}
+          {/* Contact info with Social Icons */}
           <div className="mobile-drawer__contact">
-            <a href="mailto:hello@kxbyte.co.ke">hello@kxbyte.co.ke</a>
+            <a href="mailto:hello@kxbyte.co.ke" className="contact-email">
+              hello@kxbyte.co.ke
+            </a>
             <div className="mobile-drawer__social">
-              <a href="https://instagram.com/kxbyte" target="_blank" rel="noopener noreferrer">IG</a>
-              <a href="https://twitter.com/kxbyte" target="_blank" rel="noopener noreferrer">TW</a>
-              <a href="https://linkedin.com/company/kxbyte" target="_blank" rel="noopener noreferrer">LI</a>
+              <a 
+                href="https://instagram.com/kxbyte" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-icon instagram"
+                aria-label="Instagram"
+              >
+                <FaInstagram />
+              </a>
+              <a 
+                href="https://twitter.com/kxbyte" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-icon twitter"
+                aria-label="Twitter"
+              >
+                <FaTwitter />
+              </a>
+              <a 
+                href="https://linkedin.com/company/kxbyte" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-icon linkedin"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedinIn />
+              </a>
+              <a 
+                href="https://wa.me/254XXXXXXXXX" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-icon whatsapp"
+                aria-label="WhatsApp"
+              >
+                <FaWhatsapp />
+              </a>
             </div>
           </div>
         </div>

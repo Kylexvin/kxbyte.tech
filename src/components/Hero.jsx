@@ -15,30 +15,59 @@ const Hero = () => {
     return () => window.removeEventListener('resize', setVH);
   }, []);
 
+  // Smooth scroll to section
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  // Get a Quote handler - opens contact section
+  const handleGetQuote = () => {
+    scrollToSection('contact');
+  };
+
+  // View Work handler - scrolls to projects section
+  const handleViewWork = () => {
+    scrollToSection('projects');
+  };
+
   return (
     <section className="hero-section" id="home">
-      {/* DESKTOP HERO - YOUR EXACT DESIGN */}
+      {/* DESKTOP HERO */}
       <div className="hero hero--desktop">
         <div className="hero__watermark">KX</div>
+
         <div className="hero__content">
           <p className="hero__label">Digital Agency</p>
+
           <h1 className="hero__heading">
-            WE BUILD <span>DIGITAL</span><br />EXPERIENCES
+            WE BUILD <span>SCALABLE</span><br />DIGITAL PRODUCTS
           </h1>
+
           <div className="hero__line" />
+
           <p className="hero__sub">
-            From websites to mobile apps and full systems — we craft solutions
-            that are fast, modern, and built to scale for businesses across Kenya and beyond.
+            We design and develop fast, reliable web and mobile applications — 
+            built to help businesses launch, grow, and scale with confidence.
           </p>
+
           <div className="hero__actions">
-            <button className="btn--primary">View Our Work</button>
-            <button className="btn--ghost">What We Do ↓</button>
+            <button className="btn--primary" onClick={handleGetQuote}>
+              Get a Free Quote →
+            </button>
+            <button className="btn--ghost" onClick={handleViewWork}>
+              View Our Work ↓
+            </button>
           </div>
         </div>
+
         <div className="hero__image-wrap">
           <div className="hero__image-placeholder">
             <img src={heroImg} alt="KXByte Hero" className="hero__img" />
           </div>
+
           <div className="hero__badge">
             <span className="hero__badge-num">50+</span>
             <span className="hero__badge-text">Projects Delivered</span>
@@ -46,52 +75,54 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* ========== CLEAN MOBILE HERO WITH BACKGROUND IMAGE ========== */}
+      {/* MOBILE HERO */}
       <div className="hero-mobile-clean">
-        {/* Background image with overlay */}
-        <div className="mobile-bg-image" style={{ backgroundImage: `url(${heroImg})` }}>
+        {/* Background image */}
+        <div 
+          className="mobile-bg-image" 
+          style={{ backgroundImage: `url(${heroImg})` }}
+        >
           <div className="mobile-overlay"></div>
         </div>
 
-        {/* Content centered on top of background */}
+        {/* Content */}
         <div className="mobile-content-center">
-          {/* Badge */}
-          <div className="mobile-badge">
-            <span>✦ DIGITAL AGENCY</span>
-          </div>
+          
 
-          {/* Main heading */}
           <h1 className="mobile-title">
             WE BUILD
-            <span className="mobile-highlight"> DIGITAL</span>
-            <br />EXPERIENCES
+            <span className="mobile-highlight"> SCALABLE</span>
+            <br />DIGITAL PRODUCTS
           </h1>
 
-          {/* Short description */}
           <p className="mobile-text">
-            Fast, modern, and scalable solutions for businesses across Kenya and beyond.
+            Fast, modern web and mobile apps built to help your business grow and scale.
           </p>
 
-          {/* Stats row */}
+          {/* Stats */}
           <div className="mobile-stats-row">
             <div className="stat">
               <span className="stat-value">50+</span>
               <span className="stat-label">Projects</span>
             </div>
             <div className="stat">
-              <span className="stat-value">24/7</span>
-              <span className="stat-label">Support</span>
+              <span className="stat-value">Fast</span>
+              <span className="stat-label">Delivery</span>
             </div>
             <div className="stat">
-              <span className="stat-value">100%</span>
-              <span className="stat-label">Success</span>
+              <span className="stat-value">Clean</span>
+              <span className="stat-label">Code</span>
             </div>
           </div>
 
-          {/* CTA Buttons */}
+          {/* CTA */}
           <div className="mobile-buttons-center">
-            <button className="mobile-btn-primary">Get a Quote →</button>
-            <button className="mobile-btn-secondary">View Work</button>
+            <button className="mobile-btn-primary" onClick={handleGetQuote}>
+              Get a Free Quote 
+            </button>
+            <button className="mobile-btn-secondary" onClick={handleViewWork}>
+              View Work
+            </button>
           </div>
         </div>
       </div>
