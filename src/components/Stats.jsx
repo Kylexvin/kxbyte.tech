@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/Stats.css';
 
 const stats = [
-  { icon: '🖥️', value: '50+', label: 'Projects' },
+  { icon: '🖥️', value: '20+', label: 'Projects' },
   { icon: '😊', value: '98%', label: 'Satisfaction' },
   { icon: '👥', value: '40+', label: 'Clients' },
   { icon: '⚙️', value: '5+', label: 'Team Members' },

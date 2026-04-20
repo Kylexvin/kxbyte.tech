@@ -69,7 +69,7 @@ const Hero = () => {
           </div>
 
           <div className="hero__badge">
-            <span className="hero__badge-num">50+</span>
+            <span className="hero__badge-num">20+</span>
             <span className="hero__badge-text">Projects Delivered</span>
           </div>
         </div>

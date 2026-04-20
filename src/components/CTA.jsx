@@ -54,7 +54,7 @@ const CTA = () => {
 
           <div className="cta__stats">
             <div className="cta-stat">
-              <span className="stat-number">50+</span>
+              <span className="stat-number">20+</span>
               <span className="stat-label">Projects Built</span>
             </div>
             <div className="cta-stat">
