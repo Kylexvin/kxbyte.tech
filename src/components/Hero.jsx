@@ -40,7 +40,7 @@ const Hero = () => {
         <div className="hero__watermark">KX</div>
 
         <div className="hero__content">
-          <p className="hero__label">Digital Agency</p>
+          {/* <p className="hero__label">Digital Agency</p> */}
 
           <h1 className="hero__heading">
             WE BUILD <span>SCALABLE</span><br />DIGITAL PRODUCTS
