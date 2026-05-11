@@ -10,12 +10,14 @@ const ProjectCard = ({ project }) => {
         <div className="project-card__icon">{project.icon}</div>
         <div className="project-card__client">{project.client}</div>
         <h3 className="project-card__title">{project.title}</h3>
-        <p className="project-card__problem">{project.problem.substring(0, 80)}...</p>
+        <p className="project-card__problem">
+          {(project.problem || project.intro?.summary || '').substring(0, 80)}...
+        </p>
         
         <div className="project-card__results">
-          {project.results.slice(0, 2).map((result, idx) => (
+          {(project.results || project.impact || []).slice(0, 2).map((result, idx) => (
             <div key={idx} className="result-item">
-              <span className="result-metric">{result.metric}</span>
+              <span className="result-metric">{result.metric || result.value}</span>
               <span className="result-label">{result.label}</span>
             </div>
           ))}
