@@ -9,7 +9,9 @@ import Footer from './components/Footer';
 import Projects from './components/Projects';
 import Process from './components/Process';
 import CTA from './components/CTA';
+import ServicePage from './pages/ServicePage';
 import ProjectPage from './pages/ProjectPage';
+
 import './styles/index.css';
 
 // Component to handle hash navigation
@@ -49,6 +51,7 @@ function App() {
             </>
           } />
           <Route path="/project/:slug" element={<ProjectPage />} />
+          <Route path="/service/:slug" element={<ServicePage />} />
         </Routes>
         <Footer />
       </div>

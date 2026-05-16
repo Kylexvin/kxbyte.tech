@@ -1,31 +1,38 @@
 import React from 'react';
+import { Globe, Smartphone, Settings, Palette } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Services.css';
 
 const services = [
-  { 
-    icon: '🌐', 
-    title: 'Web Development', 
-    desc: 'High-performance websites and web apps built for speed, scalability, and real-world usage — not just visuals.' 
+  {
+    Icon: Globe,
+    title: 'Web Development',
+    slug: 'web-development',
+    desc: 'High-performance websites and web apps built for speed, scalability, and real-world usage — not just visuals.',
   },
-  { 
-    icon: '📱', 
-    title: 'Mobile Apps', 
-    desc: 'Cross-platform mobile apps that are smooth, reliable, and ready for real users from day one.' 
+  {
+    Icon: Smartphone,
+    title: 'Mobile Apps',
+    slug: 'mobile-apps',
+    desc: 'Cross-platform mobile apps that are smooth, reliable, and ready for real users from day one.',
   },
-  { 
-    icon: '⚙️', 
-    title: 'Systems & Backends', 
-    desc: 'Custom systems, APIs, and dashboards that automate operations and keep your business running efficiently.' 
+  {
+    Icon: Settings,
+    title: 'Systems & Backends',
+    slug: 'systems-backends',
+    desc: 'Custom systems, APIs, and dashboards that automate operations and keep your business running efficiently.',
   },
-  { 
-    icon: '🎨', 
-    title: 'UI & UX Design', 
-    desc: 'Clean, intuitive interfaces designed to convert users and deliver seamless experiences across devices.' 
+  {
+    Icon: Palette,
+    title: 'UI & UX Design',
+    slug: 'ui-ux-design',
+    desc: 'Clean, intuitive interfaces designed to convert users and deliver seamless experiences across devices.',
   },
 ];
 
 const Services = () => {
-  // Smooth scroll to projects section
+  const navigate = useNavigate();
+
   const scrollToProjects = () => {
     const projectsSection = document.getElementById('projects');
     if (projectsSection) {
@@ -57,8 +64,8 @@ const Services = () => {
           just a basic website.
         </p>
 
-        <button 
-          className="btn--primary" 
+        <button
+          className="btn--primary"
           style={{ marginTop: '2rem' }}
           onClick={scrollToProjects}
         >
@@ -68,8 +75,15 @@ const Services = () => {
 
       <div className="services__grid">
         {services.map((s, i) => (
-          <div className="service-card" key={i}>
-            <div className="service-card__icon">{s.icon}</div>
+          <div
+            className="service-card"
+            key={i}
+            onClick={() => navigate(`/service/${s.slug}`)}
+            style={{ cursor: 'pointer' }}
+          >
+            <div className="service-card__icon">
+              <s.Icon size={32} />
+            </div>
             <h3 className="service-card__title">{s.title}</h3>
             <p className="service-card__desc">{s.desc}</p>
           </div>
