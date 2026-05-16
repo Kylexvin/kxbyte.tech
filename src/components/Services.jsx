@@ -8,25 +8,25 @@ const services = [
     Icon: Globe,
     title: 'Web Development',
     slug: 'web-development',
-    desc: 'High-performance websites and web apps built for speed, scalability, and real-world usage — not just visuals.',
+    desc: 'Get a website that loads fast, looks professional, and actually brings in customers — not just a pretty page.',
   },
   {
     Icon: Smartphone,
     title: 'Mobile Apps',
     slug: 'mobile-apps',
-    desc: 'Cross-platform mobile apps that are smooth, reliable, and ready for real users from day one.',
+    desc: 'Put your business in your customers\' pockets. Apps that work, retain users, and grow with your business.',
   },
   {
     Icon: Settings,
-    title: 'Systems & Backends',
+    title: 'Business Automation',
     slug: 'systems-backends',
-    desc: 'Custom systems, APIs, and dashboards that automate operations and keep your business running efficiently.',
+    desc: 'Stop doing manually what a system can do for you. We build tools that save time, cut costs, and reduce errors.',
   },
   {
     Icon: Palette,
     title: 'UI & UX Design',
     slug: 'ui-ux-design',
-    desc: 'Clean, intuitive interfaces designed to convert users and deliver seamless experiences across devices.',
+    desc: 'First impressions close deals. We design interfaces that build trust and turn visitors into paying customers.',
   },
 ];
 
@@ -53,16 +53,15 @@ const Services = () => {
 
         <div className="section__line" />
 
-        <p className="section__body">
-          We don't just build websites — we build systems that power real businesses.
-          From simple landing pages to complex platforms, every solution is designed
-          to be fast, scalable, and built for growth.
-        </p>
+<p className="section__body">
+  Whether you need a website that wins clients, an app your customers love,
+  or a system that runs your operations — we build it right, on time, and
+  built to last.
+</p>
 
-        <p className="section__body" style={{ marginTop: '1rem' }}>
-          Built for startups, businesses, and growing brands that need more than
-          just a basic website.
-        </p>
+<p className="section__body" style={{ marginTop: '1rem' }}>
+  Trusted by startups, local businesses, and growing brands across Kenya.
+</p>
 
         <button
           className="btn--primary"
