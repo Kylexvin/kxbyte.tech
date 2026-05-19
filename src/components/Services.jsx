@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, Smartphone, Settings, Palette } from 'lucide-react';
+import { Globe, Smartphone, Settings, Palette, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Services.css';
 
@@ -53,15 +53,15 @@ const Services = () => {
 
         <div className="section__line" />
 
-<p className="section__body">
-  Whether you need a website that wins clients, an app your customers love,
-  or a system that runs your operations — we build it right, on time, and
-  built to last.
-</p>
+        <p className="section__body">
+          Whether you need a website that wins clients, an app your customers love,
+          or a system that runs your operations — we build it right, on time, and
+          built to last.
+        </p>
 
-<p className="section__body" style={{ marginTop: '1rem' }}>
-  Trusted by startups, local businesses, and growing brands across Kenya.
-</p>
+        <p className="section__body" style={{ marginTop: '1rem' }}>
+          Trusted by startups, local businesses, and growing brands across Kenya.
+        </p>
 
         <button
           className="btn--primary"
@@ -80,8 +80,11 @@ const Services = () => {
             onClick={() => navigate(`/service/${s.slug}`)}
             style={{ cursor: 'pointer' }}
           >
-            <div className="service-card__icon">
-              <s.Icon size={32} />
+            <div className="service-card__header">
+              <div className="service-card__icon">
+                <s.Icon size={32} />
+              </div>
+              <ChevronRight className="service-card__chevron" size={20} />
             </div>
             <h3 className="service-card__title">{s.title}</h3>
             <p className="service-card__desc">{s.desc}</p>

@@ -119,4 +119,45 @@
 
 @media (max-width: 500px) {
   .services__grid { grid-template-columns: 1fr; }
+} 
+.service-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+}
+
+.service-card__chevron {
+  color: var(--orange);
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.service-card:hover .service-card__chevron {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* Optional: Add a subtle orange gradient/text shadow on hover to reinforce clickability */
+.service-card:hover .service-card__title {
+  color: var(--orange);
+  transition: color 0.2s;
+}
+
+/* Keep icon orange by default (optional) */
+.service-card__icon svg {
+  stroke: var(--orange);
+}
+
+/* If you want to animate the icon on hover too */
+.service-card:hover .service-card__icon svg {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+/* Ensure the whole card feels clickable */
+.service-card {
+  cursor: pointer;
 }

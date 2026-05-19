@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { FaInstagram, FaTwitter, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 import { FiX, FiArrowRight } from 'react-icons/fi';
+import { ArrowLeft } from 'lucide-react';
 import logo from '../assets/images/logo2.png';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Check if we're on a service or project page (inner pages)
+  const isInnerPage = location.pathname !== '/';
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -44,51 +51,84 @@ const Navbar = () => {
     return mapping[item];
   };
 
-  // Smooth scroll function
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setMenuOpen(false);
+  // Handle navigation - works for both homepage and inner pages
+  const handleNavigation = (sectionId) => {
+    if (isInnerPage) {
+      // If on inner page, navigate to homepage first, then scroll
+      navigate('/');
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      // If already on homepage, just scroll
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
+    setMenuOpen(false);
+  };
+
+  // Handle back button for inner pages
+  const handleBack = () => {
+    navigate(-1);
   };
 
   return (
     <>
-      <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-        <a 
-          href="#home" 
-          className="navbar__logo"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToSection('home');
-          }}
-        >
-          <img src={logo} alt="KXByte logo" className="navbar__logo-img" />
-          <span className="navbar__logo-text">KX<em>BYTE</em></span>
-        </a>
+      <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isInnerPage ? 'inner-page-nav' : ''}`}>
+        <div className="navbar__left">
+          {/* Show back button on inner pages */}
+          {isInnerPage && (
+            <button className="navbar__back-btn" onClick={handleBack}>
+              <ArrowLeft size={20} />
+            </button>
+          )}
+          
+          <a 
+            href="#home" 
+            className="navbar__logo"
+            onClick={(e) => {
+              e.preventDefault();
+              if (isInnerPage) {
+                navigate('/');
+              } else {
+                handleNavigation('home');
+              }
+            }}
+          >
+            <img src={logo} alt="KXByte logo" className="navbar__logo-img" />
+            <span className="navbar__logo-text">KX<em>BYTE</em></span>
+          </a>
+        </div>
 
-        <ul className="navbar__links">
-          {navItems.map((item) => (
-            <li key={item}>
-              <a 
-                href={`#${getSectionId(item)}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(getSectionId(item));
-                }}
-              >
-                {item}
-                <span className="navbar__link-dot" />
-              </a>
-            </li>
-          ))}
-        </ul>
+        {/* Only show nav links on homepage */}
+        {!isInnerPage && (
+          <ul className="navbar__links">
+            {navItems.map((item) => (
+              <li key={item}>
+                <a 
+                  href={`#${getSectionId(item)}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation(getSectionId(item));
+                  }}
+                >
+                  {item}
+                  <span className="navbar__link-dot" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
 
         <div className="navbar__right">
           <button 
             className="navbar__cta"
-            onClick={() => scrollToSection('contact')}
+            onClick={() => handleNavigation('contact')}
           >
             <span>Get a Quote</span>
             <FiArrowRight />
@@ -126,7 +166,7 @@ const Navbar = () => {
                   href={`#${getSectionId(item)}`}
                   onClick={(e) => {
                     e.preventDefault();
-                    scrollToSection(getSectionId(item));
+                    handleNavigation(getSectionId(item));
                   }}
                 >
                   {item}
@@ -139,7 +179,7 @@ const Navbar = () => {
           <button 
             className="mobile-drawer__cta" 
             onClick={() => {
-              scrollToSection('contact');
+              handleNavigation('contact');
             }}
           >
             Get a Quote

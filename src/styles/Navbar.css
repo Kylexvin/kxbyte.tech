@@ -394,3 +394,61 @@
     display: none;
   }
 }
+/* Add to your existing Navbar.css */
+
+/* Left section with back button */
+.navbar__left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Back button for inner pages */
+.navbar__back-btn {
+  background: rgba(255, 92, 26, 0.1);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--orange);
+  transition: all 0.2s;
+}
+
+.navbar__back-btn:hover {
+  background: var(--orange);
+  color: white;
+  transform: translateX(-2px);
+}
+
+/* Adjust navbar for inner pages */
+.navbar.inner-page-nav {
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar.inner-page-nav.scrolled {
+  background: var(--white);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Hide some elements on inner pages if needed */
+.navbar.inner-page-nav .navbar__links {
+  /* Keep them hidden on inner pages */
+  display: flex;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar__back-btn {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .navbar__left {
+    gap: 0.75rem;
+  }
+}

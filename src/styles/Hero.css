@@ -1,6 +1,4 @@
-/* Hero.css - Add this to your existing file */
 
-/* Container for exact 100vh */
 .hero-section {
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
@@ -19,8 +17,7 @@
   height: 100%;
 }
 
-/* ========== YOUR EXISTING DESKTOP STYLES ========== */
-/* Keep all your original .hero styles but update to .hero--desktop */
+
 .hero--desktop {
   background: var(--bg);
   display: flex;

@@ -33,6 +33,20 @@ function HashHandler() {
   return null;
 }
 
+// Layout wrapper for homepage
+function HomepageLayout() {
+  return (
+    <>
+      <Hero />
+      <Services />
+      <About />
+      <Projects />
+      <Process />
+      <CTA />
+    </>
+  );
+}
+
 function App() {
   return (
     <Router>
@@ -40,16 +54,7 @@ function App() {
         <Navbar />
         <HashHandler />
         <Routes>
-          <Route path="/" element={
-            <>
-              <Hero />
-              <Services />
-              <About />
-              <Projects />
-              <Process />
-              <CTA />
-            </>
-          } />
+          <Route path="/" element={<HomepageLayout />} />
           <Route path="/project/:slug" element={<ProjectPage />} />
           <Route path="/service/:slug" element={<ServicePage />} />
         </Routes>
