@@ -109,7 +109,7 @@ const serviceDetails = {
         {
           title: 'Food Delivery App',
           description: 'Order food from local restaurants',
-          image: 'https://unsplash.com/photos/a-cell-phone-with-the-number-fifteen-on-it-R3fHo09P8FA',
+          image: '../assets/images/hero.jpg',
           tags: ['Real-time Tracking', 'M-Pesa', 'Push Notifications']
         },
         {
