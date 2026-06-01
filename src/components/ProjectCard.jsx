@@ -1,13 +1,24 @@
-// src/components/ProjectCard.jsx
+// src/components/ProjectCard.jsx - No emojis
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiBriefcase, FiUsers, FiMapPin, FiPackage, FiTarget } from 'react-icons/fi';
 
 const ProjectCard = ({ project }) => {
+  // Map project icon to Lucide icon based on title or category
+  const getProjectIcon = () => {
+    const iconMap = {
+      'MoiHub': <FiPackage size={32} />,
+      'Tujiinue CBO': <FiUsers size={32} />,
+      'Sagrema': <FiTarget size={32} />,
+      'Rada Ke': <FiMapPin size={32} />
+    };
+    return iconMap[project.title] || <FiBriefcase size={32} />;
+  };
+
   return (
     <Link to={`/project/${project.slug}`} className="project-card-link">
       <div className="project-card">
-        <div className="project-card__icon">{project.icon}</div>
+        <div className="project-card__icon">{getProjectIcon()}</div>
         <div className="project-card__client">{project.client}</div>
         <h3 className="project-card__title">{project.title}</h3>
         <p className="project-card__problem">

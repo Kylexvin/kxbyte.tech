@@ -11,10 +11,11 @@ import Process from './components/Process';
 import CTA from './components/CTA';
 import ServicePage from './pages/ServicePage';
 import ProjectPage from './pages/ProjectPage';
+//import TrustScroll from './components/TrustScroll';
+import WhatsAppFab from './components/WhatsAppFab';
 
 import './styles/index.css';
 
-// Component to handle hash navigation
 function HashHandler() {
   const location = useLocation();
   
@@ -33,11 +34,12 @@ function HashHandler() {
   return null;
 }
 
-// Layout wrapper for homepage
+
 function HomepageLayout() {
   return (
     <>
       <Hero />
+     
       <Services />
       <About />
       <Projects />
@@ -59,6 +61,7 @@ function App() {
           <Route path="/service/:slug" element={<ServicePage />} />
         </Routes>
         <Footer />
+        <WhatsAppFab /> 
       </div>
     </Router>
   );

@@ -1,10 +1,11 @@
+// src/data/projectsData.js - No emojis, using string icons or null
 export const projectsData = [
   {
     id: 1,
     title: 'MoiHub',
     client: 'Independent Platform',
     slug: 'moihub-platform',
-    icon: '🏗️',
+    icon: null,
     category: 'Campus Super App',
     timeline: '6+ months',
     platform: ['Android', 'Web'],
@@ -77,7 +78,7 @@ export const projectsData = [
     title: 'Tujiinue CBO',
     client: 'Client Project',
     slug: 'tujiinue-cbo',
-    icon: '🤝',
+    icon: null,
     category: 'NGO Website',
     timeline: '3 weeks',
     platform: ['Web'],
@@ -145,9 +146,9 @@ export const projectsData = [
     title: 'Sagrema',
     client: 'Client Project',
     slug: 'sagrema-org',
-    icon: '🌱',
+    icon: null,
     category: 'Organization Website',
-    timeline: '2–3 weeks',
+    timeline: '2-3 weeks',
     platform: ['Web'],
     mockupStyle: 'screen',
 
@@ -209,7 +210,7 @@ export const projectsData = [
     title: 'Rada Ke',
     client: 'Independent Platform',
     slug: 'rada-ke',
-    icon: '📍',
+    icon: null,
     category: 'Location-based Marketplace',
     timeline: 'In Progress',
     platform: ['Android', 'iOS'],

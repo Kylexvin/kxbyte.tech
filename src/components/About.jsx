@@ -1,13 +1,15 @@
+// src/components/About.jsx
 import React from 'react';
+import { FiZap, FiTarget, FiTruck, FiUsers } from 'react-icons/fi';
 import '../styles/About.css';
 import aboutImg from '../assets/images/about.jpg';
 
 const About = () => {
   const features = [
-    { icon: '⚡', title: 'Clean Code', desc: 'Maintainable, scalable architecture from day one.' },
-    { icon: '🎯', title: 'Modern Design', desc: 'Interfaces that look great and convert better.' },
-    { icon: '🚀', title: 'Fast Delivery', desc: 'We ship on time, every time. No ghost clients.' },
-    { icon: '🤝', title: 'Local Support', desc: 'Kenya-based team, always reachable and responsive.' }
+    { icon: <FiZap size={24} />, title: 'Clean Code', desc: 'Maintainable, scalable architecture from day one.' },
+    { icon: <FiTarget size={24} />, title: 'Modern Design', desc: 'Interfaces that look great and convert better.' },
+    { icon: <FiTruck size={24} />, title: 'Fast Delivery', desc: 'We ship on time, every time. No ghost clients.' },
+    { icon: <FiUsers size={24} />, title: 'Local Support', desc: 'Kenya-based team, always reachable and responsive.' }
   ];
 
   return (
