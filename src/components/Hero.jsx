@@ -18,6 +18,7 @@ import {
   SiWordpress
 } from 'react-icons/si';
 
+
 import '../styles/Hero.css';
 import heroImg from '../assets/images/hero2.jpg';
 
