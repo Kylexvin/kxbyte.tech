@@ -31,7 +31,6 @@ const technologies = [
   { icon: <SiPostgresql />, name: 'PostgreSQL' },
   { icon: <SiTailwindcss />, name: 'Tailwind CSS' },
   { icon: <SiFirebase />, name: 'Firebase' },
-
   { icon: <SiVercel />, name: 'Vercel' },
   { icon: <SiGit />, name: 'Git' },
   { icon: <SiDocker />, name: 'Docker' },
