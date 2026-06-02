@@ -142,6 +142,7 @@ const Hero = () => {
             <button className="mobile-btn-secondary" onClick={handleViewWork}>View Work</button>
           </div>
         </div>
+        
       </div>
 
 
