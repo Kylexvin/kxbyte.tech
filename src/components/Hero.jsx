@@ -144,6 +144,7 @@ const Hero = () => {
         </div>
       </div>
 
+
       {/* TRUST SCROLL — baked in, sits at bottom of 100vh */}
       <TrustBar />
 
