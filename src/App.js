@@ -11,6 +11,7 @@ import Process from './components/Process';
 import CTA from './components/CTA';
 import ServicePage from './pages/ServicePage';
 import ProjectPage from './pages/ProjectPage';
+import Team from './components/Team';
 //import TrustScroll from './components/TrustScroll';
 import WhatsAppFab from './components/WhatsAppFab';
 
@@ -39,9 +40,9 @@ function HomepageLayout() {
   return (
     <>
       <Hero />
-     
       <Services />
       <About />
+      <Team />       
       <Projects />
       <Process />
       <CTA />
