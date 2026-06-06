@@ -12,7 +12,7 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Check if we're on a service or project page (inner pages)
+  // Check if we're on an inner page (not homepage)
   const isInnerPage = location.pathname !== '/';
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', setVH);
   }, []);
 
-  const navItems = ['Home', 'Services', 'About Us', 'Contact'];
+  const navItems = ['Home', 'Services', 'About Us', 'Team', 'Contact'];
   
   // Map nav items to section IDs
   const getSectionId = (item) => {
@@ -46,6 +46,7 @@ const Navbar = () => {
       'Home': 'home',
       'Services': 'services',
       'About Us': 'about',
+      'Team': 'team',
       'Contact': 'contact'
     };
     return mapping[item];
@@ -77,12 +78,15 @@ const Navbar = () => {
     navigate(-1);
   };
 
+  // Check if current path is a team member page
+  const isTeamMemberPage = location.pathname.startsWith('/team/');
+
   return (
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isInnerPage ? 'inner-page-nav' : ''}`}>
         <div className="navbar__left">
-          {/* Show back button on inner pages */}
-          {isInnerPage && (
+          {/* Show back button on inner pages (except team member pages - they can use browser back) */}
+          {isInnerPage && !isTeamMemberPage && (
             <button className="navbar__back-btn" onClick={handleBack}>
               <ArrowLeft size={20} />
             </button>

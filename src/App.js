@@ -12,6 +12,7 @@ import CTA from './components/CTA';
 import ServicePage from './pages/ServicePage';
 import ProjectPage from './pages/ProjectPage';
 import Team from './components/Team';
+import TeamMemberPage from './pages/TeamMemberPage'; // IMPORT THIS
 //import TrustScroll from './components/TrustScroll';
 import WhatsAppFab from './components/WhatsAppFab';
 
@@ -34,7 +35,6 @@ function HashHandler() {
   
   return null;
 }
-
 
 function HomepageLayout() {
   return (
@@ -60,6 +60,7 @@ function App() {
           <Route path="/" element={<HomepageLayout />} />
           <Route path="/project/:slug" element={<ProjectPage />} />
           <Route path="/service/:slug" element={<ServicePage />} />
+          <Route path="/team/:slug" element={<TeamMemberPage />} /> {/* ADD THIS LINE */}
         </Routes>
         <Footer />
         <WhatsAppFab /> 

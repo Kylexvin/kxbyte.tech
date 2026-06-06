@@ -1,53 +1,10 @@
+// src/components/Team.js
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaLinkedinIn, FaTwitter, FaGithub } from 'react-icons/fa';
 import { FiArrowUpRight } from 'react-icons/fi';
+import { team } from '../data/teamData'; // Import from shared data
 import '../styles/Team.css';
-
-import vinny from '../assets/images/hero2.jpg';
-
-const team = [
-  {
-    slug: 'vincent-kipchirchir',
-    name: 'Vincent Kipchirchir',
-    role: 'Founder & Lead Developer',
-    tag: 'Full-Stack • React Native',
-    image: vinny,
-    socials: { linkedin: '#', twitter: '#', github: '#' },
-  },
-  {
-    slug: 'member-two',
-    name: 'Member Two',
-    role: 'Frontend Developer',
-    tag: 'React • UI Engineering',
-    image: null,
-    socials: { linkedin: '#', twitter: '#', github: '#' },
-  },
-  {
-    slug: 'member-three',
-    name: 'Member Three',
-    role: 'Backend Developer',
-    tag: 'Node.js • MongoDB',
-    image: null,
-    socials: { linkedin: '#', twitter: '#', github: null },
-  },
-  {
-    slug: 'member-four',
-    name: 'Member Four',
-    role: 'UI/UX Designer',
-    tag: 'Figma • Prototyping',
-    image: null,
-    socials: { linkedin: '#', twitter: null, github: null },
-  },
-  {
-    slug: 'member-five',
-    name: 'Member Five',
-    role: 'Project Manager',
-    tag: 'Agile • Client Relations',
-    image: null,
-    socials: { linkedin: '#', twitter: '#', github: null },
-  },
-];
 
 const MemberCard = ({ member, navigate }) => (
   <div className="team__card">
