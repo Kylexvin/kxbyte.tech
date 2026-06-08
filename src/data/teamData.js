@@ -1,12 +1,12 @@
 // src/data/teamData.js
-
+import vinny from '../assets/team/profile_img.jpg';
 export const team = [
   {
     slug: 'vincent-kipchirchir',
     name: 'Vincent Kipchirchir',
     role: 'Founder & Lead Developer',
     tag: 'Full-Stack • React Native',
-    image: null,
+    image: vinny,
     bio: 'Vincent is a passionate full-stack developer with over 8 years of experience building scalable web and mobile applications. He founded the company with a vision to deliver exceptional digital solutions that drive business growth. His expertise spans across modern JavaScript frameworks, cloud architecture, and team leadership.',
     experience: [
       { year: '2020-Present', title: 'Founder & Lead Developer', company: 'KXByte' },
