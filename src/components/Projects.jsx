@@ -1,6 +1,6 @@
 // src/components/Projects.jsx
 import React, { useState, useRef, useEffect } from 'react';
-import { FiArrowRight, FiExternalLink, FiTrendingUp, FiUsers, FiClock } from 'react-icons/fi';
+import { FiArrowRight, FiTrendingUp, FiUsers, FiClock } from 'react-icons/fi';
 import { projectsData } from '../data/projectsData';
 import CaseStudyModal from './CaseStudyModal';
 import '../styles/Projects.css';
@@ -31,7 +31,7 @@ const Projects = () => {
       { threshold: 0.1 }
     );
 
-    const cards = document.querySelectorAll('.project-card-modern');
+    const cards = document.querySelectorAll('.project-card');
     cards.forEach(card => observer.observe(card));
 
     return () => observer.disconnect();
@@ -44,171 +44,134 @@ const Projects = () => {
     }
   };
 
-  const getMetricIcon = (type) => {
-    switch(type) {
-      case 'increase': return <FiTrendingUp />;
-      case 'users': return <FiUsers />;
-      case 'time': return <FiClock />;
-      default: return <FiTrendingUp />;
-    }
-  };
-
   return (
-    <section className="projects-modern" id="projects" ref={sectionRef}>
-      {/* Background decoration */}
-      <div className="projects-bg-decoration">
-        <div className="projects-bg-blob projects-bg-blob-1"></div>
-        <div className="projects-bg-blob projects-bg-blob-2"></div>
-      </div>
-
-      <div className="projects-modern__container">
-        {/* Header */}
-        <div className="projects-modern__header">
-          <div className="projects-modern__label-wrapper">
-            <span className="projects-modern__label">Our Work</span>
-            <div className="projects-modern__label-line"></div>
-          </div>
-          
-          <h2 className="projects-modern__title">
-            Transforming Ideas Into 
-            <span className="gradient-text"> Digital Excellence</span>
+    <section className="projects" id="projects" ref={sectionRef}>
+      <div className="projects__container">
+        {/* Header - Compressed */}
+        <div className="projects__header">
+          <span className="projects__label">Portfolio</span>
+          <h2 className="projects__title">
+            Featured <span className="projects__title-accent">Projects</span>
           </h2>
-          
-          <p className="projects-modern__subtitle">
-            Explore our portfolio of successful projects that have helped businesses grow, 
-            innovate, and dominate their markets.
-          </p>
+          <p className="projects__subtitle">We build digital solutions that drive real business results.</p>
         </div>
 
-        {/* Stats Section */}
-        <div className="projects-stats">
-          <div className="stat-item">
-            <div className="stat-number">150+</div>
-            <div className="stat-label">Projects Completed</div>
+        {/* Stats - Compressed */}
+        <div className="projects__stats">
+          <div className="projects__stat">
+            <span className="projects__stat-number">150+</span>
+            <span className="projects__stat-label">Projects</span>
           </div>
-          <div className="stat-item">
-            <div className="stat-number">98%</div>
-            <div className="stat-label">Client Satisfaction</div>
+          <div className="projects__stat">
+            <span className="projects__stat-number">98%</span>
+            <span className="projects__stat-label">Satisfaction</span>
           </div>
-          <div className="stat-item">
-            <div className="stat-number">50+</div>
-            <div className="stat-label">Happy Clients</div>
+          <div className="projects__stat">
+            <span className="projects__stat-number">50+</span>
+            <span className="projects__stat-label">Clients</span>
           </div>
-          <div className="stat-item">
-            <div className="stat-number">5+</div>
-            <div className="stat-label">Years Average</div>
+          <div className="projects__stat">
+            <span className="projects__stat-number">5+</span>
+            <span className="projects__stat-label">Years</span>
           </div>
         </div>
 
         {/* Filters */}
-        <div className="projects-modern__filters">
+        <div className="projects__filters">
           {filters.map(filter => (
             <button
               key={filter}
-              className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
-              onClick={() => setActiveFilter(filter)}
+              className={`projects__filter ${activeFilter === filter ? 'projects__filter--active' : ''}`}
+              onClick={() => {
+                setActiveFilter(filter);
+                setVisibleProjects(6);
+              }}
             >
               {filter.charAt(0).toUpperCase() + filter.slice(1)}
             </button>
           ))}
         </div>
 
-        {/* Projects Grid */}
-        <div className="projects-modern__grid">
-          {displayedProjects.map((project, index) => (
-            <div 
-              key={project.id}
-              className="project-card-modern"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Image/Thumbnail Area */}
-              <div className="project-card__media">
-                <div className="project-card__image-wrapper">
+        {/* Grid */}
+        <div className="projects__grid">
+          {displayedProjects.length > 0 ? (
+            displayedProjects.map((project, index) => (
+              <div 
+                key={project.id}
+                className="project-card"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="project-card__image">
                   {project.image ? (
-                    <img src={project.image} alt={project.title} className="project-card__image" />
+                    <img src={project.image} alt={project.title} />
                   ) : (
-                    <div className="project-card__image-placeholder">
-                      <div className="placeholder-icon">{project.icon || '🚀'}</div>
+                    <div className="project-card__placeholder">
+                      <span>{project.icon || '🚀'}</span>
                     </div>
                   )}
-                  <div className="project-card__overlay">
-                    <button 
-                      className="project-card__view-btn"
-                      onClick={() => setSelectedProject(project)}
-                    >
-                      <FiExternalLink /> View Case Study
-                    </button>
-                  </div>
+                  <span className="project-card__category">{project.category || 'Web'}</span>
                 </div>
-                <div className="project-card__category">{project.category || 'Web Development'}</div>
-              </div>
 
-              {/* Content */}
-              <div className="project-card__content">
-                <h3 className="project-card__title">{project.title}</h3>
-                <p className="project-card__description">{project.problem}</p>
-                
-                {/* Tech Stack */}
-                {project.tech && (
+                <div className="project-card__body">
+                  <h3 className="project-card__title">{project.title}</h3>
+                  
                   <div className="project-card__tech">
-                    {project.tech.slice(0, 4).map((tech, i) => (
-                      <span key={i} className="tech-tag">{tech}</span>
+                    {project.tech?.slice(0, 3).map((tech, i) => (
+                      <span key={i} className="project-card__tech-tag">{tech}</span>
                     ))}
                   </div>
-                )}
 
-                {/* Results */}
-                <div className="project-card__results-modern">
-                  {project.results?.map((result, i) => (
-                    <div key={i} className="result-item-modern">
-                      <div className="result-icon-modern">
-                        {getMetricIcon(result.type)}
+                  <div className="project-card__results">
+                    {project.results?.map((result, i) => (
+                      <div key={i} className="project-card__result">
+                        <span className="project-card__result-icon">
+                          {result.type === 'increase' && <FiTrendingUp />}
+                          {result.type === 'users' && <FiUsers />}
+                          {result.type === 'time' && <FiClock />}
+                        </span>
+                        <div>
+                          <span className="project-card__result-value">{result.value}</span>
+                          <span className="project-card__result-label">{result.label}</span>
+                        </div>
                       </div>
-                      <div className="result-content">
-                        <div className="result-value">{result.value}</div>
-                        <div className="result-label-modern">{result.label}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Client & Link */}
-                <div className="project-card__footer">
-                  <div className="project-client">
-                    <span className="client-label">Client</span>
-                    <span className="client-name">{project.client}</span>
+                    ))}
                   </div>
+
                   <button 
-                    className="project-link-btn"
+                    className="project-card__btn"
                     onClick={() => setSelectedProject(project)}
                   >
-                    Read Story <FiArrowRight />
+                    View Project <FiArrowRight />
                   </button>
                 </div>
               </div>
+            ))
+          ) : (
+            <div className="projects__empty">
+              <p>No projects found in this category.</p>
             </div>
-          ))}
+          )}
         </div>
 
         {/* Load More */}
         {visibleProjects < filteredProjects.length && (
-          <div className="projects-modern__load-more">
+          <div className="projects__load-more">
             <button 
-              className="load-more-btn"
+              className="projects__load-btn"
               onClick={() => setVisibleProjects(prev => prev + 3)}
             >
-              Load More Projects <FiArrowRight />
+              Load More <FiArrowRight />
             </button>
           </div>
         )}
 
-        {/* CTA Banner */}
-        <div className="projects-modern__cta">
-          <div className="cta-content">
-            <h3>Ready to Start Your Project?</h3>
-            <p>Let's create something amazing together</p>
+        {/* CTA - Compressed */}
+        <div className="projects__cta">
+          <div>
+            <h3>Have a project in mind?</h3>
+            <p>Let's bring your vision to life.</p>
           </div>
-          <button className="cta-button" onClick={scrollToContact}>
+          <button className="projects__cta-btn" onClick={scrollToContact}>
             Start a Project <FiArrowRight />
           </button>
         </div>

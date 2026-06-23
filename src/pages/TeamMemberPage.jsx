@@ -1,14 +1,25 @@
 // src/pages/TeamMemberPage.js
 import React, { useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
-import { FaLinkedinIn, FaTwitter, FaGithub, FaArrowLeft, FaEnvelope, FaMapMarkerAlt, FaCalendarAlt, FaGraduationCap, FaTrophy } from 'react-icons/fa';
-import { FiArrowUpRight, FiAward, FiBriefcase, FiCode } from 'react-icons/fi';
-import { team } from '../data/teamData'; // Import from shared data
+import { useParams, Link } from 'react-router-dom';
+import { 
+  FaLinkedinIn, 
+  FaTwitter, 
+  FaGithub, 
+  FaArrowLeft, 
+  FaEnvelope, 
+  FaMapMarkerAlt, 
+  FaCalendarAlt, 
+  FaBriefcase, 
+  FaCode, 
+  FaQuoteLeft, 
+  FaQuoteRight,
+  FaUsers
+} from 'react-icons/fa';
+import { team } from '../data/teamData'; 
 import '../styles/TeamMemberPage.css';
 
 const TeamMemberPage = () => {
   const { slug } = useParams();
-  const navigate = useNavigate();
   const member = team.find(m => m.slug === slug);
 
   useEffect(() => {
@@ -19,67 +30,76 @@ const TeamMemberPage = () => {
     return (
       <div className="team-member-notfound">
         <h2>Team member not found</h2>
-        <Link to="/" className="team-member-back-home">Back to Home</Link>
+        <Link to="/team" className="team-member-back-home">Back to Team</Link>
       </div>
     );
   }
 
   return (
     <div className="team-member-page">
-      <div className="team-member-container">
-        {/* Back button */}
-        <button onClick={() => navigate('/')} className="team-member-back-btn">
+      <div className="team-member-top-bar">
+        <div className="team-member-breadcrumb">
+          <Link to="/">Home</Link>
+          <span className="separator">/</span>
+          <Link to="/team">Our Team</Link>
+          <span className="separator">/</span>
+          <span className="current">{member.name}</span>
+        </div>
+        <Link to="/team" className="team-member-back-btn">
           <FaArrowLeft /> Back to Team
-        </button>
+        </Link>
+      </div>
 
-        {/* Hero Section */}
-        <div className="team-member-hero">
-          <div className="team-member-avatar">
+      <div className="team-member-profile">
+        <div className="team-member-profile-left">
+          <div className="team-member-avatar-wrapper">
             {member.image ? (
-              <img src={member.image} alt={member.name} />
+              <img src={member.image} alt={member.name} className="team-member-avatar" />
             ) : (
               <div className="team-member-avatar-placeholder">
                 {member.name.charAt(0)}
               </div>
             )}
+            <span className="team-member-status">Active Team Member</span>
           </div>
-          <div className="team-member-hero-content">
-            <h1 className="team-member-name">{member.name}</h1>
-            <p className="team-member-role">{member.role}</p>
-            <div className="team-member-tag">{member.tag}</div>
-            <div className="team-member-info-grid">
-              {member.email && (
-                <div className="team-member-info-item">
-                  <FaEnvelope />
-                  <span>{member.email}</span>
-                </div>
-              )}
-              {member.location && (
-                <div className="team-member-info-item">
-                  <FaMapMarkerAlt />
-                  <span>{member.location}</span>
-                </div>
-              )}
-              {member.joined && (
-                <div className="team-member-info-item">
-                  <FaCalendarAlt />
-                  <span>Joined {member.joined}</span>
-                </div>
-              )}
-            </div>
+          
+          <div className="team-member-contact-card">
+            <h4>Contact Information</h4>
+            {member.email && (
+              <a href={`mailto:${member.email}`} className="team-member-contact-item">
+                <FaEnvelope />
+                <span>{member.email}</span>
+              </a>
+            )}
+            {member.location && (
+              <div className="team-member-contact-item">
+                <FaMapMarkerAlt />
+                <span>{member.location}</span>
+              </div>
+            )}
+            {member.joined && (
+              <div className="team-member-contact-item">
+                <FaCalendarAlt />
+                <span>Joined {member.joined}</span>
+              </div>
+            )}
+          </div>
+
+          <div className="team-member-social-card">
+            <h4>Connect</h4>
             <div className="team-member-socials">
               {member.socials.linkedin && (
-                <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer">
+                <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="team-member-social-link linkedin">
                   <FaLinkedinIn /> LinkedIn
                 </a>
               )}
               {member.socials.twitter && (
-                <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer">
+                <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer" className="team-member-social-link twitter">
                   <FaTwitter /> Twitter
                 </a>
               )}
               {member.socials.github && (
-                <a href={member.socials.github} target="_blank" rel="noopener noreferrer">
+                <a href={member.socials.github} target="_blank" rel="noopener noreferrer" className="team-member-social-link github">
                   <FaGithub /> GitHub
                 </a>
               )}
@@ -87,83 +107,52 @@ const TeamMemberPage = () => {
           </div>
         </div>
 
-        {/* Bio Section */}
-        <div className="team-member-section">
-          <h2 className="team-member-section-title">About Me</h2>
-          <p className="team-member-bio">{member.bio}</p>
-        </div>
-
-        {/* Education Section (if available) */}
-        {member.education && (
-          <div className="team-member-section">
-            <h2 className="team-member-section-title">
-              <FaGraduationCap /> Education
-            </h2>
-            <p className="team-member-education">{member.education}</p>
+        <div className="team-member-profile-right">
+          <div className="team-member-header">
+            <div className="team-member-title">
+              <h1 className="team-member-name">{member.name}</h1>
+              <p className="team-member-role">{member.role}</p>
+            </div>
+            <div className="team-member-tags">
+              <span className="team-member-tag">{member.tag}</span>
+              <span className="team-member-tag team-member-tag-secondary">
+                <FaUsers /> Team Player
+              </span>
+            </div>
           </div>
-        )}
 
-        {/* Skills Section */}
-        <div className="team-member-section">
-          <h2 className="team-member-section-title">
-            <FiCode /> Technical Skills
-          </h2>
-          <div className="team-member-skills">
-            {member.skills.map((skill, index) => (
-              <span key={index} className="team-member-skill">{skill}</span>
-            ))}
+          <div className="team-member-bio-section">
+            <div className="team-member-bio-quote">
+              <FaQuoteLeft />
+            </div>
+            <p className="team-member-bio">{member.bio}</p>
+            <div className="team-member-bio-quote team-member-bio-quote-right">
+              <FaQuoteRight />
+            </div>
           </div>
-        </div>
 
-        {/* Experience Section */}
-        <div className="team-member-section">
-          <h2 className="team-member-section-title">
-            <FiBriefcase /> Work Experience
-          </h2>
-          <div className="team-member-experience">
-            {member.experience.map((exp, index) => (
-              <div key={index} className="team-member-exp-item">
-                <div className="team-member-exp-year">{exp.year}</div>
-                <div className="team-member-exp-content">
-                  <h3>{exp.title}</h3>
-                  <p>{exp.company}</p>
-                </div>
-              </div>
-            ))}
+          <div className="team-member-contribution-section">
+            <h3 className="team-member-section-title">
+              <FaBriefcase /> Role & Contributions
+            </h3>
+            <div className="team-member-contribution-content">
+              <p className="team-member-contribution-text">
+                As our {member.role}, {member.name.split(' ')[0]} brings expertise in {member.skills?.slice(0, 3).join(', ')}.
+              </p>
+            </div>
           </div>
-        </div>
 
-        {/* Projects Section */}
-        <div className="team-member-section">
-          <h2 className="team-member-section-title">
-            <FiAward /> Featured Projects
-          </h2>
-          <div className="team-member-projects">
-            {member.projects.map((project, index) => (
-              <div key={index} className="team-member-project">
-                <FiArrowUpRight />
-                <span>{project}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Achievements Section (if available) */}
-        {member.achievements && member.achievements.length > 0 && (
-          <div className="team-member-section">
-            <h2 className="team-member-section-title">
-              <FaTrophy /> Achievements
-            </h2>
-            <div className="team-member-achievements">
-              {member.achievements.map((achievement, index) => (
-                <div key={index} className="team-member-achievement">
-                  <FiAward />
-                  <span>{achievement}</span>
-                </div>
+          <div className="team-member-skills-section">
+            <h3 className="team-member-section-title">
+              <FaCode /> Technical Expertise
+            </h3>
+            <div className="team-member-skills">
+              {member.skills.map((skill, index) => (
+                <span key={index} className="team-member-skill">{skill}</span>
               ))}
             </div>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
