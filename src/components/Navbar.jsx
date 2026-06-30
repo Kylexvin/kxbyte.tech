@@ -78,15 +78,12 @@ const Navbar = () => {
     navigate(-1);
   };
 
-  // Check if current path is a team member page
-  const isTeamMemberPage = location.pathname.startsWith('/team/');
-
   return (
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isInnerPage ? 'inner-page-nav' : ''}`}>
         <div className="navbar__left">
-          {/* Show back button on inner pages (except team member pages - they can use browser back) */}
-          {isInnerPage && !isTeamMemberPage && (
+          {/* Show back button on ALL inner pages */}
+          {isInnerPage && (
             <button className="navbar__back-btn" onClick={handleBack}>
               <ArrowLeft size={20} />
             </button>

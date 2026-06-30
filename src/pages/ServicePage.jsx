@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { 
   Globe, Smartphone, Settings, Palette, 
@@ -45,24 +45,6 @@ const serviceDetails = {
       { q: 'Do you help with domain & hosting?', a: 'Yes — we can set everything up or use your existing providers.' },
       { q: 'What if I need changes later?', a: 'We\'re here for ongoing support whenever you need updates.' }
     ],
-    // Optional mockups for this service
-    // mockups: {
-    //   type: 'website',
-    //   projects: [
-    //     {
-    //       title: 'E-commerce Platform',
-    //       description: 'Online store with inventory management',
-    //       image: '/mockups/ecommerce-mockup.png', // Add your image paths
-    //       tags: ['Shopify', 'Payment Integration', 'M-Pesa']
-    //     },
-    //     {
-    //       title: 'Business Landing Page',
-    //       description: 'High-converting corporate website',
-    //       image: '/mockups/business-mockup.png',
-    //       tags: ['Responsive', 'Fast Loading', 'SEO Optimized']
-    //     }
-    //   ]
-    // }
   },
   
   'mobile-apps': {
@@ -102,7 +84,6 @@ const serviceDetails = {
       { q: 'Do I need to maintain the app?', a: 'We handle updates and maintenance, or train your team to do it.' },
       { q: 'Will it work without internet?', a: 'Key features work offline — perfect for Kenya\'s network conditions.' }
     ],
-    // App mockups
     mockups: {
       type: 'app',
       projects: [
@@ -165,18 +146,6 @@ const serviceDetails = {
       { q: 'What if something breaks?', a: '24/7 monitoring and support. We fix issues before you notice them.' },
       { q: 'Can we add more automation later?', a: 'Absolutely — we build systems that grow with your business.' }
     ],
-    // Optional: systems might have dashboard mockups
-    // mockups: {
-    //   type: 'dashboard',
-    //   projects: [
-    //     {
-    //       title: 'Admin Dashboard',
-    //       description: 'Control everything from one place',
-    //       image: '/mockups/dashboard-mockup.png',
-    //       tags: ['Analytics', 'User Management', 'Reports']
-    //     }
-    //   ]
-    // }
   },
 
   'ui-ux-design': {
@@ -216,24 +185,6 @@ const serviceDetails = {
       { q: 'What about mobile design?', a: 'Everything is designed for phones, tablets, and computers.' },
       { q: 'Can I get revisions?', a: 'Yes — unlimited revisions until you\'re completely satisfied.' }
     ],
-    // Design mockups
-    // mockups: {
-    //   type: 'design',
-    //   projects: [
-    //     {
-    //       title: 'Mobile App UI Kit',
-    //       description: 'Complete design system for apps',
-    //       image: '/mockups/uikit-mockup.png',
-    //       tags: ['Components', 'Dark Mode', 'Prototype']
-    //     },
-    //     {
-    //       title: 'Website Redesign',
-    //       description: 'Modern corporate look',
-    //       image: '/mockups/redesign-mockup.png',
-    //       tags: ['Wireframes', 'High-fidelity', 'Responsive']
-    //     }
-    //   ]
-    // }
   }
 };
 
@@ -241,6 +192,11 @@ const ServicePage = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const service = serviceDetails[slug];
+
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!service) {
     return (
