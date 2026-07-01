@@ -1,12 +1,12 @@
 // src/components/Projects.jsx
 import React, { useState, useRef, useEffect } from 'react';
 import { FiArrowRight, FiTrendingUp, FiUsers, FiClock } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
-import CaseStudyModal from './CaseStudyModal';
 import '../styles/Projects.css';
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('all');
   const [visibleProjects, setVisibleProjects] = useState(6);
   const sectionRef = useRef(null);
@@ -19,6 +19,7 @@ const Projects = () => {
 
   const displayedProjects = filteredProjects.slice(0, visibleProjects);
 
+  // Handle intersection observer for animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -34,7 +35,9 @@ const Projects = () => {
     const cards = document.querySelectorAll('.project-card');
     cards.forEach(card => observer.observe(card));
 
-    return () => observer.disconnect();
+    return () => {
+      cards.forEach(card => observer.unobserve(card));
+    };
   }, [displayedProjects]);
 
   const scrollToContact = () => {
@@ -44,10 +47,27 @@ const Projects = () => {
     }
   };
 
+  // Navigate to project detail page
+const handleProjectClick = (project) => {
+  navigate(`/project-detail/${project.id}`); // Use this route
+  // Instead of: navigate(`/project/${project.id}`);
+};
+
+  // Reset visible projects when filter changes
+  const handleFilterChange = (filter) => {
+    setActiveFilter(filter);
+    setVisibleProjects(6);
+  };
+
+  // Handle load more
+  const handleLoadMore = () => {
+    setVisibleProjects(prev => Math.min(prev + 3, filteredProjects.length));
+  };
+
   return (
     <section className="projects" id="projects" ref={sectionRef}>
       <div className="projects__container">
-        {/* Header - Compressed */}
+        {/* Header */}
         <div className="projects__header">
           <span className="projects__label">Portfolio</span>
           <h2 className="projects__title">
@@ -56,7 +76,7 @@ const Projects = () => {
           <p className="projects__subtitle">We build digital solutions that drive real business results.</p>
         </div>
 
-        {/* Stats - Compressed */}
+        {/* Stats */}
         <div className="projects__stats">
           <div className="projects__stat">
             <span className="projects__stat-number">150+</span>
@@ -82,10 +102,7 @@ const Projects = () => {
             <button
               key={filter}
               className={`projects__filter ${activeFilter === filter ? 'projects__filter--active' : ''}`}
-              onClick={() => {
-                setActiveFilter(filter);
-                setVisibleProjects(6);
-              }}
+              onClick={() => handleFilterChange(filter)}
             >
               {filter.charAt(0).toUpperCase() + filter.slice(1)}
             </button>
@@ -100,6 +117,15 @@ const Projects = () => {
                 key={project.id}
                 className="project-card"
                 style={{ animationDelay: `${index * 0.1}s` }}
+                onClick={() => handleProjectClick(project)}
+                role="button"
+                tabIndex={0}
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleProjectClick(project);
+                  }
+                }}
               >
                 <div className="project-card__image">
                   {project.image ? (
@@ -139,7 +165,10 @@ const Projects = () => {
 
                   <button 
                     className="project-card__btn"
-                    onClick={() => setSelectedProject(project)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleProjectClick(project);
+                    }}
                   >
                     View Project <FiArrowRight />
                   </button>
@@ -158,14 +187,14 @@ const Projects = () => {
           <div className="projects__load-more">
             <button 
               className="projects__load-btn"
-              onClick={() => setVisibleProjects(prev => prev + 3)}
+              onClick={handleLoadMore}
             >
               Load More <FiArrowRight />
             </button>
           </div>
         )}
 
-        {/* CTA - Compressed */}
+        {/* CTA */}
         <div className="projects__cta">
           <div>
             <h3>Have a project in mind?</h3>
@@ -176,12 +205,6 @@ const Projects = () => {
           </button>
         </div>
       </div>
-
-      <CaseStudyModal 
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-        onStartProject={scrollToContact}
-      />
     </section>
   );
 };

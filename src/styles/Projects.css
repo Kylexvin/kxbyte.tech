@@ -10,7 +10,7 @@
   margin: 0 auto;
 }
 
-/* Header - Compressed */
+/* Header */
 .projects__header {
   text-align: center;
   margin-bottom: 2rem;
@@ -43,7 +43,7 @@
   margin: 0;
 }
 
-/* Stats - Compressed */
+/* Stats */
 .projects__stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -80,7 +80,7 @@
   margin-top: 0.15rem;
 }
 
-/* Filters - Compressed */
+/* Filters */
 .projects__filters {
   display: flex;
   justify-content: center;
@@ -129,7 +129,7 @@
   font-size: 1rem;
 }
 
-/* Card - Compressed */
+/* Card */
 .project-card {
   background: white;
   border-radius: 14px;
@@ -141,6 +141,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  cursor: pointer;
 }
 
 .project-card.fade-in-up {
@@ -149,9 +150,18 @@
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
   border-color: #ff4500;
+}
+
+.project-card:active {
+  transform: scale(0.98);
+}
+
+.project-card:focus-visible {
+  outline: 2px solid #ff4500;
+  outline-offset: 2px;
 }
 
 .project-card__image {
@@ -166,6 +176,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-card__image img {
+  transform: scale(1.05);
 }
 
 .project-card__placeholder {
@@ -175,6 +190,12 @@
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
+  background: linear-gradient(135deg, #fff5f0, #ffe8e0);
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-card__placeholder {
+  transform: scale(1.05);
 }
 
 .project-card__category {
@@ -187,6 +208,23 @@
   border-radius: 50px;
   font-size: 0.65rem;
   font-weight: 600;
+  text-transform: capitalize;
+}
+
+.project-card__image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,69,0,0.08);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-card__image::after {
+  opacity: 1;
 }
 
 .project-card__body {
@@ -202,6 +240,11 @@
   color: #1a1a2e;
   margin: 0 0 0.75rem 0;
   min-height: 2.2rem;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-card__title {
+  color: #ff4500;
 }
 
 .project-card__tech {
@@ -219,6 +262,11 @@
   font-size: 0.65rem;
   font-weight: 500;
   color: #4a6cf7;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .project-card__tech-tag {
+  background: #e8edff;
 }
 
 .project-card__results {
@@ -236,6 +284,11 @@
   padding: 0.4rem;
   background: #f8fafc;
   border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .project-card__result {
+  background: #f0f4ff;
 }
 
 .project-card__result-icon {
@@ -278,6 +331,12 @@
 
 .project-card__btn:hover {
   background: #ff4500;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255,69,0,0.3);
+}
+
+.project-card__btn:active {
+  transform: scale(0.98);
 }
 
 /* Load More */
@@ -304,9 +363,15 @@
 .projects__load-btn:hover {
   background: #ff4500;
   color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255,69,0,0.3);
 }
 
-/* CTA - Compressed */
+.projects__load-btn:active {
+  transform: scale(0.98);
+}
+
+/* CTA */
 .projects__cta {
   background: linear-gradient(135deg, #1a1a2e, #16213e);
   border-radius: 14px;
@@ -316,6 +381,12 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.projects__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
 }
 
 .projects__cta h3 {
@@ -353,10 +424,35 @@
   box-shadow: 0 8px 24px rgba(255,69,0,0.3);
 }
 
+.projects__cta-btn:active {
+  transform: scale(0.98);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
+  .projects {
+    padding: 50px 6vw;
+  }
+  
   .projects__grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 }
 
@@ -371,10 +467,21 @@
 
   .projects__stats {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .projects__stat {
+    padding: 0.75rem;
+  }
+
+  .projects__stat-number {
+    font-size: 1.2rem;
   }
 
   .projects__grid {
     grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto 2rem auto;
   }
 
   .projects__cta {
@@ -382,11 +489,58 @@
     text-align: center;
     padding: 1.5rem;
   }
+
+  .projects__cta h3 {
+    font-size: 1.1rem;
+  }
+
+  .projects__cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .project-card__image {
+    height: 140px;
+  }
+
+  .project-card__body {
+    padding: 1rem;
+  }
+
+  .project-card__title {
+    font-size: 1rem;
+    min-height: 1.8rem;
+  }
 }
 
 @media (max-width: 480px) {
+  .projects {
+    padding: 30px 4vw;
+  }
+
+  .projects__title {
+    font-size: 1.5rem;
+  }
+
+  .projects__subtitle {
+    font-size: 0.85rem;
+  }
+
   .projects__stats {
     grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+
+  .projects__stat {
+    padding: 0.6rem;
+  }
+
+  .projects__stat-number {
+    font-size: 1rem;
+  }
+
+  .projects__stat-label {
+    font-size: 0.65rem;
   }
 
   .projects__filters {
@@ -398,7 +552,95 @@
     font-size: 0.7rem;
   }
 
+  .projects__grid {
+    gap: 0.8rem;
+  }
+
+  .project-card__image {
+    height: 120px;
+  }
+
+  .project-card__placeholder {
+    font-size: 2rem;
+  }
+
+  .project-card__body {
+    padding: 0.8rem;
+  }
+
+  .project-card__title {
+    font-size: 0.9rem;
+    min-height: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-card__tech {
+    gap: 0.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-card__tech-tag {
+    font-size: 0.6rem;
+    padding: 0.1rem 0.5rem;
+  }
+
   .project-card__results {
     grid-template-columns: 1fr;
+    gap: 0.3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-card__result {
+    padding: 0.3rem;
+  }
+
+  .project-card__result-value {
+    font-size: 0.7rem;
+  }
+
+  .project-card__result-label {
+    font-size: 0.55rem;
+  }
+
+  .project-card__btn {
+    font-size: 0.7rem;
+    padding: 0.4rem;
+  }
+
+  .projects__load-btn {
+    font-size: 0.8rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .projects__cta {
+    padding: 1.2rem;
+  }
+
+  .projects__cta h3 {
+    font-size: 1rem;
+  }
+
+  .projects__cta p {
+    font-size: 0.8rem;
+  }
+
+  .projects__cta-btn {
+    font-size: 0.8rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+/* Landscape phones */
+@media (max-height: 600px) and (orientation: landscape) {
+  .projects {
+    padding: 30px 4vw;
+  }
+  
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .project-card__image {
+    height: 100px;
   }
 }

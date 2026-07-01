@@ -12,7 +12,8 @@ import CTA from './components/CTA';
 import ServicePage from './pages/ServicePage';
 import ProjectPage from './pages/ProjectPage';
 import Team from './components/Team';
-import TeamMemberPage from './pages/TeamMemberPage'; // IMPORT THIS
+import TeamMemberPage from './pages/TeamMemberPage'; 
+import ProjectDetail from './pages/ProjectDetail';
 //import TrustScroll from './components/TrustScroll';
 import WhatsAppFab from './components/WhatsAppFab';
 
@@ -60,7 +61,8 @@ function App() {
           <Route path="/" element={<HomepageLayout />} />
           <Route path="/project/:slug" element={<ProjectPage />} />
           <Route path="/service/:slug" element={<ServicePage />} />
-          <Route path="/team/:slug" element={<TeamMemberPage />} /> {/* ADD THIS LINE */}
+          <Route path="/team/:slug" element={<TeamMemberPage />} />
+          <Route path="/project-detail/:id" element={<ProjectDetail />} />
         </Routes>
         <Footer />
         <WhatsAppFab /> 
