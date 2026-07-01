@@ -45,9 +45,7 @@ const TeamMemberPage = () => {
           <span className="separator">/</span>
           <span className="current">{member.name}</span>
         </div>
-        <Link to="/team" className="team-member-back-btn">
-          <FaArrowLeft /> Back to Team
-        </Link>
+
       </div>
 
       <div className="team-member-profile">
