@@ -75,7 +75,7 @@ export const team = [
   location: 'Nairobi, Kenya',
 
   socials: {
-    linkedin: 'https://www.linkedin.com/in/vinny-kylex-622890363/',
+    linkedin: 'https://www.linkedin.com/in/vincent-kipchirchir-622890363',
     github: 'https://github.com/kylexvin'
   },
 },
