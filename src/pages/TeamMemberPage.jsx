@@ -4,8 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { 
   FaLinkedinIn, 
   FaTwitter, 
-  FaGithub, 
-  FaArrowLeft, 
+  FaGithub,    
   FaEnvelope, 
   FaMapMarkerAlt, 
   FaCalendarAlt, 
