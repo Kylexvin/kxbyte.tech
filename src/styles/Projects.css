@@ -501,7 +501,7 @@
   }
 
   .project-card__image {
-    height: 140px;
+    height: auto;
   }
 
   .project-card__body {
@@ -558,7 +558,7 @@
   }
 
   .project-card__image {
-    height: 120px;
+    height: auto;
   }
 
   .project-card__placeholder {
@@ -642,6 +642,6 @@
   }
   
   .project-card__image {
-    height: 100px;
+    height: auto;
   }
 }
