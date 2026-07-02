@@ -1,28 +1,38 @@
 // src/data/projectsData.js
+import moihub from '../assets/images/moihub.jpeg';
+import foodapp from '../assets/images/foodapp.jpeg';
+
 export const projectsData = [
-  {
-    id: 1,
-    title: 'E-Commerce Platform',
-    category: 'ecommerce',
-    client: 'RetailCo',
-    icon: '🛒',
-    image: null,
-    tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    problem: 'The client had an outdated e-commerce system with poor performance and conversion rates.',
-    solution: 'We built a modern, headless e-commerce platform with real-time inventory and AI-powered recommendations.',
-    features: ['Real-time inventory sync', 'AI product recommendations', 'One-click checkout', 'Analytics dashboard'],
-    results: [
-      { type: 'increase', value: '156%', label: 'Conversion Rate' },
-      { type: 'users', value: '45K+', label: 'Monthly Users' },
-      { type: 'time', value: '3.2x', label: 'Faster Load Time' }
-    ],
-    testimonial: {
-      quote: 'This platform transformed our online business. Revenue doubled within 3 months.',
-      author: 'Sarah Johnson',
-      role: 'CEO, RetailCo'
-    },
-    liveUrl: 'https://example.com'
+{
+  id: 1,
+  title: 'MoiHub',
+  category: 'webapp',
+  client: 'MoiHub',
+  icon: '🎓',
+  image: moihub,
+  tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Socket.IO'],
+  problem: 'Moi University students faced fragmented services such as finding accommodation, buying and selling second-hand items, ordering food, discovering roommates, and accessing campus businesses.',
+  solution: 'Developed MoiHub, an all-in-one digital platform that centralizes essential student services into a single, user-friendly web application with real-time communication and secure transactions.',
+  features: [
+    'Student rentals and housing listings',
+    'Roommate finder',
+    'Marketplace for second-hand items',
+    'E-Shop for campus businesses',
+    'Food ordering and delivery',
+    'Real-time messaging with read receipts',
+    'Campus blog and announcements'
+  ],
+  results: [
+    { type: 'feature', value: '7+', label: 'Integrated Services' },
+    { type: 'realtime', value: '100%', label: 'Real-Time Messaging' }
+  ],
+  testimonial: {
+    quote: 'MoiHub brings together everything a university student needs into one convenient platform, making campus life easier and more connected.',
+    author: 'Kylex',
+    role: 'Founder, MoiHub'
   },
+  liveUrl: 'https://moihub-silk.vercel.app/'
+},
   {
     id: 2,
     title: 'Healthcare Management System',
@@ -45,23 +55,30 @@ export const projectsData = [
     },
     liveUrl: null
   },
-  {
-    id: 3,
-    title: 'Food Delivery App',
-    category: 'mobile',
-    client: 'FoodDash',
-    icon: '📱',
-    image: null,
-    tech: ['React Native', 'Firebase', 'Stripe', 'Mapbox'],
-    problem: 'Food delivery market was saturated with poor user experience and unreliable tracking.',
-    solution: 'Developed a sleek mobile app with real-time GPS tracking and smart route optimization.',
-    features: ['Live order tracking', 'AI route optimization', 'In-app payments', 'Rating system'],
-    results: [
-      { type: 'increase', value: '234%', label: 'Order Growth' },
-      { type: 'users', value: '100K+', label: 'App Downloads' }
-    ],
-    liveUrl: null
-  },
+{
+  id: 3,
+  title: 'MoiHub Food Delivery',
+  category: 'mobile',
+  client: 'MoiHub',
+  icon: '🍔',
+  image: foodapp,
+  tech: ['React Native', 'Node.js', 'Express.js', 'MongoDB', 'Socket.IO'],
+  problem: 'Students at Moi University had no centralized platform for discovering campus food vendors, placing orders, and communicating with vendors efficiently.',
+  solution: 'Built an integrated food delivery module within MoiHub that allows students to browse menus, place orders, track order status, and communicate with vendors in real time.',
+  features: [
+    'Browse campus food vendors',
+    'Real-time order status updates',
+    'Vendor and customer messaging',
+    'Order history',
+    'Menu and pricing management',
+    'Integrated with MoiHub accounts'
+  ],
+  results: [
+    { type: 'vendors', value: 'Multi', label: 'Campus Vendors' },
+    { type: 'orders', value: 'Real-Time', label: 'Order Tracking' }
+  ],
+  liveUrl: null
+},
   {
     id: 4,
     title: 'Portfolio Management Dashboard',
