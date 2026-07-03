@@ -64,50 +64,43 @@ const Process = () => {
           </p>
         </div>
 
-        {/* Stats */}
-        <div className="process__stats">
-          <div className="process__stat">
-            <span className="process__stat-number">100%</span>
-            <span className="process__stat-label">Success Rate</span>
-          </div>
-          <div className="process__stat">
-            <span className="process__stat-number">4.9</span>
-            <span className="process__stat-label">Client Rating</span>
-          </div>
-          <div className="process__stat">
-            <span className="process__stat-number">50+</span>
-            <span className="process__stat-label">Projects</span>
-          </div>
-        </div>
+        {/* Road / Steps */}
+        <div className="process__road">
+          <svg className="process__path" viewBox="0 0 100 1400" preserveAspectRatio="none">
+            <path className="process__path-line" d="M50,20 L50,1380" />
+          </svg>
 
-        {/* Steps Grid */}
-        <div className="process__grid">
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`process-card ${activeIndex === index ? 'active' : ''}`}
+              className={`process-card ${activeIndex === index ? 'active' : ''} ${
+                index % 2 === 0 ? 'left' : 'right'
+              }`}
               onClick={() => setActiveIndex(activeIndex === index ? null : index)}
             >
-              <div className="process-card__top">
-                <span className="process-card__number">{step.number}</span>
+              <div className="process-card__marker">{step.number}</div>
+              <div className="process-card__content">
                 <h3 className="process-card__title">{step.title}</h3>
+                <p className="process-card__desc">{step.desc}</p>
+
+                {activeIndex === index && (
+                  <div className="process-card__details">
+                    <p>
+                      Detailed breakdown of the {step.title.toLowerCase()} phase, including key
+                      activities and deliverables.
+                    </p>
+                    <button
+                      className="process-card__btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        scrollToContact();
+                      }}
+                    >
+                      Start Your Project →
+                    </button>
+                  </div>
+                )}
               </div>
-              <p className="process-card__desc">{step.desc}</p>
-              
-              {activeIndex === index && (
-                <div className="process-card__details">
-                  <p>Detailed breakdown of the {step.title.toLowerCase()} phase, including key activities and deliverables.</p>
-                  <button 
-                    className="process-card__btn"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      scrollToContact();
-                    }}
-                  >
-                    Start Your Project →
-                  </button>
-                </div>
-              )}
             </div>
           ))}
         </div>

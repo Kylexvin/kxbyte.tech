@@ -75,25 +75,7 @@ const handleProjectClick = (project) => {
           <p className="projects__subtitle">We build digital solutions that drive real business results.</p>
         </div>
 
-        {/* Stats */}
-        <div className="projects__stats">
-          <div className="projects__stat">
-            <span className="projects__stat-number">150+</span>
-            <span className="projects__stat-label">Projects</span>
-          </div>
-          <div className="projects__stat">
-            <span className="projects__stat-number">98%</span>
-            <span className="projects__stat-label">Satisfaction</span>
-          </div>
-          <div className="projects__stat">
-            <span className="projects__stat-number">50+</span>
-            <span className="projects__stat-label">Clients</span>
-          </div>
-          <div className="projects__stat">
-            <span className="projects__stat-number">5+</span>
-            <span className="projects__stat-label">Years</span>
-          </div>
-        </div>
+
 
         {/* Filters */}
         <div className="projects__filters">

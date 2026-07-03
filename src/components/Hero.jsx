@@ -125,7 +125,7 @@ const Hero = () => {
           </p>
           <div className="mobile-stats-row">
             <div className="stat">
-              <span className="stat-value">50+</span>
+              <span className="stat-value">20+</span>
               <span className="stat-label">Projects</span>
             </div>
             <div className="stat">

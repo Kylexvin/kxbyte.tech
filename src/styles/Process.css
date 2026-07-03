@@ -43,101 +43,141 @@
   margin: 0;
 }
 
-/* Stats - Compact */
-.process__stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.6rem;
-  margin-bottom: 1.5rem;
+/* Road container */
+.process__road {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  padding: 1rem 0;
 }
 
-.process__stat {
-  background: white;
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
-  text-align: center;
-  border: 1px solid #f0f0f0;
-  transition: all 0.3s ease;
+.process__path {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
-.process__stat:hover {
-  border-color: #ff4500;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255,69,0,0.08);
+.process__path-line {
+  stroke: #ff4500;
+  stroke-width: 3;
+  stroke-dasharray: 8 6;
+  fill: none;
+  opacity: 0.35;
 }
 
-.process__stat-number {
-  display: block;
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: #1a1a2e;
-}
-
-.process__stat-label {
-  display: block;
-  font-size: 0.7rem;
-  color: #666;
-  margin-top: 0.1rem;
-}
-
-/* Grid - Compact */
-.process__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 0.8rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Card - Compact, Refined */
+/* Card */
 .process-card {
+  position: relative;
+  width: 44%;
+  margin-bottom: 2.2rem;
+  cursor: pointer;
+  z-index: 1;
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+.process-card.left {
+  margin-right: auto;
+  text-align: right;
+}
+
+.process-card.right {
+  margin-left: auto;
+  text-align: left;
+}
+
+.process-card:nth-child(2) { animation-delay: 0.03s; }
+.process-card:nth-child(3) { animation-delay: 0.06s; }
+.process-card:nth-child(4) { animation-delay: 0.09s; }
+.process-card:nth-child(5) { animation-delay: 0.12s; }
+.process-card:nth-child(6) { animation-delay: 0.15s; }
+.process-card:nth-child(7) { animation-delay: 0.18s; }
+.process-card:nth-child(8) { animation-delay: 0.21s; }
+
+/* Marker (circle on the road) */
+.process-card__marker {
+  position: absolute;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ff4500;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  font-family: 'Orbitron', monospace;
+  z-index: 2;
+  box-shadow: 0 0 0 6px #f8fafc, 0 4px 12px rgba(255, 69, 0, 0.25);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.process-card.left .process-card__marker {
+  right: -76px;
+}
+
+.process-card.right .process-card__marker {
+  left: -76px;
+}
+
+.process-card:hover .process-card__marker,
+.process-card.active .process-card__marker {
+  transform: scale(1.1);
+  background: #cc3700;
+}
+
+/* Content box */
+.process-card__content {
   background: white;
   border-radius: 10px;
   padding: 1rem 1.2rem;
   border: 1px solid #f0f0f0;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  cursor: pointer;
   position: relative;
   overflow: hidden;
 }
 
-.process-card:hover {
+.process-card:hover .process-card__content {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   border-color: #ff4500;
 }
 
-.process-card.active {
+.process-card.active .process-card__content {
   border-color: #ff4500;
-  box-shadow: 0 8px 24px rgba(255,69,0,0.08);
+  box-shadow: 0 8px 24px rgba(255, 69, 0, 0.08);
 }
 
-/* Top row: number + title */
-.process-card__top {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 0.3rem;
+.process-card__content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff4500, #ff784a);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  transform-origin: left;
 }
 
-.process-card__number {
-  font-size: 1.6rem;
-  font-weight: 900;
-  color: rgba(255,69,0,0.12);
-  line-height: 1;
-  font-family: 'Orbitron', monospace;
-  flex-shrink: 0;
-  transition: color 0.3s;
-}
-
-.process-card:hover .process-card__number {
-  color: rgba(255,69,0,0.25);
+.process-card:hover .process-card__content::before,
+.process-card.active .process-card__content::before {
+  transform: scaleX(1);
 }
 
 .process-card__title {
   font-size: 1rem;
   font-weight: 700;
   color: #1a1a2e;
-  margin: 0;
+  margin: 0 0 0.3rem 0;
   transition: color 0.3s;
 }
 
@@ -150,7 +190,6 @@
   line-height: 1.5;
   color: #666;
   margin: 0;
-  padding-left: 2.4rem;
 }
 
 /* Details - expands on click */
@@ -159,7 +198,6 @@
   padding-top: 0.6rem;
   border-top: 1px solid #f0f0f0;
   animation: slideDown 0.25s ease;
-  padding-left: 2.4rem;
 }
 
 @keyframes slideDown {
@@ -196,26 +234,7 @@
   transform: translateX(4px);
 }
 
-/* Glow accent */
-.process-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #ff4500, #ff784a);
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
-  transform-origin: left;
-}
-
-.process-card:hover::before,
-.process-card.active::before {
-  transform: scaleX(1);
-}
-
-/* CTA - Compact */
+/* CTA */
 .process__cta {
   background: linear-gradient(135deg, #1a1a2e, #16213e);
   border-radius: 12px;
@@ -230,7 +249,7 @@
 
 .process__cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
 .process__cta h3 {
@@ -241,7 +260,7 @@
 }
 
 .process__cta p {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   margin: 0.1rem 0 0 0;
   font-size: 0.85rem;
 }
@@ -265,7 +284,7 @@
 .process__cta-btn:hover {
   background: #cc3700;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255,69,0,0.3);
+  box-shadow: 0 6px 20px rgba(255, 69, 0, 0.3);
 }
 
 .process__cta-btn:active {
@@ -284,27 +303,10 @@
   }
 }
 
-.process-card {
-  animation: fadeInUp 0.5s ease forwards;
-}
-
-.process-card:nth-child(1) { animation-delay: 0.03s; }
-.process-card:nth-child(2) { animation-delay: 0.06s; }
-.process-card:nth-child(3) { animation-delay: 0.09s; }
-.process-card:nth-child(4) { animation-delay: 0.12s; }
-.process-card:nth-child(5) { animation-delay: 0.15s; }
-.process-card:nth-child(6) { animation-delay: 0.18s; }
-.process-card:nth-child(7) { animation-delay: 0.21s; }
-
 /* Responsive */
 @media (max-width: 1024px) {
   .process {
     padding: 40px 6vw 50px;
-  }
-  
-  .process__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.7rem;
   }
 }
 
@@ -317,31 +319,32 @@
     font-size: 1.6rem;
   }
 
-  .process__stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.4rem;
+  .process__road {
+    padding: 1rem 0 1rem 60px;
   }
 
-  .process__stat {
-    padding: 0.5rem;
+  .process__path {
+    left: 20px;
+    transform: none;
   }
 
-  .process__stat-number {
-    font-size: 1.1rem;
+  .process-card,
+  .process-card.left,
+  .process-card.right {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
   }
 
-  .process__grid {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-    margin: 0 auto 1.5rem auto;
+  .process-card__marker,
+  .process-card.left .process-card__marker,
+  .process-card.right .process-card__marker {
+    left: -60px;
+    right: auto;
   }
 
-  .process-card {
+  .process-card__content {
     padding: 0.8rem 1rem;
-  }
-
-  .process-card__number {
-    font-size: 1.4rem;
   }
 
   .process-card__title {
@@ -350,11 +353,6 @@
 
   .process-card__desc {
     font-size: 0.75rem;
-    padding-left: 2rem;
-  }
-
-  .process-card__details {
-    padding-left: 2rem;
   }
 
   .process__cta {
@@ -386,37 +384,29 @@
     font-size: 0.8rem;
   }
 
-  .process__stats {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.3rem;
+  .process__road {
+    padding-left: 48px;
   }
 
-  .process__stat {
-    padding: 0.4rem;
-  }
-
-  .process__stat-number {
-    font-size: 1rem;
-  }
-
-  .process__stat-label {
-    font-size: 0.6rem;
-  }
-
-  .process__grid {
-    gap: 0.6rem;
+  .process__path {
+    left: 16px;
   }
 
   .process-card {
+    margin-bottom: 1.6rem;
+  }
+
+  .process-card__marker,
+  .process-card.left .process-card__marker,
+  .process-card.right .process-card__marker {
+    left: -48px;
+    width: 36px;
+    height: 36px;
+    font-size: 0.75rem;
+  }
+
+  .process-card__content {
     padding: 0.7rem 0.8rem;
-  }
-
-  .process-card__top {
-    gap: 0.5rem;
-  }
-
-  .process-card__number {
-    font-size: 1.2rem;
   }
 
   .process-card__title {
@@ -425,11 +415,6 @@
 
   .process-card__desc {
     font-size: 0.7rem;
-    padding-left: 1.8rem;
-  }
-
-  .process-card__details {
-    padding-left: 1.8rem;
   }
 
   .process-card__details p {

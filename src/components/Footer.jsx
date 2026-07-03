@@ -134,7 +134,7 @@ const Footer = () => {
           </div>
           <div className="footer__contact-item">
             <FaEnvelope />
-            <a href="mailto:hello@kxbyte.co.ke">hello@kxbyte.co.ke</a>
+            <a href="mailto:kxbyte.tech@gmail.com">kxbyte.tech@gmail.com</a>
           </div>
           <div className="footer__contact-item">
             <FaMapMarkerAlt />
