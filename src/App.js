@@ -16,6 +16,8 @@ import TeamMemberPage from './pages/TeamMemberPage';
 import ProjectDetail from './pages/ProjectDetail';
 //import TrustScroll from './components/TrustScroll';
 import WhatsAppFab from './components/WhatsAppFab';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 import './styles/index.css';
 
@@ -63,6 +65,8 @@ function App() {
           <Route path="/service/:slug" element={<ServicePage />} />
           <Route path="/team/:slug" element={<TeamMemberPage />} />
           <Route path="/project-detail/:id" element={<ProjectDetail />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
         </Routes>
         <Footer />
         <WhatsAppFab /> 

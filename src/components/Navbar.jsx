@@ -1,3 +1,4 @@
+// src/components/Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaInstagram, FaTwitter, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
@@ -38,13 +39,14 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', setVH);
   }, []);
 
-  const navItems = ['Home', 'Services', 'About Us', 'Team', 'Contact'];
+  const navItems = ['Home', 'Services', 'Projects', 'About Us', 'Team', 'Contact'];
   
   // Map nav items to section IDs
   const getSectionId = (item) => {
     const mapping = {
       'Home': 'home',
       'Services': 'services',
+      'Projects': 'projects',
       'About Us': 'about',
       'Team': 'team',
       'Contact': 'contact'
@@ -221,7 +223,7 @@ const Navbar = () => {
                 <FaLinkedinIn />
               </a>
               <a 
-                href="https://wa.me/254XXXXXXXXX" 
+                href="https://wa.me/254768610613" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="social-icon whatsapp"
