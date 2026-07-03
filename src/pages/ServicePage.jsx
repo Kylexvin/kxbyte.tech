@@ -84,29 +84,29 @@ const serviceDetails = {
       { q: 'Do I need to maintain the app?', a: 'We handle updates and maintenance, or train your team to do it.' },
       { q: 'Will it work without internet?', a: 'Key features work offline — perfect for Kenya\'s network conditions.' }
     ],
-    mockups: {
-      type: 'app',
-      projects: [
-        {
-          title: 'Food Delivery App',
-          description: 'Order food from local restaurants',
-          image: '../assets/images/hero.jpg',
-          tags: ['Real-time Tracking', 'M-Pesa', 'Push Notifications']
-        },
-        {
-          title: 'E-commerce Mobile App',
-          description: 'Shop from your phone anywhere',
-          image: '/mockups/shopapp-mockup.png',
-          tags: ['Wishlist', 'Cart', 'Secure Payments']
-        },
-        {
-          title: 'Service Booking App',
-          description: 'Book services in seconds',
-          image: '/mockups/booking-mockup.png',
-          tags: ['Calendar', 'Reviews', 'Scheduling']
-        }
-      ]
-    }
+    // mockups: {
+    //   type: 'app',
+    //   projects: [
+    //     {
+    //       title: 'Food Delivery App',
+    //       description: 'Order food from local restaurants',
+    //       image: '../assets/images/hero.jpg',
+    //       tags: ['Real-time Tracking', 'M-Pesa', 'Push Notifications']
+    //     },
+    //     {
+    //       title: 'E-commerce Mobile App',
+    //       description: 'Shop from your phone anywhere',
+    //       image: '/mockups/shopapp-mockup.png',
+    //       tags: ['Wishlist', 'Cart', 'Secure Payments']
+    //     },
+    //     {
+    //       title: 'Service Booking App',
+    //       description: 'Book services in seconds',
+    //       image: '/mockups/booking-mockup.png',
+    //       tags: ['Calendar', 'Reviews', 'Scheduling']
+    //     }
+    //   ]
+    // }
   },
 
   'systems-backends': {
