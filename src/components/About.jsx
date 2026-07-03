@@ -2,7 +2,7 @@
 import React from 'react';
 import { FiZap, FiTarget, FiTruck, FiUsers } from 'react-icons/fi';
 import '../styles/About.css';
-import aboutImg from '../assets/images/about.jpg';
+import aboutImg from '../assets/images/about.png';
 
 const About = () => {
   const features = [

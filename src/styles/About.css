@@ -22,24 +22,12 @@
 .about__img {
   width: 380px;
   height: 460px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 4px;
   position: relative;
   z-index: 1;
   display: block;
-  box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
-}
-
-.about__image-accent {
-  position: absolute;
-  width: 380px;
-  height: 460px;
-  border: 3px solid var(--orange);
-  top: 20px;
-  left: calc(50% - 190px);
-  border-radius: 4px;
-  z-index: 0;
-  transition: all 0.3s ease;
+  
 }
 
 /* Content Section */
@@ -134,12 +122,6 @@
     width: 320px;
     height: 390px;
   }
-  
-  .about__image-accent {
-    width: 320px;
-    height: 390px;
-    left: calc(50% - 160px);
-  }
 }
 
 /* Mobile Landscape */
@@ -174,13 +156,6 @@
   .about__img {
     width: 280px;
     height: 340px;
-  }
-  
-  .about__image-accent {
-    width: 280px;
-    height: 340px;
-    left: calc(50% - 140px);
-    top: 15px;
   }
 }
 
@@ -226,13 +201,6 @@
     width: 240px;
     height: 290px;
   }
-  
-  .about__image-accent {
-    width: 240px;
-    height: 290px;
-    left: calc(50% - 120px);
-    top: 12px;
-  }
 }
 
 /* Small phones */
@@ -253,13 +221,6 @@
   .about__img {
     width: 200px;
     height: 240px;
-  }
-  
-  .about__image-accent {
-    width: 200px;
-    height: 240px;
-    left: calc(50% - 100px);
-    top: 10px;
   }
   
   .about__feature {
@@ -284,12 +245,6 @@
   .about__img {
     width: 180px;
     height: 220px;
-  }
-  
-  .about__image-accent {
-    width: 180px;
-    height: 220px;
-    left: calc(50% - 90px);
   }
   
   .section__heading {

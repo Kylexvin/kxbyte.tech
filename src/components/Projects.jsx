@@ -11,7 +11,7 @@ const Projects = () => {
   const [visibleProjects, setVisibleProjects] = useState(6);
   const sectionRef = useRef(null);
 
-  const filters = ['all', 'web', 'mobile', 'ecommerce', 'enterprise'];
+  const filters = ['all', 'web', 'mobile', 'backend'];
 
   const filteredProjects = activeFilter === 'all' 
     ? projectsData 
@@ -49,8 +49,7 @@ const Projects = () => {
 
   // Navigate to project detail page
 const handleProjectClick = (project) => {
-  navigate(`/project-detail/${project.id}`); // Use this route
-  // Instead of: navigate(`/project/${project.id}`);
+  navigate(`/project-detail/${project.id}`); 
 };
 
   // Reset visible projects when filter changes

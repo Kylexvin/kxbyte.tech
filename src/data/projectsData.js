@@ -5,12 +5,13 @@ import tujiinue from '../assets/images/tujiinue.jpeg';
 import sagrema from '../assets/images/sagrema.jpeg';
 import mtz from '../assets/images/mtz.jpeg';
 import kxtill from '../assets/images/kxtill.jpeg';
+import taskflow from '../assets/images/taskflow.jpeg'; // Add this image
 
 export const projectsData = [
 {
   id: 1,
-  title: 'MoiHub',
-  category: 'webapp',
+  title: 'MoiHub Platform',
+  category: 'web',
   client: 'MoiHub',
   icon: '🎓',
   image: moihub,
@@ -40,13 +41,13 @@ export const projectsData = [
 {
   id: 2,
   title: 'Tujiinue CBO Website',
-  category: 'website',
+  category: 'web',
   client: 'Tujiinue Community Based Organization',
   icon: '🌍',
   image: tujiinue,
   tech: ['React', 'Node.js', 'Express.js', 'MongoDB'],
   problem: 'The organization lacked a modern online presence to showcase its community programs, impact, and attract partners, donors, and volunteers.',
-  solution: 'Designed and developed a responsive website that highlights the organization’s mission, projects, success stories, and provides an easy way for visitors to get involved.',
+  solution: 'Designed and developed a responsive website that highlights the organization\'s mission, projects, success stories, and provides an easy way for visitors to get involved.',
   features: [
     'Responsive website design',
     'Projects and programs showcase',
@@ -57,10 +58,10 @@ export const projectsData = [
   ],
   results: [
     { type: 'website', value: 'Modern', label: 'Online Presence' },
-    { type: 'responsive', value: '100%', label: 'Mobile Responsive' },
-    { type: 'content', value: 'Dynamic', label: 'Content Management' }
+    { type: 'responsive', value: '100%', label: 'Mobile Responsive' }
+    
   ],
-  liveUrl: null
+  liveUrl: 'https://tujiinue-cbo.org/'
 },
 {
   id: 3,
@@ -88,26 +89,27 @@ export const projectsData = [
 },
 {
   id: 4,
-  title: 'Sagrema Foundation Website',
-  category: 'website',
-  client: 'Sagrema Foundation',
-  icon: '🤝',
-  image: sagrema,
-  tech: ['React', 'Node.js', 'Express.js', 'MongoDB'],
-  problem: 'The foundation needed a professional platform to communicate its mission, showcase initiatives, and engage donors, beneficiaries, and community partners.',
-  solution: 'Built a modern, accessible website that presents the foundation’s work, impact, events, and provides streamlined communication with supporters.',
+  title: 'KXTill POS Mobile',
+  category: 'mobile',
+  client: 'KXBYTE',
+  icon: '📲',
+  image: kxtill,
+  tech: ['React Native', 'Node.js', 'Express.js', 'SQLite'],
+  problem: 'Many small business owners need a portable point-of-sale solution that works reliably even without an internet connection while keeping inventory and sales organized.',
+  solution: 'Built KXTill POS Mobile, an offline-first point-of-sale application that enables businesses to manage sales, inventory, customers, and transactions directly from their smartphones, with data synchronized when connectivity is available.',
   features: [
-    'Programs and initiatives pages',
-    'Events and announcements',
-    'Photo gallery',
-    'Contact and partnership forms',
-    'Donation information',
-    'Admin content management'
+    'Offline-first sales processing',
+    'Product and inventory management',
+    'Customer management',
+    'Sales history and reports',
+    'Receipt generation',
+    'Local SQLite data storage',
+    'Cloud synchronization'
   ],
   results: [
-    { type: 'impact', value: 'Professional', label: 'Digital Presence' },
-    { type: 'access', value: '24/7', label: 'Information Access' },
-    { type: 'responsive', value: '100%', label: 'Cross-Device Support' }
+    { type: 'offline', value: '100%', label: 'Offline Operation' },
+    { type: 'sync', value: 'Automatic', label: 'Data Synchronization' },
+    { type: 'platform', value: 'Mobile', label: 'Business Management' }
   ],
   liveUrl: null
 },
@@ -136,88 +138,64 @@ export const projectsData = [
   ],
   liveUrl: null
 },
-  // {
-  //   id: 6,
-  //   title: 'B2B SaaS CRM',
-  //   category: 'enterprise',
-  //   client: 'SalesHub',
-  //   icon: '💼',
-  //   image: null,
-  //   tech: ['React', 'Node.js', 'PostgreSQL', 'AWS'],
-  //   problem: 'Sales teams were using disjointed tools causing data silos and inefficiency.',
-  //   solution: 'Developed an all-in-one CRM with pipeline management and AI-powered insights.',
-  //   features: ['Lead management', 'Pipeline tracking', 'Email automation', 'Analytics dashboard'],
-  //   results: [
-  //     { type: 'increase', value: '92%', label: 'Sales Efficiency' },
-  //     { type: 'users', value: '1,200+', label: 'Enterprise Users' }
-  //   ],
-  //   liveUrl: 'https://example.com'
-  // },
-  // {
-  //   id: 7,
-  //   title: 'Online Learning Platform',
-  //   category: 'web',
-  //   client: 'EduTech',
-  //   icon: '🎓',
-  //   image: null,
-  //   tech: ['React', 'Python', 'PostgreSQL', 'WebRTC'],
-  //   problem: 'Traditional education was inaccessible to many learners due to geographic and financial barriers.',
-  //   solution: 'Built a comprehensive learning platform with live classes and interactive content.',
-  //   features: ['Live video classes', 'Interactive quizzes', 'Progress tracking', 'Community forums'],
-  //   results: [
-  //     { type: 'users', value: '50K+', label: 'Students Enrolled' },
-  //     { type: 'increase', value: '85%', label: 'Course Completion Rate' }
-  //   ],
-  //   testimonial: {
-  //     quote: 'This platform has made quality education accessible to thousands of students worldwide.',
-  //     author: 'Emma Rodriguez',
-  //     role: 'Education Director'
-  //   },
-  //   liveUrl: null
-  // },
-  // {
-  //   id: 8,
-  //   title: 'Real Estate Marketplace',
-  //   category: 'ecommerce',
-  //   client: 'PropFinder',
-  //   icon: '🏘️',
-  //   image: null,
-  //   tech: ['Next.js', 'Node.js', 'PostgreSQL', 'Mapbox'],
-  //   problem: 'Property search was inefficient with outdated listings and poor user experience.',
-  //   solution: 'Created a modern marketplace with AI-powered property matching and virtual tours.',
-  //   features: ['AI property matching', 'Virtual tours', 'Mortgage calculator', 'Agent messaging'],
-  //   results: [
-  //     { type: 'increase', value: '198%', label: 'Listing Views' },
-  //     { type: 'users', value: '15K+', label: 'Active Buyers' }
-  //   ],
-  //   liveUrl: 'https://example.com'
-  // },
-  {
+{
   id: 6,
-  title: 'KXTill POS Mobile',
-  category: 'mobile',
-  client: 'KXBYTE',
-  icon: '📲',
-  image: kxtill,
-  tech: ['React Native', 'Node.js', 'Express.js', 'SQLite'],
-  problem: 'Many small business owners need a portable point-of-sale solution that works reliably even without an internet connection while keeping inventory and sales organized.',
-  solution: 'Built KXTill POS Mobile, an offline-first point-of-sale application that enables businesses to manage sales, inventory, customers, and transactions directly from their smartphones, with data synchronized when connectivity is available.',
+  title: 'TaskFlow - Project Management API',
+  category: 'backend',
+  client: 'TaskFlow',
+  icon: '📋',
+  image: taskflow, // Your diagram/image
+  tech: ['Node.js', 'Express.js', 'PostgreSQL', 'JWT', 'Sequelize'],
+  problem: 'Development teams needed a robust, secure, and scalable backend system to manage projects, tasks, and team collaboration with proper access control.',
+  solution: 'Built TaskFlow, a RESTful API with JWT authentication and role-based access control (RBAC). Features project and task management, team collaboration, comments, and real-time dashboard statistics.',
   features: [
-    'Offline-first sales processing',
-    'Product and inventory management',
-    'Customer management',
-    'Sales history and reports',
-    'Receipt generation',
-    'Local SQLite data storage',
-    'Cloud synchronization'
+    'JWT authentication with refresh tokens',
+    'Role-based access control (Admin, Manager, Member)',
+    'Project CRUD operations',
+    'Task management with status tracking',
+    'Task assignments and comments',
+    'Dashboard statistics and reporting',
+    'User management and team organization',
+    'RESTful API with Swagger documentation'
   ],
   results: [
-    { type: 'offline', value: '100%', label: 'Offline Operation' },
-    { type: 'sync', value: 'Automatic', label: 'Data Synchronization' },
-    { type: 'platform', value: 'Mobile', label: 'Business Management' }
+    { type: 'auth', value: 'JWT', label: 'Secure Authentication' },
+    { type: 'roles', value: '3+', label: 'Access Levels' },
+    { type: 'api', value: 'RESTful', label: 'Scalable API' }
   ],
+  testimonial: {
+    quote: 'TaskFlow provides a solid foundation for any team looking to manage projects efficiently with proper security and role management.',
+    author: 'Backend Team',
+    role: 'TaskFlow'
+  },
   liveUrl: null
-}
+},
+
+{
+  id: 7,
+  title: 'Sagrema Foundation Website',
+  category: 'web',
+  client: 'Sagrema Foundation',
+  icon: '🤝',
+  image: sagrema,
+  tech: ['React', 'Node.js', 'Express.js', 'MongoDB'],
+  problem: 'The foundation needed a professional platform to communicate its mission, showcase initiatives, and engage donors, beneficiaries, and community partners.',
+  solution: 'Built a modern, accessible website that presents the foundation\'s work, impact, events, and provides streamlined communication with supporters.',
+  features: [
+    'Programs and initiatives pages',
+    'Events and announcements',
+    'Photo gallery',
+    'Contact and partnership forms',
+    'Donation information',
+    'Admin content management'
+  ],
+  results: [
+    { type: 'impact', value: 'Professional', label: 'Digital Presence' },
+    { type: 'access', value: '24/7', label: 'Information Access' },
+    { type: 'responsive', value: '100%', label: 'Cross-Device Support' }
+  ],
+  liveUrl: "https://sagremafoundation.org/"
+},
 ];
 
 export const getProjectBySlug = (slug) => {
