@@ -14,10 +14,11 @@ import ProjectPage from './pages/ProjectPage';
 import Team from './components/Team';
 import TeamMemberPage from './pages/TeamMemberPage'; 
 import ProjectDetail from './pages/ProjectDetail';
-//import TrustScroll from './components/TrustScroll';
 import WhatsAppFab from './components/WhatsAppFab';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
 
 import './styles/index.css';
 
@@ -61,6 +62,8 @@ function App() {
         <HashHandler />
         <Routes>
           <Route path="/" element={<HomepageLayout />} />
+          <Route path="/about" element={<AboutPage />} />          {/* 👈 NEW */}
+          <Route path="/services" element={<ServicesPage />} />    {/* 👈 NEW */}
           <Route path="/project/:slug" element={<ProjectPage />} />
           <Route path="/service/:slug" element={<ServicePage />} />
           <Route path="/team/:slug" element={<TeamMemberPage />} />

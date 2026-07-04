@@ -1,6 +1,6 @@
 import React from 'react';
-import { Globe, Smartphone, Settings, Palette, ChevronRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Globe, Smartphone, Settings, Palette, ChevronRight, ArrowRight } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
 import '../styles/Services.css';
 
 const services = [
@@ -33,13 +33,6 @@ const services = [
 const Services = () => {
   const navigate = useNavigate();
 
-  const scrollToProjects = () => {
-    const projectsSection = document.getElementById('projects');
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   return (
     <section className="services" id="services">
       <div className="services__watermark">DO</div>
@@ -63,13 +56,13 @@ const Services = () => {
           Trusted by startups, local businesses, and growing brands across Kenya.
         </p>
 
-        <button
-          className="btn--primary"
-          style={{ marginTop: '2rem' }}
-          onClick={scrollToProjects}
-        >
-          View Our Work →
-        </button>
+        {/* 👇 NEW: Services CTA - Replaces View Our Work */}
+        <div className="services__cta-wrapper">
+          <Link to="/services" className="services__cta">
+            Explore All Services
+            <ArrowRight className="services__cta-icon" size={18} />
+          </Link>
+        </div>
       </div>
 
       <div className="services__grid">
@@ -78,7 +71,6 @@ const Services = () => {
             className="service-card"
             key={i}
             onClick={() => navigate(`/service/${s.slug}`)}
-            style={{ cursor: 'pointer' }}
           >
             <div className="service-card__header">
               <div className="service-card__icon">

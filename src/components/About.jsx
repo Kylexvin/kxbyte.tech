@@ -1,6 +1,7 @@
 // src/components/About.jsx
 import React from 'react';
-import { FiZap, FiTarget, FiTruck, FiUsers } from 'react-icons/fi';
+import { FiZap, FiTarget, FiTruck, FiUsers, FiArrowRight } from 'react-icons/fi';
+import { Link } from 'react-router-dom'; // or 'next/link' if using Next.js
 import '../styles/About.css';
 import aboutImg from '../assets/images/about.png';
 
@@ -41,6 +42,14 @@ const About = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* 👇 NEW: Read More CTA */}
+        <div className="about__cta-wrapper">
+          <Link to="/about" className="about__cta">
+            Learn More About KXByte
+            <FiArrowRight className="about__cta-icon" />
+          </Link>
         </div>
       </div>
     </section>
