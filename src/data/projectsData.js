@@ -5,7 +5,8 @@ import tujiinue from '../assets/images/tujiinue.jpeg';
 import sagrema from '../assets/images/sagrema.jpeg';
 import mtz from '../assets/images/mtz.jpeg';
 import kxtill from '../assets/images/kxtill.jpeg';
-import taskflow from '../assets/images/taskflow.jpeg'; // Add this image
+import taskflow from '../assets/images/taskflow.jpeg';
+import coastal from '../assets/images/hotel.jpg';
 
 export const projectsData = [
 {
@@ -196,6 +197,31 @@ export const projectsData = [
   ],
   liveUrl: "https://sagremafoundation.org/"
 },
+{
+  id: 8,
+  title: 'Coastal Hotel website',
+  category: 'web',
+  client: 'Coastal Hotel',
+  icon: '🤝',
+  image: coastal,
+  tech: ['React', 'Node.js', 'Express.js', 'MongoDB'],
+  problem: 'The hotel needed a professional platform to communicate its services, showcase amenities, and engage potential guests.',
+  solution: 'Built a modern, accessible website that presents the hotel\'s offerings, guest reviews, and provides streamlined booking functionality.',
+  features: [
+    'Room listings and availability',
+    'Booking system',
+    'Photo gallery',
+   
+  ],
+  results: [
+    { type: 'impact', value: 'Professional', label: 'Digital Presence' },
+    { type: 'access', value: '24/7', label: 'Information Access' },
+    { type: 'responsive', value: '100%', label: 'Cross-Device Support' }
+  ],
+  liveUrl: "https://luxuryhotel-demo.vercel.app/"
+},
+
+
 ];
 
 export const getProjectBySlug = (slug) => {

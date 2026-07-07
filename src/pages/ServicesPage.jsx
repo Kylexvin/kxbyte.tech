@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { 
   Globe, Smartphone, Settings, Palette, ArrowRight, CheckCircle,
-  Users, TrendingUp, Clock, Code, 
-  Zap, Shield, Target, Truck, Award,
-  Layout, Database, ShoppingCart, Bot, Server,
+  Users,  
+  Zap, Shield, Target,  Award,
+   Database,  Server,
   Building2, GraduationCap, Heart, Stethoscope,
-  ShoppingBag, Utensils, Package, Home, Landmark,
-  Rocket, Briefcase, ChevronDown, ChevronUp,
-  DollarSign, Calendar, Clock as ClockIcon,
-  Headphones, RefreshCw, Globe as GlobeIcon,
-  FileText, MessageSquare, BarChart3, Cpu,
-  Cloud, Github, Terminal, Layers
+  ShoppingBag, Utensils,  Home, 
+ ChevronDown, ChevronUp,
+  Calendar, Clock as ClockIcon,
+  Globe as GlobeIcon,
+ MessageSquare, BarChart3, Cpu,
+ Layers
 } from 'lucide-react';
 import '../styles/ServicesPage.css';
 
