@@ -773,6 +773,8 @@ const AboutPage = () => {
               </div>
               <div className="about-page__founder-badge">Founder & CEO</div>
             </div>
+
+            
 <div className="about-page__founder-info">
   <span className="about-page__section-label">Meet the Founder</span>
 
