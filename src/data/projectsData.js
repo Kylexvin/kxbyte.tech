@@ -222,6 +222,8 @@ export const projectsData = [
 },
 
 
+
+
 ];
 
 export const getProjectBySlug = (slug) => {
