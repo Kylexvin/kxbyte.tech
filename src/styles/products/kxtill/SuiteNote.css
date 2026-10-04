@@ -1,0 +1,143 @@
+/* src/styles/products/kxtill/SuiteNote.css */
+
+.kt-suite {
+  padding: 4rem 0;
+  background: #1a1a1a;
+  color: #f5f3f0;
+}
+
+.kt-suite__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 6%;
+}
+
+.kt-suite__inner {
+  display: grid;
+  grid-template-columns: 1.5fr auto;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* ── Body ─────────────────────────────────────────────────── */
+.kt-suite__body {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #d4d4d4;
+  max-width: 62ch;
+  margin: 0;
+}
+
+/* ── Liquid-glass CTA — logo lives inside ─────────────────── */
+.kt-suite__cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+
+  background: rgba(249, 249, 249, 0.04);
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+
+  border: 0.6px solid rgba(249, 249, 249, 0.12);
+  box-shadow:
+    8px 8px 20px rgba(0, 0, 0, 0.6),
+    inset -2px -2px 8px rgba(0, 0, 0, 0.3),
+    inset 2px 2px 8px rgba(249, 249, 249, 0.05),
+    0 0 40px rgba(217, 91, 45, 0.05);
+
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.3s ease;
+}
+
+.kt-suite__cta:hover {
+  transform: translateY(-2px);
+  background: rgba(249, 249, 249, 0.07);
+  box-shadow:
+    10px 12px 28px rgba(0, 0, 0, 0.7),
+    inset -2px -2px 8px rgba(0, 0, 0, 0.3),
+    inset 2px 2px 8px rgba(249, 249, 249, 0.08),
+    0 0 60px rgba(217, 91, 45, 0.15);
+  text-decoration: none;
+}
+
+.kt-suite__cta-shimmer {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(249, 249, 249, 0.15) 0%,
+    rgba(249, 249, 249, 0.02) 40%,
+    rgba(217, 91, 45, 0.08) 60%,
+    rgba(249, 249, 249, 0.05) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: ktSuiteShimmer 6s ease-in-out infinite;
+}
+
+@keyframes ktSuiteShimmer {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.kt-suite__cta-content {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #f9f9f9;
+}
+
+/* Logo inside the pill */
+.kt-suite__cta-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.kt-suite__cta-content svg {
+  transition: transform 0.2s ease;
+  margin-left: 0.1rem;
+}
+
+.kt-suite__cta:hover .kt-suite__cta-content svg {
+  transform: translate(2px, -2px);
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .kt-suite {
+    padding: 3.5rem 0;
+  }
+
+  .kt-suite__container {
+    padding: 0 5%;
+  }
+
+  .kt-suite__inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .kt-suite__cta {
+    width: 100%;
+  }
+}

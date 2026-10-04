@@ -1,0 +1,125 @@
+/* src/styles/TrustScroll.css */
+
+.trust-scroll {
+  padding: 14px 0;
+  background: transparent;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  position: relative;
+}
+
+.trust-scroll__label {
+  text-align: center;
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.trust-scroll__track {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.trust-scroll__content {
+  display: inline-flex;
+  animation: scroll 20s linear infinite;
+  gap: 40px;
+}
+
+.trust-scroll__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: #ffffff;
+  border-radius: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tech-icon {
+  font-size: 1.2rem;
+  color: #ff5c1a;
+  display: flex;
+  align-items: center;
+}
+
+.tech-name {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.trust-scroll:hover .trust-scroll__content {
+  animation-play-state: paused;
+}
+
+/* ── Product status dot ──────────────────────────────────── */
+.trust-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.trust-dot--live {
+  background: #10b981;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
+}
+
+.trust-dot--soon {
+  background: #d4d4d4;
+}
+
+/* ── Status tag ──────────────────────────────────────────── */
+.trust-tag {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #9ca3af;
+  margin-left: 2px;
+  padding: 1px 5px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+}
+
+/* ── Mobile ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .trust-scroll {
+    padding: 12px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+    background: transparent;
+  }
+
+  .trust-scroll__label {
+    color: #9ca3af;
+  }
+
+  .trust-scroll__item {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.05);
+    padding: 6px 12px;
+  }
+
+  .tech-name {
+    color: #1a1a1a;
+    font-size: 0.75rem;
+  }
+
+  .trust-scroll__content {
+    gap: 16px;
+  }
+
+  .tech-icon {
+    font-size: 1rem;
+  }
+}

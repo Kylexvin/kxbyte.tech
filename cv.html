@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vincent Kipchirchir — CV</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Georgia', serif;
+    font-size: 10.5pt;
+    color: #1a1a1a;
+    background: #fff;
+    line-height: 1.5;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 52px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .header h1 {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 15pt;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #111;
+    line-height: 1.2;
+  }
+
+  .header .tagline {
+    font-size: 10pt;
+    color: #333;
+    margin-top: 2px;
+  }
+
+  .header .contact {
+    font-size: 9.5pt;
+    color: #333;
+    margin-top: 5px;
+  }
+
+  .header .contact a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  /* ── DIVIDER ── */
+  hr {
+    border: none;
+    border-top: 1px solid #999;
+    margin: 10px 0;
+  }
+
+  hr.thick {
+    border-top: 1.5px solid #555;
+    margin: 14px 0 0 0;
+  }
+
+  /* ── SECTION ROW LAYOUT ── */
+  .section {
+    display: table;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .section-label {
+    display: table-cell;
+    width: 130px;
+    min-width: 130px;
+    padding: 12px 16px 12px 0;
+    font-family: Arial, sans-serif;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #333;
+    vertical-align: top;
+    border-top: 1px solid #ccc;
+  }
+
+  .section-content {
+    display: table-cell;
+    padding: 12px 0 12px 0;
+    vertical-align: top;
+    border-top: 1px solid #ccc;
+  }
+
+  /* ── PROFILE TEXT ── */
+  .profile-text {
+    font-size: 9.8pt;
+    color: #222;
+    line-height: 1.55;
+  }
+
+  /* ── JOB ENTRY ── */
+  .job {
+    margin-bottom: 14px;
+  }
+
+  .job:last-child {
+    margin-bottom: 0;
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1px;
+  }
+
+  .job-title-line {
+    font-family: Arial, sans-serif;
+    font-size: 9.8pt;
+    font-weight: 700;
+    color: #111;
+  }
+
+  .job-date {
+    font-family: Arial, sans-serif;
+    font-size: 9pt;
+    color: #444;
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+
+  .job-role {
+    font-size: 9.5pt;
+    font-style: italic;
+    color: #444;
+    margin-bottom: 5px;
+  }
+
+  .job ul {
+    padding-left: 16px;
+    margin: 0;
+  }
+
+  .job ul li {
+    font-size: 9.5pt;
+    color: #222;
+    line-height: 1.55;
+    margin-bottom: 2px;
+  }
+
+  /* ── EDUCATION ENTRY ── */
+  .edu-entry {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .edu-entry:last-child { margin-bottom: 0; }
+
+  .edu-left .edu-degree {
+    font-family: Arial, sans-serif;
+    font-size: 9.8pt;
+    font-weight: 700;
+    color: #111;
+  }
+
+  .edu-left .edu-institution {
+    font-size: 9.5pt;
+    color: #444;
+  }
+
+  .edu-date {
+    font-family: Arial, sans-serif;
+    font-size: 9pt;
+    color: #444;
+    white-space: nowrap;
+    margin-left: 12px;
+    text-align: right;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+  }
+
+  .skill-tag {
+    font-family: Arial, sans-serif;
+    font-size: 9pt;
+    color: #222;
+    background: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 2px 9px;
+    border-radius: 2px;
+  }
+
+  /* ── LINKS ── */
+  .links-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .links-row a {
+    font-family: Arial, sans-serif;
+    font-size: 9.5pt;
+    color: #1a5276;
+    text-decoration: underline;
+  }
+
+  /* ── INTEREST / ACTIVITIES ── */
+  .plain-list {
+    padding-left: 16px;
+    margin: 0;
+  }
+
+  .plain-list li {
+    font-size: 9.5pt;
+    color: #222;
+    line-height: 1.55;
+    margin-bottom: 2px;
+  }
+
+  .activity-item {
+    margin-bottom: 7px;
+  }
+
+  .activity-item strong {
+    font-family: Arial, sans-serif;
+    font-size: 9.5pt;
+    color: #111;
+  }
+
+  .activity-item p {
+    font-size: 9.5pt;
+    color: #222;
+    line-height: 1.55;
+  }
+
+  /* ── REFERENCE ── */
+  .ref-name {
+    font-family: Arial, sans-serif;
+    font-size: 9.8pt;
+    font-weight: 700;
+    color: #111;
+  }
+
+  .ref-detail {
+    font-size: 9.5pt;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  @media print {
+    body { font-size: 10pt; }
+    .page { padding: 36px 44px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>VINCENT KIPCHIRCHIR, ICT Intern | Software Development | Full Stack Development</h1>
+    <div class="contact">
+      0768610613 &nbsp;·&nbsp;
+      <a href="mailto:vinnykylex@gmail.com">vinnykylex@gmail.com</a>
+    </div>
+  </div>
+
+  <hr class="thick">
+
+  <!-- LINKS -->
+  <div class="section">
+    <div class="section-label">Links</div>
+    <div class="section-content">
+      <div class="links-row">
+        <a href="https://kylexvin.vercel.app/" target="_blank">Portfolio</a>
+        <a href="https://kxbyte.vercel.app/" target="_blank">KXByte</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFILE -->
+  <div class="section">
+    <div class="section-label">Profile</div>
+    <div class="section-content">
+      <p class="profile-text">
+        Results-driven Full-Stack Developer with 3+ years of experience building scalable web and mobile applications. Proven track record of delivering end-to-end solutions using the MERN stack, React Native, and modern development practices. Founder of MoiHub, a multi-service platform serving university students. Passionate about creating user-centric applications that solve real-world problems. I also teach, having completed my Teaching Practice where I taught Mathematics and Physics. I hold a Bachelor of Science in Education (BSE), blending strong technical skills with solid teaching experience.
+      </p>
+    </div>
+  </div>
+
+  <!-- OBJECTIVE -->
+  <div class="section">
+    <div class="section-label">Objective</div>
+    <div class="section-content">
+      <p class="profile-text">
+        To secure a challenging position that utilizes my skills and knowledge to achieve personal and organizational goals.
+      </p>
+    </div>
+  </div>
+
+  <!-- WORK EXPERIENCE -->
+  <div class="section">
+    <div class="section-label">Work Experience</div>
+    <div class="section-content">
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title-line">CEO, MOIHUB</span>
+          <span class="job-date">Mar 2023 — Present</span>
+        </div>
+        <ul>
+          <li>Founded and operate the leading student services platform for Moi University, consolidating housing, e-commerce, food delivery, and social networking into one ecosystem.</li>
+          <li>Designed and developed full-stack architecture using MongoDB, Express.js, React.js, and Node.js, with deployment on Vercel and Expo.</li>
+          <li>Built cross-platform Android application with offline caching, push notifications (FCM), and real-time chat featuring read receipts, typing indicators, and online presence.</li>
+          <li>Implemented role-based notification system and integrated payment solutions for vendors, landlords, and students.</li>
+          <li>Reduced average housing search time by 60% and facilitated student-to-student marketplace transactions.</li>
+          <li>Actively maintain and scale platform to serve growing user base across multiple service categories.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title-line">Website Developer, Sagrema Foundation</span>
+          <span class="job-date">Jul 2025 — Sept 2025</span>
+        </div>
+        <ul>
+          <li>Led end-to-end design, development, and deployment of the organization's website to enhance community engagement and digital storytelling.</li>
+          <li>Delivered fully functional, responsive site with content management system.</li>
+          <li>Provided comprehensive training to foundation staff for long-term content management and site maintenance.</li>
+          <li>Improved online visibility and community reach through SEO optimization.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title-line">Website Developer, GLOBE GIVERS CBO</span>
+          <span class="job-date">Jan 2025 — Feb 2025</span>
+        </div>
+        <ul>
+          <li>Developed responsive website and created branded graphics to strengthen digital presence.</li>
+          <li>Collaborated with stakeholders to translate organizational mission into compelling web experience.</li>
+          <li>Delivered project on time with positive client feedback.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title-line">Web Developer & Graphics Designer, Nkosira CBO</span>
+          <span class="job-date">Aug 2024 — Sept 2024</span>
+        </div>
+        <ul>
+          <li>Led complete website development and brand identity design project.</li>
+          <li>Created cohesive visual identity including logo, color scheme, and marketing materials.</li>
+          <li>Established brand guidelines for consistent communication across platforms.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title-line">Teacher — Moi University TP Program (Songoliet Secondary School)</span>
+          <span class="job-date">May 2024 — Aug 2024</span>
+        </div>
+        <ul>
+          <li>Taught Mathematics and Physics to high school students, delivering structured lessons aligned with the Kenyan curriculum.</li>
+          <li>Broke down complex scientific and mathematical concepts for learners of varying abilities.</li>
+          <li>Designed lesson plans, assignments, and assessments to track student progress.</li>
+          <li>Provided one-on-one support to struggling learners, improving their confidence and academic performance.</li>
+          <li>Managed classroom discipline and maintained professional communication with supervisors.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title-line">Website Developer, VastoGroup</span>
+          <span class="job-date">Feb 2024 — Mar 2024</span>
+        </div>
+        <ul>
+          <li>Developed and deployed responsive frontend for company's online presence platforms.</li>
+          <li>Collaborated with team to implement modern UI/UX best practices.</li>
+          <li>Ensured cross-browser compatibility and optimal performance.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-label">Projects</div>
+    <div class="section-content">
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title-line">MoiHub — Founder & Full-Stack Developer</span>
+          <span class="job-date">Apr 2023 — Present</span>
+        </div>
+        <div class="job-role">MongoDB · Express.js · React.js · Node.js · React Native · Firebase · Vercel · Expo</div>
+        <ul>
+          <li>Housing rentals with roommate matching algorithm.</li>
+          <li>E-commerce marketplace for student-to-student transactions.</li>
+          <li>Food delivery system connecting campus vendors with students.</li>
+          <li>Integrated blog and social networking features.</li>
+          <li>Real-time messaging with read receipts, typing indicators, and online presence.</li>
+          <li>Role-based user management for students, vendors, and landlords.</li>
+          <li>In-app payment processing and transaction management.</li>
+          <li><strong>Impact:</strong> Successfully scaled to active multi-service user base, significantly reducing housing search time and enabling an efficient student services ecosystem.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEADERSHIP -->
+  <div class="section">
+    <div class="section-label">Leadership &amp; Community</div>
+    <div class="section-content">
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title-line">IEEE Moi University Student Branch</span>
+          <span class="job-date">Dec 2023 — Apr 2024</span>
+        </div>
+        <ul>
+          <li>Active member contributing to technical workshops and student engagement initiatives.</li>
+          <li>Participated in organizing tech events and knowledge-sharing sessions.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title-line">Google Developer Student Clubs (GDSC)</span>
+          <span class="job-date">Jan 2022 — Dec 2023</span>
+        </div>
+        <ul>
+          <li>Engaged in workshops, hackathons, and collaborative learning projects.</li>
+          <li>Expanded knowledge of Google technologies and development best practices.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-label">Education</div>
+    <div class="section-content">
+
+      <div class="edu-entry">
+        <div class="edu-left">
+          <div class="edu-degree">Bachelor of Science with Education (Mathematics, Physics &amp; Computing)</div>
+          <div class="edu-institution">Moi University</div>
+        </div>
+        <div class="edu-date">Sep 2021 — Jul 2025</div>
+      </div>
+
+      <div class="edu-entry">
+        <div class="edu-left">
+          <div class="edu-degree">Website Development</div>
+          <div class="edu-institution">W3Schools</div>
+        </div>
+        <div class="edu-date">Jan 2023 — May 2023</div>
+      </div>
+
+      <div class="edu-entry">
+        <div class="edu-left">
+          <div class="edu-degree">SEO Certification</div>
+          <div class="edu-institution">HubSpot Academy</div>
+        </div>
+        <div class="edu-date">May 2023 — Jun 2023</div>
+      </div>
+
+      <div class="edu-entry">
+        <div class="edu-left">
+          <div class="edu-degree">Graphics Design</div>
+          <div class="edu-institution">YouTube (Self-directed)</div>
+        </div>
+        <div class="edu-date">Jun 2023</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-label">Skills</div>
+    <div class="section-content">
+      <div class="skills-grid">
+        <span class="skill-tag">HTML &amp; CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">React.js</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Express.js</span>
+        <span class="skill-tag">React Native</span>
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">Database Design</span>
+        <span class="skill-tag">Git &amp; Version Control</span>
+        <span class="skill-tag">Web Security</span>
+        <span class="skill-tag">SEO</span>
+        <span class="skill-tag">Graphics Design</span>
+        <span class="skill-tag">Marketing &amp; E-skills</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITIES -->
+  <div class="section">
+    <div class="section-label">Activities</div>
+    <div class="section-content">
+      <div class="activity-item">
+        <strong>Teaching Coding Workshops:</strong>
+        <p>Led coding and tech workshops simplifying complex programming concepts for learners. Teaching background in Mathematics and Physics strengthens ability to explain technical topics clearly.</p>
+      </div>
+      <div class="activity-item">
+        <strong>Freelance Projects:</strong>
+        <p>Completed multiple freelance development projects, gaining practical experience working with real clients and building a diverse portfolio across web and mobile applications.</p>
+      </div>
+      <div class="activity-item">
+        <strong>Continuous Learning:</strong>
+        <p>Consistently invest in upskilling through online courses, self-study, and exploring new technologies to stay aligned with modern industry trends and deliver future-ready solutions.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERESTS -->
+  <div class="section">
+    <div class="section-label">Interests</div>
+    <div class="section-content">
+      <ul class="plain-list">
+        <li>Open-source contributions</li>
+        <li>Hackathons</li>
+        <li>Tech blogging / vlogging</li>
+        <li>Gaming</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- REFERENCE -->
+  <div class="section">
+    <div class="section-label">Reference</div>
+    <div class="section-content">
+      <div class="ref-name">DAVID NGETICH</div>
+      <div class="ref-detail">
+        Executive Officer · SHA<br>
+        Tel: +254721283697<br>
+        Email: davidngetich3@gmail.com
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,220 @@
+/* src/styles/products/kxtill/OfflineNote.css */
+
+.kt-offline {
+  padding: 5rem 0;
+  background: #1a1a1a;
+  color: #f5f3f0;
+}
+
+.kt-offline__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 6%;
+}
+
+.kt-offline__label {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ff5c1a;
+  margin-bottom: 1rem;
+}
+
+.kt-offline__headline {
+  font-family: var(--font-orbitron), sans-serif;
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  color: #f5f3f0;
+  text-transform: uppercase;
+  max-width: 24ch;
+  margin-bottom: 1.5rem;
+}
+
+.kt-offline__body {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #d4d4d4;
+  max-width: 68ch;
+  margin: 0 0 2.5rem;
+}
+
+/* ── Two-column split ─────────────────────────────────────── */
+.kt-offline__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.kt-offline__col {
+  border-radius: 6px;
+  padding: 1.5rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.kt-offline__col--works {
+  border-color: rgba(16, 185, 129, 0.25);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.kt-offline__col--needs {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.kt-offline__col-head {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+
+.kt-offline__col--works .kt-offline__col-head svg {
+  color: #10b981;
+}
+
+.kt-offline__col--needs .kt-offline__col-head svg {
+  color: #9ca3af;
+}
+
+.kt-offline__col-title {
+  font-family: var(--font-orbitron), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #f5f3f0;
+}
+
+.kt-offline__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.kt-offline__list li {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #d4d4d4;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.kt-offline__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #ff5c1a;
+}
+
+.kt-offline__col--works .kt-offline__list li::before {
+  background: #10b981;
+}
+
+/* ── Flow diagram ─────────────────────────────────────────── */
+.kt-offline__flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kt-offline__flow-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.kt-offline__flow-label {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-orbitron), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #f5f3f0;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.kt-offline__flow-arrow {
+  color: #ff5c1a;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 720px) {
+  .kt-offline {
+    padding: 4rem 0;
+  }
+
+  .kt-offline__container {
+    padding: 0 5%;
+  }
+
+  .kt-offline__body {
+    margin-bottom: 2rem;
+  }
+
+  .kt-offline__columns {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+  }
+
+  .kt-offline__col {
+    padding: 1.25rem 1.15rem;
+  }
+
+  /* ── Flow diagram — vertical stack on mobile ─────────── */
+  .kt-offline__flow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+  }
+
+  .kt-offline__flow-step {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+  }
+
+  .kt-offline__flow-label {
+    font-size: 0.72rem;
+    padding: 0.7rem 1rem;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Arrow becomes a vertical connector — rotated 90° */
+  .kt-offline__flow-arrow {
+    display: block;
+    width: 100%;
+    text-align: center;
+    transform: rotate(90deg);
+    padding: 0.15rem 0;
+    font-size: 0.85rem;
+    line-height: 1;
+  }
+}

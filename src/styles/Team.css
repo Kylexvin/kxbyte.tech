@@ -1,0 +1,444 @@
+/* src/styles/Team.css */
+
+.team {
+  padding: 5rem 6% 6rem;
+  background: #f5f3f0;
+  position: relative;
+}
+
+/* ════════════════════════════════════════════════════════════
+   HEADER
+   ════════════════════════════════════════════════════════════ */
+
+.team__header {
+  max-width: 640px;
+  margin-bottom: 2.5rem;
+}
+
+.team__label {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ff5c1a;
+  margin-bottom: 0.8rem;
+}
+
+.team__heading {
+  font-family: var(--font-orbitron), sans-serif;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.team__heading--accent {
+  color: #ff5c1a;
+}
+
+/* ════════════════════════════════════════════════════════════
+   DESKTOP — split layout
+   ════════════════════════════════════════════════════════════ */
+
+.team__body {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* ── List ─────────────────────────────────────────────────── */
+.team__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  padding: 0.5rem;
+  height: 100%;
+}
+
+.team__item {
+  display: grid;
+  grid-template-columns: 40px 1fr 36px;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  border: 1px solid transparent;
+  flex: 1;
+}
+
+.team__item:hover {
+  background: #fafaf8;
+  border-color: rgba(255, 92, 26, 0.12);
+}
+
+.team__item--active {
+  background: rgba(255, 92, 26, 0.05);
+  border-color: rgba(255, 92, 26, 0.2);
+}
+
+.team__item--active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 25%;
+  bottom: 25%;
+  width: 3px;
+  background: #ff5c1a;
+  border-radius: 0 3px 3px 0;
+}
+
+.team__item-index {
+  font-family: var(--font-orbitron), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #d4d4d4;
+  transition: color 0.2s ease;
+  text-transform: uppercase;
+}
+
+.team__item:hover .team__item-index,
+.team__item--active .team__item-index {
+  color: #ff5c1a;
+}
+
+.team__item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.team__item-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  transition: color 0.2s ease;
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+}
+
+.team__item:hover .team__item-name,
+.team__item--active .team__item-name {
+  color: #ff5c1a;
+}
+
+.team__item-role {
+  font-size: 0.65rem;
+  color: #8a8a8a;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.team__item-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #fafaf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.team__item-arrow:hover {
+  background: #ff5c1a;
+  border-color: #ff5c1a;
+  color: #ffffff;
+  transform: translate(2px, -2px);
+}
+
+/* ════════════════════════════════════════════════════════════
+   CARD — with orange offset signature
+   ════════════════════════════════════════════════════════════ */
+
+.team__body > div:last-child {
+  position: sticky;
+  top: 80px;
+  display: flex;
+  align-items: stretch;
+  padding-right: 12px;
+  padding-bottom: 12px;
+}
+
+.team__card {
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  animation: teamCardFade 0.3s ease-out;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 12px 12px 0 #ff5c1a;
+}
+
+@keyframes teamCardFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.team__card-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3.4;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #e8e4df 0%, #d4cfc9 100%);
+  overflow: hidden;
+}
+
+.team__card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.team__card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-orbitron), sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  background: linear-gradient(135deg, #e8e4df 0%, #d4cfc9 100%);
+}
+
+.team__card-tag {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0.85rem;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 3px;
+  border-left: 3px solid #ff5c1a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.team__card-bottom {
+  padding: 1.25rem 1.35rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex: 1;
+}
+
+.team__card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.team__card-name {
+  font-family: var(--font-orbitron), sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+.team__card-role {
+  font-size: 0.68rem;
+  color: #ff5c1a;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ── Socials ──────────────────────────────────────────────── */
+.team__card-socials {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.team__card-socials a {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: #f5f3f0;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.team__card-socials a:hover {
+  background: #ff5c1a;
+  border-color: #ff5c1a;
+  color: #ffffff;
+}
+
+/* ── Card CTA ─────────────────────────────────────────────── */
+.team__card-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #ff5c1a;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  transition: background 0.2s ease, gap 0.2s ease;
+  width: 100%;
+  margin-top: auto;
+  font-family: inherit;
+}
+
+.team__card-cta:hover {
+  background: #e04a0f;
+  gap: 0.7rem;
+}
+
+.team__card-cta svg {
+  transition: transform 0.2s ease;
+  font-size: 14px;
+}
+
+.team__card-cta:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* ════════════════════════════════════════════════════════════
+   MOBILE CAROUSEL
+   ════════════════════════════════════════════════════════════ */
+
+.team__carousel-wrap {
+  display: none;
+}
+
+.team__carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 0.85rem;
+  padding: 0 12px 12px 0;
+  scrollbar-width: none;
+}
+
+.team__carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.team__carousel-item {
+  flex: 0 0 78%;
+  scroll-snap-align: center;
+}
+
+.team__carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.team__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #d4d4d4;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.team__dot--active {
+  background: #ff5c1a;
+  width: 20px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .team {
+    padding: 4rem 5% 5rem;
+  }
+
+  .team__body {
+    display: none;
+  }
+
+  .team__carousel-wrap {
+    display: block;
+  }
+
+  .team__header {
+    margin-bottom: 2rem;
+  }
+
+  /* Smaller offset on mobile — still signature */
+  .team__card {
+    box-shadow: 8px 8px 0 #ff5c1a;
+  }
+
+  .team__body > div:last-child {
+    padding-right: 8px;
+    padding-bottom: 8px;
+  }
+
+  .team__carousel {
+    padding: 0 8px 8px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .team {
+    padding: 3.5rem 4% 4rem;
+  }
+
+  .team__heading {
+    font-size: 1.35rem;
+  }
+
+  .team__carousel-item {
+    flex: 0 0 85%;
+  }
+}

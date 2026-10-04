@@ -1,0 +1,280 @@
+/* src/styles/TermsOfService.css */
+
+.terms-service {
+  padding: 80px 8vw 100px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.terms-service__container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Back Button */
+.terms-service__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  margin-bottom: 2rem;
+}
+
+.terms-service__back:hover {
+  color: #ff4500;
+  transform: translateX(-4px);
+}
+
+/* Header */
+.terms-service__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.terms-service__badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ff4500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 69, 0, 0.08);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+}
+
+.terms-service__header h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #1a1a2e;
+  margin: 0 0 0.5rem 0;
+}
+
+.terms-service__date {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.terms-service__line {
+  width: 60px;
+  height: 3px;
+  background: #ff4500;
+  margin: 1.5rem auto 0;
+}
+
+/* Content */
+.terms-service__content {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
+}
+
+.terms-service__intro {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1a1a2e;
+}
+
+.terms-service__content p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.terms-service__content p strong {
+  color: #1a1a2e;
+}
+
+/* Sections */
+.terms-section {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.terms-section:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.terms-section h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 1rem 0;
+}
+
+/* Lists */
+.terms-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.terms-list li {
+  padding: 0.5rem 0 0.5rem 1.8rem;
+  position: relative;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.terms-list li:last-child {
+  border-bottom: none;
+}
+
+.terms-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #ff4500;
+  font-weight: 700;
+}
+
+/* Contact Box */
+.terms-contact {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+  border-left: 3px solid #ff4500;
+}
+
+.terms-contact p {
+  margin: 0.3rem 0;
+}
+
+.terms-contact a {
+  color: #ff4500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.terms-contact a:hover {
+  color: #cc3700;
+  text-decoration: underline;
+}
+
+/* Final Note */
+.terms-final {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #ff4500;
+}
+
+.terms-final-note {
+  background: linear-gradient(135deg, #f8fafc, #fff5f0);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 69, 0, 0.1);
+}
+
+.terms-final-note h2 {
+  color: #ff4500;
+  margin-bottom: 1rem;
+}
+
+.terms-final-note p {
+  margin-bottom: 0.8rem;
+}
+
+.terms-final-note p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .terms-service {
+    padding: 60px 5vw 80px;
+  }
+
+  .terms-service__header h1 {
+    font-size: 2.2rem;
+  }
+
+  .terms-service__content {
+    padding: 1.5rem;
+  }
+
+  .terms-service__intro {
+    font-size: 1rem;
+  }
+
+  .terms-service__content p {
+    font-size: 0.9rem;
+  }
+
+  .terms-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .terms-list li {
+    font-size: 0.9rem;
+  }
+
+  .terms-contact {
+    padding: 1rem;
+  }
+
+  .terms-final-note {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .terms-service {
+    padding: 40px 4vw 60px;
+  }
+
+  .terms-service__header h1 {
+    font-size: 1.8rem;
+  }
+
+  .terms-service__date {
+    font-size: 0.8rem;
+  }
+
+  .terms-service__content {
+    padding: 1rem;
+  }
+
+  .terms-service__intro {
+    font-size: 0.95rem;
+  }
+
+  .terms-service__content p {
+    font-size: 0.85rem;
+  }
+
+  .terms-section h2 {
+    font-size: 1.1rem;
+  }
+
+  .terms-list li {
+    font-size: 0.85rem;
+    padding: 0.4rem 0 0.4rem 1.5rem;
+  }
+
+  .terms-contact {
+    padding: 0.8rem;
+  }
+
+  .terms-contact p {
+    font-size: 0.85rem;
+  }
+
+  .terms-final-note {
+    padding: 1rem;
+  }
+}

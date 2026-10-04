@@ -1,0 +1,378 @@
+/* src/styles/products/kxtill/Hero.css */
+
+/* ════════════════════════════════════════════════════════════
+   SHARED
+   ════════════════════════════════════════════════════════════ */
+
+.kt-hero {
+  background: #f5f3f0;
+  color: #1a1a1a;
+  position: relative;
+  overflow: hidden;
+}
+
+.kt-hero__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 6%;
+}
+
+/* ════════════════════════════════════════════════════════════
+   DESKTOP
+   ════════════════════════════════════════════════════════════ */
+
+.kt-hero__desktop {
+  padding: 8rem 0 6rem;
+}
+
+.kt-hero__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.kt-hero__content {
+  min-width: 0;
+}
+
+/* ── Identity ─────────────────────────────────────────────── */
+.kt-hero__identity {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.8rem;
+}
+
+.kt-hero__logo {
+  width: auto;
+  height: 28px;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.kt-hero__eyebrow {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #ff5c1a;
+}
+
+.kt-hero__status {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 3px;
+}
+
+.kt-hero__status--live {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+/* ── Headline + description ───────────────────────────────── */
+.kt-hero__headline {
+  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.8px;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  margin-bottom: 1.3rem;
+}
+
+.kt-hero__description {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #555555;
+  max-width: 52ch;
+  margin-bottom: 2rem;
+}
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.kt-hero__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.6rem;
+}
+
+.kt-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.8rem 1.3rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease, gap 0.2s ease;
+}
+
+.kt-hero__btn--primary {
+  background: #ff5c1a;
+  color: #ffffff;
+}
+
+.kt-hero__btn--primary:hover {
+  background: #e04a0f;
+  gap: 0.7rem;
+}
+
+.kt-hero__btn--ghost {
+  background: transparent;
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.kt-hero__btn--ghost:hover {
+  border-color: #ff5c1a;
+  color: #ff5c1a;
+  gap: 0.7rem;
+}
+
+/* ── Proof strip ──────────────────────────────────────────── */
+.kt-hero__proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.78rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.kt-hero__proof li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.kt-hero__proof-sep {
+  color: #d4d4d4;
+  margin-left: 0.3rem;
+}
+
+/* ── Screenshot frame ─────────────────────────────────────── */
+.kt-hero__media {
+  position: relative;
+}
+
+.kt-hero__frame {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #e8e4df;
+  box-shadow: 20px 20px 0 #ff5c1a;
+}
+
+.kt-hero__shot {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ════════════════════════════════════════════════════════════
+   MOBILE HERO — hidden by default
+   ════════════════════════════════════════════════════════════ */
+
+.kt-hero__mobile {
+  display: none;
+}
+
+/* ════════════════════════════════════════════════════════════
+   BREAKPOINT
+   ════════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .kt-hero__desktop {
+    display: none;
+  }
+
+  .kt-hero__mobile {
+    display: block;
+    /* Top padding only — navbar space. No bottom padding so
+       the screenshot can bleed off the bottom edge. */
+    padding: 5.5rem 0 0;
+  }
+
+  /* ── Text block ─────────────────────────────────────────── */
+  .kt-hero__mobile-content {
+    padding: 0 5% 2rem;
+  }
+
+  .kt-hero__mobile-headline {
+    font-size: clamp(1.6rem, 7vw, 2.1rem);
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: -0.5px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    margin-bottom: 0.9rem;
+  }
+
+  .kt-hero__mobile-description {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #555555;
+  }
+
+  /* ── Screenshot + overlay CTAs ──────────────────────────── */
+  .kt-hero__mobile-media {
+    position: relative;
+  }
+
+  .kt-hero__mobile-frame {
+    position: relative;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    background: #e8e4df;
+  }
+
+  .kt-hero__mobile-shot {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Fade overlay on the bottom of the screenshot */
+  .kt-hero__mobile-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 55%;
+    background: linear-gradient(
+      to bottom,
+      rgba(245, 243, 240, 0) 0%,
+      rgba(245, 243, 240, 0.6) 45%,
+      rgba(245, 243, 240, 0.95) 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* CTAs floating on the faded bottom of the screenshot */
+  .kt-hero__mobile-actions {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 5%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    z-index: 3;
+  }
+
+  .kt-hero__mobile-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.9rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease,
+      border-color 0.2s ease, gap 0.2s ease;
+  }
+
+  .kt-hero__mobile-btn--primary {
+    background: #ff5c1a;
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(255, 92, 26, 0.25);
+  }
+
+  .kt-hero__mobile-btn--primary:active {
+    background: #e04a0f;
+  }
+
+  .kt-hero__mobile-btn--ghost {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #1a1a1a;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .kt-hero__mobile-btn--ghost:active {
+    background: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* ── Small phones ──────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .kt-hero__mobile {
+    padding: 5rem 0 0;
+  }
+
+  .kt-hero__mobile-content {
+    padding: 0 5% 1.75rem;
+  }
+
+  .kt-hero__mobile-headline {
+    font-size: clamp(1.5rem, 7.5vw, 1.85rem);
+  }
+
+  .kt-hero__mobile-description {
+    font-size: 0.88rem;
+  }
+
+  .kt-hero__mobile-actions {
+    bottom: 1.25rem;
+  }
+}
+
+/* ── Very small phones ─────────────────────────────────────── */
+@media (max-width: 380px) {
+  .kt-hero__mobile-headline {
+    font-size: 1.35rem;
+  }
+
+  .kt-hero__mobile-description {
+    font-size: 0.84rem;
+  }
+
+  .kt-hero__mobile-btn {
+    padding: 0.8rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+/* ── Quick links under hero CTAs ─────────────────────────── */
+.kt-hero__links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.kt-hero__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.kt-hero__link:hover {
+  color: #ff5c1a;
+  gap: 0.55rem;
+}
+
+@media (max-width: 900px) {
+  .kt-hero__links {
+    display: none;
+  }
+}

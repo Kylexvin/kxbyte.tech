@@ -1,0 +1,81 @@
+/* src/styles/index.css */
+
+/* ── Design tokens ─────────────────────────────────────────
+   Defined once, used everywhere.
+   Every component can safely use var(--name) now. */
+:root {
+  --bg: #f5f3f0;
+  --white: #ffffff;
+  --dark: #1a1a1a;
+  --gray: #555555;
+  --gray-light: #6b7280;
+  --orange: #ff5c1a;
+  --orange-dark: #e04a0f;
+  --border: rgba(0, 0, 0, 0.06);
+  --border-strong: rgba(0, 0, 0, 0.12);
+
+  --font-orbitron: "Orbitron", system-ui, sans-serif;
+  --font-dm-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+}
+
+/* ── Reset ─────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ── Base ──────────────────────────────────────────────── */
+html {
+  font-family: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg);
+  color: var(--dark);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-orbitron), sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+p {
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}

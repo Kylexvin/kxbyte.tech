@@ -1,0 +1,579 @@
+/* Service Page - Compact Design */
+.service-page-compact {
+  background: var(--white);
+  min-height: 100vh;
+  padding: 2rem 0 2rem;
+}
+
+.compact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header */
+.compact-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--bg);
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--orange);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.back-btn:hover {
+  transform: translateX(-4px);
+}
+
+.header-content {
+  text-align: center;
+}
+
+.service-icon {
+  background: var(--orange);
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: white;
+}
+
+.compact-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+  color: var(--dark);
+}
+
+.service-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--orange);
+  margin: 0 0 0.75rem;
+}
+
+.service-intro {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+.cta-btn {
+  background: var(--orange);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 92, 26, 0.3);
+}
+
+/* Compact Section */
+.compact-section {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background: var(--bg);
+  border-radius: 12px;
+}
+
+.compact-section h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Problems & Solutions Grid */
+.split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.problems-box h3,
+.solutions-box h3 {
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.problems-box ul,
+.solutions-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.problems-box li {
+  font-size: 0.85rem;
+  padding: 0.5rem 0;
+  color: #666;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.problems-box li::before {
+  content: "✕";
+  color: #ff4444;
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.solutions-box li {
+  font-size: 0.85rem;
+  padding: 0.5rem 0;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.solutions-box svg {
+  color: var(--orange);
+  flex-shrink: 0;
+}
+
+/* Outcomes */
+.outcomes {
+  padding: 1rem 1.25rem;
+}
+
+.outcomes h3 {
+  margin-bottom: 0.75rem;
+}
+
+.outcomes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.outcome-chip {
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--dark);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Process Flow - No empty space */
+.process-section {
+  padding: 1.25rem;
+}
+
+.process-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.process-node {
+  flex: 1;
+  min-width: 120px;
+  background: white;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-left: 3px solid var(--orange);
+}
+
+.process-number {
+  width: 28px;
+  height: 28px;
+  background: var(--orange);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.process-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--dark);
+  line-height: 1.3;
+}
+
+.process-connector {
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* FAQ Detailed */
+.faq-section {
+  padding: 1.25rem;
+}
+
+.faq-detailed {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.faq-detailed-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.faq-detailed-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.faq-icon {
+  color: var(--orange);
+  flex-shrink: 0;
+}
+
+.faq-question strong {
+  font-size: 0.85rem;
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.faq-answer {
+  font-size: 0.8rem;
+  color: var(--gray);
+  line-height: 1.5;
+  padding-left: 1.5rem;
+}
+
+/* Final CTA - Tight design */
+.final-cta-tight {
+  margin-top: 1rem;
+  background: linear-gradient(135deg, var(--dark) 0%, #1a1a1a 100%);
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  gap: 1rem;
+}
+
+.cta-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.cta-icon {
+  color: var(--orange);
+  flex-shrink: 0;
+}
+
+.cta-text strong {
+  display: block;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.cta-text p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.cta-action {
+  background: var(--orange);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.cta-action:hover {
+  transform: translateX(4px);
+  background: #ff6b33;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-page-compact {
+    padding: 1rem 0 1rem;
+  }
+  
+  .split-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .process-flow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .process-node {
+    width: 100%;
+  }
+  
+  .process-connector {
+    display: none;
+  }
+  
+  .faq-detailed {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .cta-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem;
+  }
+  
+  .cta-left {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .cta-action {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .compact-section {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .compact-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .outcomes-grid {
+    gap: 0.5rem;
+  }
+  
+  .outcome-chip {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+  }
+  
+  .process-node {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .process-name {
+    font-size: 0.8rem;
+  }
+  
+  .faq-question strong {
+    font-size: 0.8rem;
+  }
+  
+  .faq-answer {
+    font-size: 0.75rem;
+  }
+}
+/* Add to ServicePage.css */
+
+/* Mockups Section */
+.mockups-section {
+  padding: 1.25rem;
+}
+
+.mockups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.mockup-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.2s;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.mockup-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.mockup-image-placeholder {
+  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mockup-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder-content {
+  text-align: center;
+  color: #999;
+}
+
+.mockup-icon {
+  margin-bottom: 0.5rem;
+  color: var(--orange);
+}
+
+.placeholder-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0.5rem 0 0.25rem;
+  color: #666;
+}
+
+.placeholder-content small {
+  font-size: 0.7rem;
+  color: #999;
+}
+
+.mockup-info {
+  padding: 1rem;
+}
+
+.mockup-info h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  color: var(--dark);
+}
+
+.mockup-info p {
+  font-size: 0.8rem;
+  color: var(--gray);
+  margin: 0 0 0.75rem;
+  line-height: 1.4;
+}
+
+.mockup-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.mockup-tag {
+  background: var(--bg);
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  color: var(--orange);
+  font-weight: 500;
+}
+
+.mockup-link {
+  background: none;
+  border: none;
+  color: var(--orange);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0;
+  transition: gap 0.2s;
+}
+
+.mockup-link:hover {
+  gap: 0.5rem;
+}
+
+/* Responsive for mockups */
+@media (max-width: 768px) {
+  .mockups-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .mockup-image-placeholder {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mockup-image-placeholder {
+    height: 140px;
+  }
+  
+  .mockup-info {
+    padding: 0.75rem;
+  }
+  
+  .mockup-info h4 {
+    font-size: 0.85rem;
+  }
+  
+  .mockup-info p {
+    font-size: 0.75rem;
+  }
+}

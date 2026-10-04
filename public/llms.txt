@@ -1,0 +1,25 @@
+# KXBYTE
+
+> KXBYTE is a business technology company building connected software products for modern businesses. Products include KxTill (retail point of sale), KxWork (workforce and tasks), KxCRM (customer management), KxInvoice (invoicing), and KxPay (payments) — all connected through KXBYTE Suite.
+
+## Products
+
+- [KxTill](https://kxbyte.co.ke/products/kxtill): Offline-first point-of-sale system for growing retail businesses. Sales, stock, customers, payments, and multi-branch operations. Works without internet. Live.
+- [KXBYTE Suite](https://suite.kxbyte.co.ke): The organizational layer connecting products, people, permissions, branches, and billing in one account. Live.
+- [KxWork](https://kxbyte.co.ke/products/kxwork): Workforce and task management. In development.
+- [KxCRM](https://kxbyte.co.ke/products/kxcrm): Customer relationship management. In development.
+- [KxInvoice](https://kxbyte.co.ke/products/kxinvoice): Invoicing connected to sales. In development.
+- [KxPay](https://kxbyte.co.ke/products/kxpay): Payment reconciliation. In development.
+
+## About
+
+- [Products](https://kxbyte.co.ke/#products): All KXBYTE products.
+- [About KXBYTE](https://kxbyte.co.ke/about): Company overview.
+- GitHub: https://github.com/theKxbyte
+
+## Contact
+
+- Email: info@kxbyte.co.ke
+- Phone: +254768610613
+- Country: Kenya
+- Languages: English, Swahili

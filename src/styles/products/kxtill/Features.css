@@ -1,0 +1,141 @@
+/* src/styles/products/kxtill/Features.css */
+
+.kt-features {
+  padding: 5rem 0;
+}
+
+.kt-features__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 6%;
+}
+
+.kt-features__header {
+  max-width: 640px;
+  margin-bottom: 3.5rem;
+}
+
+.kt-features__label {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ff5c1a;
+  margin-bottom: 0.8rem;
+}
+
+.kt-features__title {
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+  color: #1a1a1a;
+  text-transform: uppercase;
+}
+
+.kt-features__line {
+  width: 60px;
+  height: 3px;
+  background: #ff5c1a;
+  margin: 1.2rem 0 1.5rem;
+}
+
+.kt-features__subtitle {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555555;
+}
+
+.kt-features__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.kt-feature {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 6px;
+  padding: 1.75rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.kt-feature:hover {
+  border-color: rgba(255, 92, 26, 0.3);
+  transform: translateY(-1px);
+}
+
+.kt-feature__num {
+  display: block;
+  font-family: var(--font-orbitron), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #ff5c1a;
+  margin-bottom: 0.6rem;
+}
+
+.kt-feature__title {
+  font-family: var(--font-orbitron), sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.kt-feature__summary {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.5;
+  margin-bottom: 1.1rem;
+}
+
+.kt-feature__points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 1rem;
+}
+
+.kt-feature__points li {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #6b7280;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.kt-feature__points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #ff5c1a;
+}
+
+@media (max-width: 900px) {
+  .kt-features {
+    padding: 4rem 0;
+  }
+
+  .kt-features__container {
+    padding: 0 5%;
+  }
+
+  .kt-features__grid {
+    grid-template-columns: 1fr;
+  }
+}

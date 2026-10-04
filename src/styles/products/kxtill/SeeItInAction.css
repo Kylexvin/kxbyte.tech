@@ -1,0 +1,150 @@
+/* src/styles/products/kxtill/SeeItInAction.css */
+
+.kt-see {
+  padding: 6rem 0;
+  background: #efece7;
+}
+
+.kt-see__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 6%;
+}
+
+.kt-see__header {
+  max-width: 640px;
+  margin-bottom: 4rem;
+}
+
+.kt-see__label {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ff5c1a;
+  margin-bottom: 0.8rem;
+}
+
+.kt-see__title {
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+  color: #1a1a1a;
+  text-transform: uppercase;
+}
+
+.kt-see__line {
+  width: 60px;
+  height: 3px;
+  background: #ff5c1a;
+  margin: 1.2rem 0 1.5rem;
+}
+
+.kt-see__subtitle {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555555;
+}
+
+/* ── Grid ─────────────────────────────────────────────────── */
+.kt-see__grid {
+  display: grid;
+  gap: 4rem;
+}
+
+.kt-see__item {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin: 0;
+}
+
+.kt-see__item--right {
+  grid-template-columns: 1fr 1.4fr;
+}
+
+.kt-see__item--right .kt-see__frame {
+  order: 2;
+}
+
+.kt-see__item--right .kt-see__caption {
+  order: 1;
+}
+
+/* ── Screenshot frame — matches hero treatment ────────────── */
+.kt-see__frame {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 20px 20px 0 #ff5c1a;
+}
+
+.kt-see__shot {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Caption ──────────────────────────────────────────────── */
+.kt-see__caption {
+  font-family: var(--font-orbitron), sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  color: #1a1a1a;
+  line-height: 1.3;
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.kt-see__caption::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3em;
+  width: 4px;
+  height: calc(100% - 0.6em);
+  background: #ff5c1a;
+  border-radius: 2px;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .kt-see {
+    padding: 5rem 0;
+  }
+
+  .kt-see__container {
+    padding: 0 5%;
+  }
+
+  .kt-see__grid {
+    gap: 3rem;
+  }
+
+  .kt-see__item,
+  .kt-see__item--right {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .kt-see__item--right .kt-see__frame,
+  .kt-see__item--right .kt-see__caption {
+    order: initial;
+  }
+
+  /* Smaller offset on mobile so it fits the container */
+  .kt-see__frame {
+    box-shadow: 12px 12px 0 #ff5c1a;
+  }
+
+  .kt-see__caption {
+    font-size: 1rem;
+  }
+}

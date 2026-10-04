@@ -1,0 +1,245 @@
+/* src/styles/products/kxtill/HowItWorks.css */
+
+.kt-how {
+  padding: 6rem 0;
+  background: #efece7;
+}
+
+.kt-how__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 6%;
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.kt-how__header {
+  max-width: 640px;
+  margin-bottom: 3.5rem;
+}
+
+.kt-how__label {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ff5c1a;
+  margin-bottom: 0.8rem;
+}
+
+.kt-how__title {
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+  color: #1a1a1a;
+  text-transform: uppercase;
+}
+
+.kt-how__line {
+  width: 60px;
+  height: 3px;
+  background: #ff5c1a;
+  margin: 1.2rem 0 1.5rem;
+}
+
+.kt-how__subtitle {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555555;
+}
+
+/* ── Steps ────────────────────────────────────────────────── */
+.kt-how__steps {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  position: relative;
+}
+
+.kt-step {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 6px;
+  padding: 1.25rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.kt-step__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.kt-step__num {
+  font-family: var(--font-orbitron), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #ff5c1a;
+}
+
+.kt-step__time {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #6b7280;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 2px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.kt-step__title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.kt-step__body {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ── Closing statement ────────────────────────────────────── */
+.kt-how__closing {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: 3px solid #ff5c1a;
+  border-radius: 6px;
+  padding: 1.75rem 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.kt-how__closing-title {
+  font-family: var(--font-orbitron), sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.kt-how__closing-body {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #555555;
+  max-width: 62ch;
+  margin: 0;
+}
+
+/* ── Trial callout ────────────────────────────────────────── */
+.kt-how__trial {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 92, 26, 0.06);
+  border: 1px solid rgba(255, 92, 26, 0.18);
+  border-radius: 6px;
+}
+
+.kt-how__trial-text {
+  min-width: 0;
+}
+
+.kt-how__trial-label {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ff5c1a;
+  margin-bottom: 0.35rem;
+}
+
+.kt-how__trial-body {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #555555;
+  margin: 0;
+}
+
+.kt-how__trial-cta {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: #ff5c1a;
+  padding: 0.65rem 1.1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.kt-how__trial-cta:hover {
+  background: #e04a0f;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .kt-how__steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .kt-how {
+    padding: 5rem 0;
+  }
+
+  .kt-how__container {
+    padding: 0 5%;
+  }
+
+  .kt-how__steps {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .kt-step {
+    padding: 1.1rem 1rem;
+  }
+
+  .kt-how__closing {
+    padding: 1.35rem 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .kt-how__closing-title {
+    font-size: 0.95rem;
+  }
+
+  .kt-how__trial {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1.25rem 1.25rem;
+  }
+
+  .kt-how__trial-cta {
+    justify-content: center;
+    width: 100%;
+  }
+}

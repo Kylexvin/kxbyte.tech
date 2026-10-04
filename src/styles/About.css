@@ -1,0 +1,366 @@
+/* About.css - Responsive & Compact with CTA */
+
+.about {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 6%;
+  gap: 5rem;
+  overflow: hidden;
+}
+
+/* Image Section */
+.about__image-wrap {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.about__img {
+  width: 380px;
+  height: 460px;
+  object-fit: contain;
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+/* Content Section */
+.about__content {
+  flex: 1;
+  max-width: 520px;
+}
+
+/* Section Styles (shared with other sections) */
+.section__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+
+.section__heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: var(--dark);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.section__heading span {
+  color: var(--orange);
+}
+
+.section__line {
+  width: 60px;
+  height: 3px;
+  background: var(--orange);
+  margin: 1.5rem 0;
+}
+
+.section__body {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--gray);
+  margin-bottom: 2rem;
+}
+
+/* Features Grid */
+.about__features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.about__feature {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.about__feature-icon {
+  font-size: 1.5rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+  color: var(--orange);
+}
+
+.about__feature h4 {
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--dark);
+  margin-bottom: 0.3rem;
+}
+
+.about__feature p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--gray);
+}
+
+/* ========== NEW: CTA STYLES ========== */
+.about__cta-wrapper {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 2px solid rgba(255, 107, 0, 0.15);
+}
+
+.about__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 2rem;
+  background: var(--orange);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--orange);
+}
+
+/* Hover effect matching your theme */
+.about__cta:hover {
+  background: transparent;
+  color: var(--orange);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 107, 0, 0.25);
+}
+
+.about__cta-icon {
+  transition: transform 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.about__cta:hover .about__cta-icon {
+  transform: translateX(6px);
+}
+
+/* Optional: Secondary CTA style (if you want an alternative) */
+.about__cta--secondary {
+  background: transparent;
+  color: var(--orange);
+  border: 2px solid var(--orange);
+}
+
+.about__cta--secondary:hover {
+  background: var(--orange);
+  color: var(--bg);
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .about {
+    gap: 3rem;
+    padding: 80px 5%;
+  }
+  
+  .about__img {
+    width: 320px;
+    height: 390px;
+  }
+}
+
+/* Mobile Landscape */
+@media (max-width: 900px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 5%;
+    gap: 2rem;
+  }
+  
+  .about__content {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .section__line {
+    margin: 1rem auto;
+  }
+  
+  .section__body {
+    max-width: 90%;
+    margin: 0 auto 2rem;
+  }
+  
+  .about__features {
+    text-align: left;
+    max-width: 500px;
+    margin: 2rem auto 0;
+  }
+  
+  .about__img {
+    width: 280px;
+    height: 340px;
+  }
+
+  /* CTA responsive */
+  .about__cta-wrapper {
+    text-align: center;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 640px) {
+  .about {
+    padding: 50px 4%;
+  }
+  
+  .about__features {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    max-width: 100%;
+  }
+  
+  .about__feature {
+    gap: 0.8rem;
+  }
+  
+  .about__feature-icon {
+    font-size: 1.3rem;
+  }
+  
+  .about__feature h4 {
+    font-size: 0.85rem;
+  }
+  
+  .about__feature p {
+    font-size: 0.78rem;
+  }
+  
+  .section__heading {
+    font-size: clamp(1.8rem, 6vw, 2.2rem);
+  }
+  
+  .section__body {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+  
+  .about__img {
+    width: 240px;
+    height: 290px;
+  }
+
+  /* CTA responsive */
+  .about__cta {
+    width: 100%;
+    justify-content: center;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .about__cta-wrapper {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .about {
+    padding: 40px 1.5rem;
+  }
+  
+  .section__label {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .section__heading {
+    font-size: 1.8rem;
+  }
+  
+  .about__img {
+    width: 200px;
+    height: 240px;
+  }
+  
+  .about__feature {
+    gap: 0.6rem;
+  }
+  
+  .about__feature-icon {
+    font-size: 1.2rem;
+  }
+  
+  .about__feature h4 {
+    font-size: 0.8rem;
+  }
+  
+  .about__feature p {
+    font-size: 0.72rem;
+  }
+
+  .about__cta {
+    font-size: 0.8rem;
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+/* Compact mode for very small devices */
+@media (max-width: 360px) {
+  .about__img {
+    width: 180px;
+    height: 220px;
+  }
+  
+  .section__heading {
+    font-size: 1.5rem;
+  }
+
+  .about__cta {
+    font-size: 0.75rem;
+    padding: 0.7rem 1rem;
+  }
+}
+
+/* ========== ANIMATION ADDITIONS ========== */
+/* Subtle hover effect for features (optional) */
+.about__feature {
+  transition: transform 0.3s ease;
+}
+
+.about__feature:hover {
+  transform: translateX(4px);
+}
+
+/* CTA ripple effect on click (optional) */
+.about__cta:active {
+  transform: scale(0.97);
+}
+
+/* Dark mode support (if you have it) */
+@media (prefers-color-scheme: dark) {
+  .about__cta-wrapper {
+    border-top-color: rgba(255, 107, 0, 0.2);
+  }
+
+  .about__cta:hover {
+    background: rgba(255, 107, 0, 0.1);
+  }
+
+  .about__feature-icon {
+    color: var(--orange);
+  }
+}
