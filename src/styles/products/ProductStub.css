@@ -1,0 +1,248 @@
+/* src/styles/products/ProductStub.css */
+
+.stub {
+  background: #f5f3f0;
+  color: #1a1a1a;
+}
+
+.stub__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8rem 6% 6rem;
+}
+
+.stub__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-decoration: none;
+  margin-bottom: 3rem;
+  transition: color 0.2s ease;
+}
+
+.stub__back:hover {
+  color: #ff5c1a;
+}
+
+.stub__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.stub__identity {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.stub__logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.stub__status {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #6b7280;
+  background: rgba(0, 0, 0, 0.045);
+  padding: 4px 10px;
+  border-radius: 3px;
+}
+
+.stub__title {
+  font-family: var(--font-orbitron), sans-serif;
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.6px;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.stub__line {
+  width: 60px;
+  height: 3px;
+  background: #ff5c1a;
+  margin-bottom: 1.5rem;
+}
+
+.stub__tagline {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+}
+
+.stub__desc {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #555555;
+  margin-bottom: 2rem;
+  max-width: 52ch;
+}
+
+.stub__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.stub__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.8rem 1.3rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease, gap 0.2s ease;
+}
+
+.stub__btn--primary {
+  background: #ff5c1a;
+  color: #ffffff;
+}
+
+.stub__btn--primary:hover {
+  background: #e04a0f;
+  gap: 0.7rem;
+}
+
+.stub__btn--ghost {
+  background: transparent;
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.stub__btn--ghost:hover {
+  border-color: #ff5c1a;
+  color: #ff5c1a;
+}
+
+.stub__media {
+  position: relative;
+}
+
+.stub__frame {
+  aspect-ratio: 4 / 5;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #e8e4df 0%, #d4cfc9 100%);
+  box-shadow: 20px 20px 0 #ff5c1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.stub__frame-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.stub__frame-name {
+  font-family: var(--font-orbitron), sans-serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.stub__frame-hint {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+}
+
+.stub__note {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: 3px solid #ff5c1a;
+  border-radius: 6px;
+  padding: 1.75rem 1.75rem;
+}
+
+.stub__note-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.stub__note-body {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #555555;
+  margin-bottom: 1rem;
+}
+
+.stub__note-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ff5c1a;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.stub__note-cta:hover {
+  gap: 0.65rem;
+}
+
+@media (max-width: 900px) {
+  .stub__container {
+    padding: 6rem 5% 4rem;
+  }
+
+  .stub__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .stub__media {
+    order: -1;
+    max-width: 340px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .stub__frame {
+    box-shadow: 12px 12px 0 #ff5c1a;
+  }
+}
+
+@media (max-width: 640px) {
+  .stub__title {
+    font-size: 1.5rem;
+  }
+
+  .stub__actions {
+    flex-direction: column;
+  }
+
+  .stub__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
