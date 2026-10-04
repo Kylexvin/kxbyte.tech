@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { products } from "@/data/products";
+import productsHero from "@/assets/images/hero.jpg";
 import "@/styles/kxProducts.css";
 
 const SITE_URL = "https://kxbyte.co.ke";
@@ -67,7 +68,7 @@ export default function ProductsPage() {
   };
 
   return (
-    <main className="products" id="products" style={{ paddingTop: "8rem" }}>
+    <main className="products" id="products">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
@@ -78,19 +79,33 @@ export default function ProductsPage() {
       />
 
       <div className="products__container">
+        {/* ── Header with image on the right (large screens) ──── */}
         <header className="products__header">
-          <span className="products__label">Products</span>
-          <h1 className="products__title">
-            Software for the work that <span>keeps business moving.</span>
-          </h1>
-          <div className="products__line" />
-          <p className="products__subtitle">
-            Each product handles a specific area of your business. KXBYTE
-            Suite brings them together so your people, data, and operations
-            can work as one.
-          </p>
+          <div className="products__header-content">
+            <span className="products__label">Products</span>
+            <h1 className="products__title">
+              Software for the work that <span>keeps business moving.</span>
+            </h1>
+            <div className="products__line" />
+            <p className="products__subtitle">
+              Each product handles a specific area of your business. KXBYTE
+              Suite brings them together so your people, data, and operations
+              can work as one.
+            </p>
+          </div>
+
+          <div className="products__header-visual">
+            <div className="products__header-frame">
+              <img
+                src={productsHero.src}
+                alt="KXBYTE products"
+                className="products__header-img"
+              />
+            </div>
+          </div>
         </header>
 
+        {/* ── Product grid ────────────────────────────────────── */}
         <div className="products__grid">
           {products.map((p) => {
             const isLive = p.status === "live";
@@ -137,7 +152,7 @@ export default function ProductsPage() {
           })}
         </div>
 
-        {/* Custom work note */}
+        {/* ── Custom work note ────────────────────────────────── */}
         <div className="products__custom-note">
           <div className="products__custom-note-text">
             <h2 className="products__custom-note-title">
