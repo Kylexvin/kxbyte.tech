@@ -68,7 +68,7 @@ export default function ProductsPage() {
   };
 
   return (
-    <main className="products" id="products">
+    <main className="kx-products" id="products">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
@@ -78,62 +78,60 @@ export default function ProductsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <div className="products__container">
-        {/* ── Header with image on the right (large screens) ──── */}
-        <header className="products__header">
-          <div className="products__header-content">
-            <span className="products__label">Products</span>
-            <h1 className="products__title">
+      <div className="kx-products__container">
+        <header className="kx-products__header">
+          <div className="kx-products__header-content">
+            <span className="kx-products__label">Products</span>
+            <h1 className="kx-products__title">
               Software for the work that <span>keeps business moving.</span>
             </h1>
-            <div className="products__line" />
-            <p className="products__subtitle">
+            <div className="kx-products__line" />
+            <p className="kx-products__subtitle">
               Each product handles a specific area of your business. KXBYTE
               Suite brings them together so your people, data, and operations
               can work as one.
             </p>
           </div>
 
-          <div className="products__header-visual">
-            <div className="products__header-frame">
+          <div className="kx-products__header-visual">
+            <div className="kx-products__header-frame">
               <img
                 src={productsHero.src}
                 alt="KXBYTE products"
-                className="products__header-img"
+                className="kx-products__header-img"
               />
             </div>
           </div>
         </header>
 
-        {/* ── Product grid ────────────────────────────────────── */}
-        <div className="products__grid">
+        <div className="kx-products__grid">
           {products.map((p) => {
             const isLive = p.status === "live";
             return (
-              <article key={p.slug} className="card">
-                <div className="card__top">
-                  <div className="card__identity">
+              <article key={p.slug} className="kx-card">
+                <div className="kx-card__top">
+                  <div className="kx-card__identity">
                     {p.logo && (
                       <img
                         src={p.logo}
                         alt=""
-                        className="card__logo"
+                        className="kx-card__logo"
                         width={26}
                         height={26}
                       />
                     )}
-                    <h2 className="card__name">{p.name}</h2>
+                    <h2 className="kx-card__name">{p.name}</h2>
                   </div>
-                  <span className={`card__status card__status--${p.status}`}>
+                  <span className={`kx-card__status kx-card__status--${p.status}`}>
                     {statusLabel(p.status)}
                   </span>
                 </div>
 
-                <h3 className="card__heading">{p.tagline}</h3>
-                <p className="card__desc">{p.description}</p>
+                <h3 className="kx-card__heading">{p.tagline}</h3>
+                <p className="kx-card__desc">{p.description}</p>
 
-                <div className="card__actions">
-                  <Link href={`/${p.slug}`} className="card__cta">
+                <div className="kx-card__actions">
+                  <Link href={`/${p.slug}`} className="kx-card__cta">
                     Learn more <ArrowRight size={13} />
                   </Link>
                   {isLive && p.url && (
@@ -141,7 +139,7 @@ export default function ProductsPage() {
                       href={p.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="card__cta card__cta--quiet"
+                      className="kx-card__cta kx-card__cta--quiet"
                     >
                       Open {p.name} <ArrowUpRight size={13} />
                     </a>
@@ -152,19 +150,18 @@ export default function ProductsPage() {
           })}
         </div>
 
-        {/* ── Custom work note ────────────────────────────────── */}
-        <div className="products__custom-note">
-          <div className="products__custom-note-text">
-            <h2 className="products__custom-note-title">
+        <div className="kx-products__note">
+          <div className="kx-products__note-text">
+            <h2 className="kx-products__note-title">
               Need something our products don't cover?
             </h2>
-            <p className="products__custom-note-body">
+            <p className="kx-products__note-body">
               KXBYTE also takes on custom software when a business needs
               something specific — a workflow, an integration, an internal
               system. Same team, same method.
             </p>
           </div>
-          <Link href="/services" className="products__custom-note-cta">
+          <Link href="/services" className="kx-products__note-cta">
             About custom work
             <ArrowRight size={15} />
           </Link>

@@ -50,11 +50,11 @@
 }
 
 .about-page__hero-container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.3fr 1fr;
-  gap: 4rem;
+  gap: 3.5rem;
   align-items: center;
 }
 
@@ -141,7 +141,7 @@
   margin-top: 0.15rem;
 }
 
-/* ── Hero visual ──────────────────────────────────────────── */
+/* ── Hero visual with image + chips ──────────────────────── */
 .about-page__hero-visual {
   position: relative;
 }
@@ -154,50 +154,123 @@
 
 .about-page__hero-image {
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   border-radius: 8px;
-  background: #d4cfc9;
+  background: linear-gradient(135deg, #e8e4df 0%, #d4cfc9 100%);
   box-shadow: 20px 20px 0 #ff5c1a;
-  overflow: hidden;
+  overflow: visible;
+  padding: 0;
 }
 
 .about-page__hero-image-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center;
   display: block;
+  border-radius: 8px;
 }
 
-.about-page__hero-image-floating {
+/* ════════════════════════════════════════════════════════════
+   FLOATING CHIPS
+   ════════════════════════════════════════════════════════════ */
+
+.about-page__hero-chips {
   position: absolute;
-  bottom: 1.5rem;
-  left: 1.5rem;
-  right: 1.5rem;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
 }
 
-.about-page__hero-image-floating-item {
+.hero-chip {
+  position: absolute;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
+  padding: 0.5rem 0.85rem;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
   border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 6px;
-  padding: 0.65rem 0.85rem;
-  font-size: 0.78rem;
-  font-weight: 600;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1px;
   color: #1a1a1a;
-  box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.15);
-  align-self: flex-start;
-  width: fit-content;
+  box-shadow: 0 8px 24px -10px rgba(0, 0, 0, 0.18);
+  white-space: nowrap;
+  pointer-events: auto;
+  animation: chipFloat 6s ease-in-out infinite;
 }
 
+.hero-chip svg {
+  color: #ff5c1a;
+  flex-shrink: 0;
+}
+
+.hero-chip__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hero-chip__dot--live {
+  background: #10b981;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+}
+
+/* ── Scattered positions ─────────────────────────────────── */
+.hero-chip--topleft {
+  top: -0.85rem;
+  left: -1rem;
+  animation-delay: 0s;
+}
+
+.hero-chip--topright {
+  top: -0.85rem;
+  right: -1rem;
+  animation-delay: -1s;
+}
+
+.hero-chip--leftcenter {
+  top: 40%;
+  left: -2.5rem;
+  animation-delay: -2s;
+}
+
+.hero-chip--rightcenter {
+  top: 30%;
+  right: -2rem;
+  animation-delay: -3s;
+}
+
+.hero-chip--bottomleft {
+  bottom: -0.85rem;
+  left: -1rem;
+  animation-delay: -4s;
+}
+
+.hero-chip--bottomright {
+  bottom: 20%;
+  right: -2.5rem;
+  animation-delay: -5s;
+}
+
+@keyframes chipFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-chip {
+    animation: none;
+  }
+}
 
 /* ════════════════════════════════════════════════════════════
    2. WHO WE ARE
@@ -208,7 +281,7 @@
 }
 
 .about-page__who-content {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.3fr 1fr;
@@ -292,7 +365,7 @@
 }
 
 .about-page__story-content {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -383,7 +456,7 @@
 }
 
 .about-page__specialties-content {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -436,7 +509,7 @@
 }
 
 /* ════════════════════════════════════════════════════════════
-   5. WHAT WE DO (Products)
+   5. PRODUCTS
    ════════════════════════════════════════════════════════════ */
 
 .about-page__services {
@@ -445,7 +518,7 @@
 }
 
 .about-page__services-content {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -540,7 +613,7 @@
 }
 
 .about-page__process-content {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -590,7 +663,7 @@
 }
 
 .about-page__why-content {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -654,7 +727,7 @@
 }
 
 .about-page__tech-content {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -721,7 +794,7 @@
 }
 
 /* ════════════════════════════════════════════════════════════
-   9. INDUSTRIES / BUSINESS AREAS
+   9. BUSINESS AREAS
    ════════════════════════════════════════════════════════════ */
 
 .about-page__industries {
@@ -730,7 +803,7 @@
 }
 
 .about-page__industries-content {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -785,7 +858,7 @@
 }
 
 .about-page__values-content {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -853,7 +926,7 @@
 }
 
 .about-page__founder-content {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 380px 1fr;
@@ -954,7 +1027,7 @@
 }
 
 .about-page__cta-content {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -1070,6 +1143,24 @@
     box-shadow: 16px 16px 0 #ff5c1a;
   }
 
+  /* Hide most chips on tablet/mobile */
+  .hero-chip--leftcenter,
+  .hero-chip--rightcenter,
+  .hero-chip--topleft,
+  .hero-chip--bottomright {
+    display: none;
+  }
+
+  .hero-chip--topright {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .hero-chip--bottomleft {
+    bottom: 0.75rem;
+    left: 0.75rem;
+  }
+
   .about-page__founder-content {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -1139,7 +1230,6 @@
     font-size: 1.3rem;
   }
 
-  /* ── Hero stats — 2×2 grid on mobile ─────────────────────── */
   .about-page__hero-stats {
     grid-template-columns: 1fr 1fr;
     gap: 1rem 1.25rem;
@@ -1169,7 +1259,6 @@
     letter-spacing: 0.9px;
   }
 
-  /* ── Other sections ──────────────────────────────────────── */
   .about-page__hero-image-wrapper {
     padding-right: 8px;
     padding-bottom: 8px;
@@ -1178,6 +1267,17 @@
   .about-page__hero-image,
   .about-page__founder-image-wrapper {
     box-shadow: 8px 8px 0 #ff5c1a;
+  }
+
+  .hero-chip {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.7rem;
+    gap: 0.3rem;
+  }
+
+  .hero-chip svg {
+    width: 12px;
+    height: 12px;
   }
 
   .about-page__services-grid,

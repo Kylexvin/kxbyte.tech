@@ -1,31 +1,27 @@
 /* src/styles/kxProducts.css */
 
-/* ════════════════════════════════════════════════════════════
-   PRODUCTS PAGE
-   ════════════════════════════════════════════════════════════ */
-
-.products {
+.kx-products {
   padding: 8rem 6% 6rem;
   background: #f5f3f0;
   color: #1a1a1a;
   min-height: 100vh;
 }
 
-.products__container {
+.kx-products__container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
 /* ── Header ────────────────────────────────────────────────── */
-.products__header {
+.kx-products__header {
   margin-bottom: 3.5rem;
 }
 
-.products__header-content {
+.kx-products__header-content {
   max-width: 640px;
 }
 
-.products__label {
+.kx-products__label {
   display: inline-block;
   font-size: 0.68rem;
   font-weight: 700;
@@ -35,7 +31,7 @@
   margin-bottom: 0.8rem;
 }
 
-.products__title {
+.kx-products__title {
   font-family: var(--font-orbitron), sans-serif;
   font-size: clamp(1.8rem, 3.4vw, 2.6rem);
   font-weight: 900;
@@ -46,31 +42,30 @@
   margin-bottom: 1rem;
 }
 
-.products__title span {
+.kx-products__title span {
   color: #ff5c1a;
 }
 
-.products__line {
+.kx-products__line {
   width: 60px;
   height: 3px;
   background: #ff5c1a;
   margin-bottom: 1.5rem;
 }
 
-.products__subtitle {
+.kx-products__subtitle {
   font-size: 0.95rem;
   line-height: 1.7;
   color: #555555;
   margin: 0;
 }
 
-/* Image column — hidden on smaller screens */
-.products__header-visual {
+.kx-products__header-visual {
   display: none;
 }
 
 /* ── Grid ──────────────────────────────────────────────────── */
-.products__grid {
+.kx-products__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
@@ -78,7 +73,7 @@
 }
 
 /* ── Card ──────────────────────────────────────────────────── */
-.card {
+.kx-card {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 6px;
@@ -88,12 +83,12 @@
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
-.card:hover {
+.kx-card:hover {
   border-color: rgba(255, 92, 26, 0.3);
   transform: translateY(-1px);
 }
 
-.card__top {
+.kx-card__top {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -101,14 +96,14 @@
   margin-bottom: 1.1rem;
 }
 
-.card__identity {
+.kx-card__identity {
   display: flex;
   align-items: center;
   gap: 0.55rem;
   min-width: 0;
 }
 
-.card__logo {
+.kx-card__logo {
   width: auto;
   height: 24px;
   max-width: 90px;
@@ -116,7 +111,7 @@
   flex-shrink: 0;
 }
 
-.card__name {
+.kx-card__name {
   font-size: 1rem;
   font-weight: 800;
   letter-spacing: 0.2px;
@@ -124,7 +119,7 @@
   margin: 0;
 }
 
-.card__status {
+.kx-card__status {
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -135,22 +130,22 @@
   flex-shrink: 0;
 }
 
-.card__status--live {
+.kx-card__status--live {
   background: rgba(16, 185, 129, 0.1);
   color: #059669;
 }
 
-.card__status--beta {
+.kx-card__status--beta {
   background: rgba(59, 130, 246, 0.1);
   color: #2563eb;
 }
 
-.card__status--soon {
+.kx-card__status--soon {
   background: rgba(0, 0, 0, 0.045);
   color: #6b7280;
 }
 
-.card__heading {
+.kx-card__heading {
   font-size: 1rem;
   font-weight: 700;
   color: #1a1a1a;
@@ -158,7 +153,7 @@
   margin: 0 0 0.6rem;
 }
 
-.card__desc {
+.kx-card__desc {
   font-size: 0.85rem;
   line-height: 1.7;
   color: #6b7280;
@@ -166,7 +161,7 @@
   margin: 0;
 }
 
-.card__actions {
+.kx-card__actions {
   display: flex;
   align-items: center;
   gap: 1.2rem;
@@ -174,7 +169,7 @@
   margin-top: 1.3rem;
 }
 
-.card__cta {
+.kx-card__cta {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -185,20 +180,20 @@
   transition: gap 0.2s ease;
 }
 
-.card__cta:hover {
+.kx-card__cta:hover {
   gap: 0.6rem;
 }
 
-.card__cta--quiet {
+.kx-card__cta--quiet {
   color: #6b7280;
 }
 
-.card__cta--quiet:hover {
+.kx-card__cta--quiet:hover {
   color: #1a1a1a;
 }
 
 /* ── Custom work note ──────────────────────────────────────── */
-.products__custom-note {
+.kx-products__note {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 2rem;
@@ -210,7 +205,7 @@
   padding: 1.75rem 1.75rem;
 }
 
-.products__custom-note-title {
+.kx-products__note-title {
   font-family: var(--font-orbitron), sans-serif;
   font-size: 1rem;
   font-weight: 800;
@@ -220,7 +215,7 @@
   margin-bottom: 0.5rem;
 }
 
-.products__custom-note-body {
+.kx-products__note-body {
   font-size: 0.88rem;
   line-height: 1.7;
   color: #555555;
@@ -228,7 +223,7 @@
   max-width: 62ch;
 }
 
-.products__custom-note-cta {
+.kx-products__note-cta {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -240,7 +235,7 @@
   transition: gap 0.2s ease;
 }
 
-.products__custom-note-cta:hover {
+.kx-products__note-cta:hover {
   gap: 0.7rem;
 }
 
@@ -249,7 +244,7 @@
    ════════════════════════════════════════════════════════════ */
 
 @media (min-width: 1025px) {
-  .products__header {
+  .kx-products__header {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
     gap: 3.5rem;
@@ -257,18 +252,18 @@
     margin-bottom: 4rem;
   }
 
-  .products__header-content {
+  .kx-products__header-content {
     max-width: none;
   }
 
-  .products__header-visual {
+  .kx-products__header-visual {
     display: block;
     position: relative;
     padding-right: 20px;
     padding-bottom: 20px;
   }
 
-  .products__header-frame {
+  .kx-products__header-frame {
     position: relative;
     aspect-ratio: 4 / 3;
     border-radius: 6px;
@@ -277,7 +272,7 @@
     box-shadow: 20px 20px 0 #ff5c1a;
   }
 
-  .products__header-img {
+  .kx-products__header-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -285,41 +280,33 @@
   }
 }
 
-/* ════════════════════════════════════════════════════════════
-   TABLET
-   ════════════════════════════════════════════════════════════ */
-
 @media (max-width: 900px) {
-  .products {
+  .kx-products {
     padding: 6rem 5% 4rem;
   }
 
-  .products__custom-note {
+  .kx-products__note {
     grid-template-columns: 1fr;
     gap: 1.25rem;
     padding: 1.5rem 1.4rem;
   }
 }
 
-/* ════════════════════════════════════════════════════════════
-   MOBILE
-   ════════════════════════════════════════════════════════════ */
-
 @media (max-width: 640px) {
-  .products {
+  .kx-products {
     padding: 5rem 5% 3rem;
   }
 
-  .products__header {
+  .kx-products__header {
     margin-bottom: 2.5rem;
   }
 
-  .products__title {
+  .kx-products__title {
     font-size: clamp(1.5rem, 7vw, 1.9rem);
-    letter-spacing: -0.4px;
+    letter-spacing: -0.4rem;
   }
 
-  .products__grid {
+  .kx-products__grid {
     grid-template-columns: 1fr;
   }
 }

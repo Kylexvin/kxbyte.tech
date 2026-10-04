@@ -84,7 +84,7 @@ const AboutPage = () => {
     {
       icon: <Code size={28} />,
       title: 'Custom Software',
-      desc: 'When a business needs something our products don\'t cover, we build it. Custom systems, integrations, and internal tools.',
+      desc: "When a business needs something our products don't cover, we build it. Custom systems, integrations, and internal tools.",
     },
     {
       icon: <Cloud size={28} />,
@@ -125,7 +125,7 @@ const AboutPage = () => {
     {
       icon: <Truck size={24} />,
       title: 'Custom work still open',
-      desc: 'When a business needs something our products don\'t cover, we take the work on. Same team, same method.',
+      desc: "When a business needs something our products don't cover, we take the work on. Same team, same method.",
     },
     {
       icon: <CheckCircle size={24} />,
@@ -193,9 +193,8 @@ const AboutPage = () => {
 
   return (
     <div className="about-page">
-
-      {/* 1. Hero Section - Mobile Only */}
-      <section className="about-page__hero about-page__hero--mobile-only">
+      {/* ══ 1. HERO ═══════════════════════════════════════ */}
+      <section className="about-page__hero">
         <div className="about-page__hero-container">
           <div className="about-page__hero-content">
             <div className="about-page__hero-badge">About KXBYTE</div>
@@ -209,13 +208,18 @@ const AboutPage = () => {
                 <div className="about-page__hero-stat" key={index}>
                   <div className="about-page__hero-stat-icon">{stat.icon}</div>
                   <div>
-                    <span className="about-page__hero-stat-value">{stat.value}</span>
-                    <span className="about-page__hero-stat-label">{stat.label}</span>
+                    <span className="about-page__hero-stat-value">
+                      {stat.value}
+                    </span>
+                    <span className="about-page__hero-stat-label">
+                      {stat.label}
+                    </span>
                   </div>
                 </div>
               ))}
             </div>
           </div>
+
           <div className="about-page__hero-visual">
             <div className="about-page__hero-image-wrapper">
               <div className="about-page__hero-image">
@@ -224,14 +228,31 @@ const AboutPage = () => {
                   alt="The KXBYTE team"
                   className="about-page__hero-image-photo"
                 />
-                <div className="about-page__hero-image-floating">
-                  <div className="about-page__hero-image-floating-item">
-                    <ShoppingBag size={18} color="#ff5c1a" />
+
+                <div className="about-page__hero-chips">
+                  <div className="hero-chip hero-chip--topleft">
+                    <span className="hero-chip__dot hero-chip__dot--live" />
+                    <span>Multi-branch</span>
+                  </div>
+                  <div className="hero-chip hero-chip--topright">
+                    <Layers size={14} />
+                    <span>Suite connecting</span>
+                  </div>
+                  <div className="hero-chip hero-chip--leftcenter">
+                    <Package size={14} />
+                    <span>6 products</span>
+                  </div>
+                  <div className="hero-chip hero-chip--rightcenter">
+                    <Wallet size={14} />
+                    <span>M-Pesa</span>
+                  </div>
+                  <div className="hero-chip hero-chip--bottomleft">
+                    <ShoppingBag size={14} />
                     <span>KxTill live</span>
                   </div>
-                  <div className="about-page__hero-image-floating-item">
-                    <Layers size={18} color="#ff5c1a" />
-                    <span>Suite connecting</span>
+                  <div className="hero-chip hero-chip--bottomright">
+                    <Zap size={14} />
+                    <span>Offline-first</span>
                   </div>
                 </div>
               </div>
@@ -240,7 +261,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 2. Who We Are */}
+      {/* ══ 2. WHO WE ARE ═════════════════════════════════ */}
       <section className="about-page__who">
         <div className="about-page__who-content">
           <div className="about-page__who-left">
@@ -267,14 +288,14 @@ const AboutPage = () => {
           <div className="about-page__who-right">
             <div className="about-page__who-card">
               <div className="about-page__who-card-icon">
-                <Target size={32} color="#ff4500" />
+                <Target size={32} color="#ff5c1a" />
               </div>
               <h4>Our Mission</h4>
               <p>Build software that replaces fragmented processes with connected systems — so businesses can grow without everything living in one person's head.</p>
             </div>
             <div className="about-page__who-card">
               <div className="about-page__who-card-icon">
-                <Globe size={32} color="#ff4500" />
+                <Globe size={32} color="#ff5c1a" />
               </div>
               <h4>Our Vision</h4>
               <p>A company whose products quietly run the operations of thousands of businesses — with KXBYTE behind them, reliable and invisible.</p>
@@ -283,7 +304,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 3. Our Story */}
+      {/* ══ 3. STORY ══════════════════════════════════════ */}
       <section className="about-page__story">
         <div className="about-page__story-content">
           <div className="about-page__story-left">
@@ -347,7 +368,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 4. Specialties */}
+      {/* ══ 4. SPECIALTIES ════════════════════════════════ */}
       <section className="about-page__specialties">
         <div className="about-page__specialties-content">
           <div className="about-page__specialties-header">
@@ -363,7 +384,9 @@ const AboutPage = () => {
           <div className="about-page__specialties-grid">
             {specialties.map((specialty, index) => (
               <div className="about-page__specialty-item" key={index}>
-                <div className="about-page__specialty-item-icon">{specialty.icon}</div>
+                <div className="about-page__specialty-item-icon">
+                  {specialty.icon}
+                </div>
                 <span>{specialty.name}</span>
               </div>
             ))}
@@ -371,7 +394,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 5. What We Do */}
+      {/* ══ 5. WHAT WE DO — PRODUCTS ══════════════════════ */}
       <section className="about-page__services">
         <div className="about-page__services-content">
           <div className="about-page__services-header">
@@ -404,7 +427,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 6. Development Process */}
+      {/* ══ 6. PROCESS ════════════════════════════════════ */}
       <section className="about-page__process">
         <div className="about-page__process-content">
           <span className="about-page__section-label">How We Work</span>
@@ -418,7 +441,9 @@ const AboutPage = () => {
           <div className="about-page__process-steps">
             {processSteps.map((step, index) => (
               <div className="about-page__process-step" key={index}>
-                <div className="about-page__process-step-number">{String(index + 1).padStart(2, '0')}</div>
+                <div className="about-page__process-step-number">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
                 <h4>{step}</h4>
               </div>
             ))}
@@ -426,7 +451,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 7. Why Choose KXBYTE */}
+      {/* ══ 7. WHY KXBYTE ═════════════════════════════════ */}
       <section className="about-page__why">
         <div className="about-page__why-content">
           <div className="about-page__why-header">
@@ -451,7 +476,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 8. Technologies We Use */}
+      {/* ══ 8. TECH STACK ═════════════════════════════════ */}
       <section className="about-page__tech">
         <div className="about-page__tech-content">
           <div className="about-page__tech-header">
@@ -467,29 +492,49 @@ const AboutPage = () => {
           <div className="about-page__tech-grid">
             <div className="about-page__tech-category">
               <h4>Frontend</h4>
-              <ul>{techStack.frontend.map((tech, i) => <li key={i}>{tech}</li>)}</ul>
+              <ul>
+                {techStack.frontend.map((tech, i) => (
+                  <li key={i}>{tech}</li>
+                ))}
+              </ul>
             </div>
             <div className="about-page__tech-category">
               <h4>Backend</h4>
-              <ul>{techStack.backend.map((tech, i) => <li key={i}>{tech}</li>)}</ul>
+              <ul>
+                {techStack.backend.map((tech, i) => (
+                  <li key={i}>{tech}</li>
+                ))}
+              </ul>
             </div>
             <div className="about-page__tech-category">
               <h4>Databases</h4>
-              <ul>{techStack.databases.map((tech, i) => <li key={i}>{tech}</li>)}</ul>
+              <ul>
+                {techStack.databases.map((tech, i) => (
+                  <li key={i}>{tech}</li>
+                ))}
+              </ul>
             </div>
             <div className="about-page__tech-category">
               <h4>Cloud & DevOps</h4>
-              <ul>{techStack.cloud.map((tech, i) => <li key={i}>{tech}</li>)}</ul>
+              <ul>
+                {techStack.cloud.map((tech, i) => (
+                  <li key={i}>{tech}</li>
+                ))}
+              </ul>
             </div>
             <div className="about-page__tech-category">
               <h4>AI & ML</h4>
-              <ul>{techStack.ai.map((tech, i) => <li key={i}>{tech}</li>)}</ul>
+              <ul>
+                {techStack.ai.map((tech, i) => (
+                  <li key={i}>{tech}</li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 9. Industries We Serve */}
+      {/* ══ 9. BUSINESS AREAS ═════════════════════════════ */}
       <section className="about-page__industries">
         <div className="about-page__industries-content">
           <div className="about-page__industries-header">
@@ -505,7 +550,9 @@ const AboutPage = () => {
           <div className="about-page__industries-grid">
             {industries.map((industry, index) => (
               <div className="about-page__industry-tag" key={index}>
-                <span className="about-page__industry-tag-icon">{industry.icon}</span>
+                <span className="about-page__industry-tag-icon">
+                  {industry.icon}
+                </span>
                 {industry.name}
               </div>
             ))}
@@ -513,7 +560,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 10. Our Values */}
+      {/* ══ 10. VALUES ════════════════════════════════════ */}
       <section className="about-page__values">
         <div className="about-page__values-content">
           <div className="about-page__values-header">
@@ -538,7 +585,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 11. Meet the Founder */}
+      {/* ══ 11. FOUNDER ═══════════════════════════════════ */}
       <section className="about-page__founder">
         <div className="about-page__founder-content">
           <div className="about-page__founder-image">
@@ -549,9 +596,6 @@ const AboutPage = () => {
                 className="about-page__founder-image-photo"
                 loading="lazy"
               />
-              <div className="about-page__founder-image-placeholder" style={{ display: 'none' }}>
-                <Users size={64} color="#ff4500" />
-              </div>
             </div>
             <div className="about-page__founder-badge">Founder</div>
           </div>
@@ -587,12 +631,14 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 12. Call to Action */}
+      {/* ══ 12. CTA ═══════════════════════════════════════ */}
       <section className="about-page__cta">
         <div className="about-page__cta-content">
           <div className="about-page__cta-left">
             <span className="about-page__cta-label">Start with KXBYTE</span>
-            <h2>Try our products. <span>Or talk to us.</span></h2>
+            <h2>
+              Try our products. <span>Or talk to us.</span>
+            </h2>
             <p>
               Use our products if they fit. If you need something our products
               don't cover, we build that too. Either way — the problem comes
@@ -618,7 +664,6 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };
