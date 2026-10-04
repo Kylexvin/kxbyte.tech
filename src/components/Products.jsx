@@ -18,8 +18,8 @@ function NotifyRow() {
     setState('sending');
     try {
       const res = await fetch(
-        //'https://auth.kxbyte.co.ke/api/v1/public/subscribe',
-        'http://localhost:5000/api/v1/public/subscribe',
+        'https://auth.kxbyte.co.ke/api/v1/public/subscribe',
+        // 'http://localhost:5000/api/v1/public/subscribe',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
