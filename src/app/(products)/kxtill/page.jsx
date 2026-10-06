@@ -7,7 +7,7 @@ import OfflineNote from "@/components/products/kxtill/OfflineNote";
 import SeeItInAction from "@/components/products/kxtill/SeeItInAction";
 import HowItWorks from "@/components/products/kxtill/HowItWorks";
 import SuiteNote from "@/components/products/kxtill/SuiteNote";
-import FooterCta from "@/components/products/kxtill/FooterCta";
+//import FooterCta from "@/components/products/kxtill/FooterCta";
 
 const SITE_URL = "https://kxbyte.co.ke";
 
@@ -49,13 +49,9 @@ export default function KxTillPage() {
     operatingSystem: "Web",
     description: product.hero.description,
     url: productUrl,
-    publisher: { "@id": `${SITE_URL}/#organization` },
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "KES",
-      availability: "https://schema.org/InStock",
-      url: product.url,
+    image: `${SITE_URL}/icons/kxtill.png`,
+    publisher: {
+      "@id": `${SITE_URL}/#organization`,
     },
     featureList: product.featureGroups.map((g) => g.title),
   };
