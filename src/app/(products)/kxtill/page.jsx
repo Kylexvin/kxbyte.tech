@@ -7,6 +7,7 @@ import OfflineNote from "@/components/products/kxtill/OfflineNote";
 import SeeItInAction from "@/components/products/kxtill/SeeItInAction";
 import HowItWorks from "@/components/products/kxtill/HowItWorks";
 import SuiteNote from "@/components/products/kxtill/SuiteNote";
+import Strip from "@/components/products/kxtill/Strip";
 //import FooterCta from "@/components/products/kxtill/FooterCta";
 
 const SITE_URL = "https://kxbyte.co.ke";
@@ -88,6 +89,7 @@ export default function KxTillPage() {
       />
 
       <Hero product={product} />
+      <Strip product={product} />
       <Features product={product} />
       <SeeItInAction product={product} />
       <OfflineNote product={product} />

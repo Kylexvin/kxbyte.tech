@@ -1,4 +1,3 @@
-
 // src/data/kxtill.js
 
 export const kxtill = {
@@ -13,7 +12,7 @@ export const kxtill = {
     eyebrow: "KXBYTE · KXTILL",
     headline: "Know what's happening across your business.",
     description:
-      "KxTill helps growing retail businesses manage sales, stock, staff, payments, customers, and branches from one system.",
+      "KxTill helps retail businesses and pharmacies manage sales, stock, staff, payments, customers, and branches from one system. Pick Retail for shops and minimarts, or Pharmacy for batches, expiry, and FEFO dispensing.",
     ctaPrimary: {
       label: "Start using KxTill",
       url: "https://kxtill.kxbyte.co.ke",
@@ -23,6 +22,7 @@ export const kxtill = {
       anchor: "how-it-works",
     },
     proofStrip: [
+      "Retail + Pharmacy",
       "Offline-first",
       "Multi-branch",
       "Staff management",
@@ -31,6 +31,45 @@ export const kxtill = {
     ],
   },
 
+  /* ── The two instances ─────────────────────────────────── */
+  instances: [
+    {
+      key: "retail",
+      name: "KxTill Retail",
+      audience: "Shops, minimarts, and general retail",
+      tagline:
+        "The complete POS and inventory system for shops, minimarts, and general retail.",
+      url: "https://kxtill.kxbyte.co.ke",
+      cta: "Open Retail POS",
+      highlights: [
+        "Fast POS with barcode scanning",
+        "Cash, M-Pesa, card, bank, and credit sales",
+        "Multi-unit products (Box → Pack → Piece)",
+        "Shifts, cash variance, and full audit log",
+        "Customer credit ledger (Deni)",
+        "Offline mode that syncs when you're back online",
+      ],
+    },
+    {
+      key: "pharmacy",
+      name: "KxTill Pharmacy",
+      audience: "Pharmacies and dispensaries",
+      tagline:
+        "Everything Retail does, plus batch tracking, expiry control, FEFO dispensing, and the pharmacy workflows a real dispensary needs.",
+      url: "https://pharmacy.kxbyte.co.ke",
+      cta: "Open Pharmacy POS",
+      highlights: [
+        "Every Retail feature included",
+        "Batch tracking with lot number and expiry",
+        "FEFO dispensing runs automatically at the till",
+        "Expiry alerts and expiring stock reports",
+        "Prescription category and medicine metadata",
+        "Batch-level receiving, transfers, and refunds",
+      ],
+    },
+  ],
+
+  /* ── Core features (included in BOTH Retail and Pharmacy) ── */
   featureGroups: [
     {
       id: "inventory",
@@ -38,9 +77,11 @@ export const kxtill = {
       summary: "Know what you have, where it is, and what's moving.",
       points: [
         "Central product catalogue with SKUs, barcodes, and selling units",
+        "Multi-unit products with conversion, such as Box → Pack → Piece",
         "Stock tracked at branch level instead of being pooled across the business",
         "Stock activity recorded through sales, restocks, transfers, and adjustments",
         "Minimum stock levels help identify products that need attention",
+        "Bulk product import and export",
         "Branch-specific stock and pricing keep each location accurate",
       ],
     },
@@ -54,6 +95,7 @@ export const kxtill = {
         "Walk-in sales can be completed without creating a customer account",
         "Sales remain tied to the branch, staff member, customer, and shift involved",
         "Receipts and sale history give the business a record of completed transactions",
+        "Multiple counters in one branch, each with its own cashier",
         "Refunds are recorded against the original sale",
       ],
     },
@@ -67,6 +109,7 @@ export const kxtill = {
         "Customer purchase history stays connected to the customer record",
         "Goods given on credit are recorded against the customer's account",
         "Credit payments are recorded against outstanding balances",
+        "Credit limits and balances per customer",
         "The credit ledger keeps customer balances traceable over time",
       ],
     },
@@ -109,8 +152,148 @@ export const kxtill = {
       ],
     },
 
-{ id: "payments", title: "Payments", summary: "Keep payments tied to the sales they belong to.", points: [ "Cash payments are recorded against the sale", "Mixed and partial payments can be recorded against a single sale", "Payment activity stays connected to the original transaction", "Payment records remain available for shift and transaction review", ], comingSoon: [ "M-Pesa STK Push", "Automatic M-Pesa payment confirmation", ], },
+    {
+      id: "payments",
+      title: "Payments",
+      summary: "Keep payments tied to the sales they belong to.",
+      points: [
+        "Cash payments are recorded against the sale",
+        "Mixed and partial payments can be recorded against a single sale",
+        "Payment activity stays connected to the original transaction",
+        "Payment records remain available for shift and transaction review",
+      ],
+      comingSoon: ["M-Pesa STK Push", "Automatic M-Pesa payment confirmation"],
+    },
+
+    {
+      id: "reports",
+      title: "Reports",
+      summary: "See how the business is performing without exporting to spreadsheets.",
+      points: [
+        "Sales by day, week, and month",
+        "Top products and payment method breakdowns",
+        "Branch performance and profit reporting",
+        "CSV and Excel export",
+      ],
+    },
   ],
+
+  /* ── Pharmacy-only features (Retail does not have these) ── */
+  pharmacyFeatureGroups: [
+    {
+      id: "batches",
+      title: "Batches & Expiry",
+      summary: "Every unit belongs to a batch, and every batch has an expiry.",
+      points: [
+        "Batch tracking with lot number and expiry date on every unit",
+        "Automatic alerts for soon-to-expire and expired stock",
+        "Expiring stock report across all branches",
+        "Write-offs for damaged or expired stock, audit-logged",
+      ],
+    },
+
+    {
+      id: "fefo",
+      title: "FEFO Dispensing",
+      summary: "The earliest-expiring batch is sold first, without extra steps.",
+      points: [
+        "Sales consume from the earliest-expiring batch automatically",
+        "A single sale can draw from multiple batches when needed",
+        "Oversell prevention: never dispenses more than the batches hold",
+        "FEFO runs correctly even when the terminal is offline",
+      ],
+    },
+
+    {
+      id: "prescriptions",
+      title: "Prescriptions & Medicines",
+      summary: "Keep the details a pharmacy needs on every medicine.",
+      points: [
+        "Prescription-required flag per medicine",
+        "Prescription category: OTC, POM, or Controlled",
+        "Generic name, brand, strength, and dosage form",
+        "Route of administration and storage conditions",
+      ],
+    },
+
+    {
+      id: "receiving",
+      title: "Receiving & Stock Control",
+      summary: "Stock for medicines only enters through proper receiving.",
+      points: [
+        "Batch-level receiving with cost, expiry, and supplier reference",
+        "No direct stock edits for medicines; all stock enters through receiving",
+        "Batch transfers between branches preserve batch identity and expiry",
+        "Earliest-expiring batches move first on transfers",
+      ],
+    },
+
+    {
+      id: "traceability",
+      title: "Refunds & Traceability",
+      summary: "Trace any unit from receipt to sale to refund.",
+      points: [
+        "Returned medicines go back into the exact batch they came from",
+        "Full refund history with batch-level detail",
+        "Full audit trail from receipt to sale to refund",
+        "Movement log of every receipt, sale, transfer, refund, and adjustment",
+      ],
+    },
+
+    {
+      id: "pharmacy-reports",
+      title: "Pharmacy Reports",
+      summary: "All Retail reports, plus the ones a pharmacy relies on.",
+      points: [
+        "Expiring stock report for a chosen window",
+        "Batch stock report with per-branch quantities by batch",
+        "Medicine sales: top-selling medicines and generics",
+        "Movement log across the whole organization",
+      ],
+    },
+  ],
+
+  /* ── Retail vs Pharmacy comparison ─────────────────────── */
+  comparison: {
+    heading: "Retail or Pharmacy?",
+    subtitle:
+      "Pharmacy includes every Retail feature. Choose it when you handle medicines, batches, or expiry. A pharmacy that also sells soap, tea, or snacks only needs Pharmacy.",
+    rows: [
+      { label: "Fast POS + barcode", retail: true, pharmacy: true },
+      { label: "Cash / M-Pesa / Card / Bank / Credit", retail: true, pharmacy: true },
+      { label: "Split payments", retail: true, pharmacy: true },
+      { label: "Customer credit (Deni)", retail: true, pharmacy: true },
+      { label: "Offline mode", retail: true, pharmacy: true },
+      { label: "Multi-counter", retail: true, pharmacy: true },
+      { label: "Multi-branch", retail: true, pharmacy: true },
+      { label: "Multi-unit products", retail: true, pharmacy: true },
+      { label: "Stock transfers", retail: true, pharmacy: true },
+      { label: "Shift management", retail: true, pharmacy: true },
+      { label: "Audit log", retail: true, pharmacy: true },
+      { label: "Reports + exports", retail: true, pharmacy: true },
+      { label: "Batch tracking", retail: false, pharmacy: true },
+      { label: "Expiry management", retail: false, pharmacy: true },
+      { label: "FEFO dispensing", retail: false, pharmacy: true },
+      { label: "Multi-batch sales", retail: false, pharmacy: true },
+      { label: "Batch-level transfers", retail: false, pharmacy: true },
+      { label: "Batch reversal on refund", retail: false, pharmacy: true },
+      { label: "Prescription metadata", retail: false, pharmacy: true },
+      { label: "Expiring stock report", retail: false, pharmacy: true },
+      { label: "Movement log", retail: false, pharmacy: true },
+      { label: "Enforced receiving (no direct stock edit)", retail: false, pharmacy: true },
+    ],
+  },
+
+  /* ── Both under one account ────────────────────────────── */
+  bothUnderOne: {
+    heading: "Pharmacy and shop on one account.",
+    body: "An organization with both a pharmacy and a normal shop can run Retail and Pharmacy side by side. Same account, same organization, same login, with independent permissions and staff roles for each.",
+    points: [
+      "Same account and login for both",
+      "Independent permissions and staff roles per vertical",
+      "Same product catalogue and sales engine underneath",
+    ],
+  },
 
   offline: {
     headline: "Your shop shouldn't stop when the internet does.",
@@ -121,13 +304,12 @@ export const kxtill = {
       "Adding customers",
       "Overview dashboard",
     ],
-    needsNetwork: [
-      "Inventory changes",
-      "Shift operations",
-      "Synchronization",
-    ],
+    needsNetwork: ["Inventory changes", "Shift operations", "Synchronization"],
     flow: ["Selling continues", "Queued locally", "Connection returns", "Auto-sync"],
+    pharmacyNote:
+      "KxTill Pharmacy works the same way. Pharmacy batches sync to the terminal, FEFO runs correctly while offline, and sync is idempotent, so no sale is duplicated.",
   },
+
   screenshots: {
     hero: {
       src: "/screenshots/kxtill/till.png",
@@ -154,8 +336,19 @@ export const kxtill = {
         alt: "KxTill shift close screen comparing expected and counted cash",
         caption: "Close the shift, know the cash",
       },
+        {
+        src: "/screenshots/kxtill/pharmacy-batches.png",
+        alt: "KxTill Pharmacy batch stock with lot numbers and expiry dates",
+        caption: "Every unit tied to a batch and expiry",
+     },
+     {
+       src: "/screenshots/kxtill/pharmacy-expiring.png",
+       alt: "KxTill Pharmacy expiring stock report",
+       caption: "Spot expiring stock before it expires",
+     },
     ],
   },
+
   howItWorks: {
     heading: "From sign-up to first sale in under two minutes.",
     subtitle:
@@ -202,6 +395,7 @@ export const kxtill = {
     label: "14-day free trial",
     body: "No card required. Add products, ring up sales, close your first shift. If it's not for you, walk away.",
   },
+
   pricing: {
     headline: "One subscription. Everything included.",
     description:
@@ -275,14 +469,47 @@ export const kxtill = {
       },
     ],
   },
-    faqs: [
+
+  faqs: [
     {
       q: "What is KxTill?",
-      a: "KxTill is a retail operations and point-of-sale system for businesses that need to manage sales, stock, payments, customers, and day-to-day operations from one place. It's designed for businesses ranging from a single shop and counter to multi-branch operations with multiple tills and staff.",
+      a: "KxTill is a point-of-sale and inventory system for businesses that need to manage sales, stock, payments, customers, and day-to-day operations from one place. It comes in two instances built on the same core: KxTill Retail for shops and minimarts, and KxTill Pharmacy for pharmacies. It suits everything from a single shop and counter to multi-branch operations with multiple tills and staff.",
     },
     {
       q: "Who is KxTill for?",
-      a: "Businesses that sell physical goods and need reliable control over sales, stock, payments, customers, and staff operations — from independent shops to multi-branch retail operations.",
+      a: "Retail businesses and pharmacies that need reliable control over sales, stock, payments, customers, and staff operations — from independent shops and dispensaries to multi-branch operations.",
+    },
+    {
+      q: "What is the difference between KxTill Retail and KxTill Pharmacy?",
+      a: "Pharmacy includes every Retail feature, plus the pharmaceutical inventory model: batch tracking, expiry management, FEFO dispensing, prescription metadata, batch-level receiving and transfers, and batch reversal on refunds. Retail does not have batches, expiry, or FEFO.",
+    },
+    {
+      q: "Which one should I choose?",
+      a: "If you sell general goods, choose Retail. If you handle medicines and need batches, expiry control, or prescription categories, choose Pharmacy. A pharmacy that also sells soap, tea, or snacks only needs Pharmacy, because it handles medicines and ordinary retail items in the same POS.",
+    },
+    {
+      q: "Can I run a pharmacy and a shop on the same account?",
+      a: "Yes. An organization can run KxTill Retail and KxTill Pharmacy side by side with the same account, organization, and login. Permissions and staff roles are independent for each.",
+    },
+    {
+      q: "What is FEFO dispensing?",
+      a: "FEFO means first-expired, first-out. In KxTill Pharmacy, sales automatically consume from the earliest-expiring batch first, so the cashier doesn't need to pick batches manually. A single sale can draw from multiple batches when needed.",
+    },
+    {
+      q: "How does KxTill Pharmacy track expiry?",
+      a: "Every unit belongs to a batch with a lot number and expiry date. KxTill Pharmacy raises alerts for soon-to-expire and expired stock, and an expiring stock report shows batches expiring within a window you choose, across all branches.",
+    },
+    {
+      q: "What happens when a medicine is refunded?",
+      a: "Returned medicines go back into the exact batch they came from, so batch traceability is preserved from receipt to sale to refund. The refund history keeps batch-level detail.",
+    },
+    {
+      q: "Does KxTill Pharmacy work offline?",
+      a: "Yes. It uses the same offline-first model as Retail. Pharmacy batches sync to the terminal, FEFO runs correctly while the terminal is offline, and sync is idempotent, so sales are not duplicated.",
+    },
+    {
+      q: "Can I transfer medicines between branches?",
+      a: "Yes. Batch transfers move the earliest-expiring batches first and preserve batch identity, so the destination branch shows the same batch numbers and expiry dates.",
     },
     {
       q: "Can I use KxTill for more than one branch?",
@@ -386,7 +613,7 @@ export const kxtill = {
     },
     {
       q: "Is KxTill only for small shops?",
-      a: "No. KxTill can be used by a single retail outlet or scaled across businesses operating multiple branches and tills. The same system supports different operational sizes.",
+      a: "No. KxTill can be used by a single outlet or scaled across businesses operating multiple branches and tills. The same system supports different operational sizes.",
     },
     {
       q: "Do I need special hardware?",
@@ -425,22 +652,26 @@ export const kxtill = {
       a: "Contact KXBYTE support with your organization name and the issue you're experiencing. For technical issues, include the relevant branch, transaction, or reference information so the issue can be investigated faster.",
     },
   ],
+
   suiteNote:
-    "KxTill works on its own. Connect it to KXBYTE Suite and bring your retail operation into the wider KXBYTE business platform.",
+    "KxTill works on its own, as Retail or Pharmacy. Connect it to KXBYTE Suite and bring your operation into the wider KXBYTE business platform.",
 
   seo: {
-    title: "KxTill — Retail management software for growing businesses",
+    title: "KxTill — POS and inventory software for retail and pharmacy",
     description:
-      "KxTill helps growing retail businesses manage sales, stock, customers, payments, staff, shifts, and branches from one system.",
+      "KxTill helps shops and pharmacies manage sales, stock, customers, payments, staff, shifts, and branches from one system. Retail for general retail; Pharmacy adds batches, expiry, and FEFO dispensing.",
     keywords: [
       "KxTill",
       "POS Kenya",
       "point of sale Kenya",
       "retail software Kenya",
+      "pharmacy software Kenya",
+      "pharmacy POS",
+      "FEFO dispensing",
+      "batch and expiry tracking",
       "inventory management",
       "multi-branch POS",
       "retail management software",
     ],
   },
 };
-

@@ -23,7 +23,7 @@ const TrustScroll = () => {
           {scrollItems.map((product, idx) => (
             <div key={idx} className="trust-scroll__item">
               <img
-                src="/icons/logo.png"
+                src="/icons/logo2.png"
                 alt=""
                 className="trust-logo"
                 width={26}

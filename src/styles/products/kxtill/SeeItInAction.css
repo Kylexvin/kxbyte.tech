@@ -148,3 +148,25 @@
     font-size: 1rem;
   }
 }
+/* ── Instance tag ────────────────────────────────────────── */
+.kt-see__tag {
+  display: inline-block;
+  margin-right: 0.6rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  vertical-align: 1px;
+}
+
+.kt-see__tag--retail {
+  color: #ff5c1a;
+  background: rgba(255, 92, 26, 0.09);
+}
+
+.kt-see__tag--pharmacy {
+  color: #267456;
+  background: rgba(38, 116, 86, 0.1);
+}

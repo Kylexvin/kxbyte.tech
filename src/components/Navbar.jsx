@@ -36,6 +36,7 @@ const Navbar = () => {
   const navLinks = [
     { label: 'Products', href: '/products' },
     { label: 'KxTill', href: '/kxtill' },
+    { label: 'Blog', href: '/blog' },
     { label: 'About', href: '/about' },
     { label: 'Custom work', href: '/services' },
   ];

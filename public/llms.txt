@@ -1,11 +1,13 @@
 # KXBYTE
 
-> KXBYTE is a business technology company building connected software products for modern businesses. Products include KxTill (retail point of sale), KxWork (workforce and tasks), KxCRM (customer management), KxInvoice (invoicing), and KxPay (payments) — all connected through KXBYTE Suite.
+> KXBYTE is a business technology company building connected software products for modern businesses. Products include KxTill (point of sale for retail and pharmacy businesses), KxWork (workforce and task management), KxCRM (customer relationship management), KxInvoice (invoicing), and KxPay (payment reconciliation) — connected through KXBYTE Suite.
 
 ## Products
 
-- [KxTill](https://kxbyte.co.ke/products/kxtill): Offline-first point-of-sale system for growing retail businesses. Sales, stock, customers, payments, and multi-branch operations. Works without internet. Live.
-- [KXBYTE Suite](https://suite.kxbyte.co.ke): The organizational layer connecting products, people, permissions, branches, and billing in one account. Live.
+- [KxTill](https://kxbyte.co.ke/products/kxtill): An offline-first point-of-sale platform for growing businesses, with specialized instances for retail and pharmacy operations. Core capabilities include sales, stock, customers, payments, and multi-branch operations. Designed to keep working without internet. Live.
+  - [KxTill Retail](https://kxbyte.co.ke/products/kxtill): POS for general retail businesses, including sales, inventory, and multi-branch stock management. Live.
+  - [KxTill Pharmacy](https://pharmacy.kxbyte.co.ke): Pharmacy-focused POS with medicine batch tracking, expiry management, and first-expiring-first-out (FEFO) inventory allocation. Live.
+- [KXBYTE Suite](https://suite.kxbyte.co.ke): The organizational layer connecting products, people, permissions, branches, and billing through one account. Live.
 - [KxWork](https://kxbyte.co.ke/products/kxwork): Workforce and task management. In development.
 - [KxCRM](https://kxbyte.co.ke/products/kxcrm): Customer relationship management. In development.
 - [KxInvoice](https://kxbyte.co.ke/products/kxinvoice): Invoicing connected to sales. In development.
@@ -23,3 +25,7 @@
 - Phone: +254768610613
 - Country: Kenya
 - Languages: English, Swahili
+
+## Product Architecture
+
+KxTill is built on a shared core platform with specialized instances for different business verticals. KxTill Retail and KxTill Pharmacy share core point-of-sale capabilities while supporting industry-specific workflows. Both are part of the broader KXBYTE product ecosystem.

@@ -3,7 +3,6 @@
 import React from 'react';
 import { Code, Layers, Plug, Wrench, ChevronRight, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import '../styles/Services.css';
 
 const services = [
@@ -34,8 +33,6 @@ const services = [
 ];
 
 const Services = () => {
-  const router = useRouter();
-
   return (
     <section className="services" id="services">
       <div className="services__watermark">DO</div>
@@ -69,11 +66,7 @@ const Services = () => {
 
       <div className="services__grid">
         {services.map((s, i) => (
-          <div
-            className="service-card"
-            key={i}
-            onClick={() => router.push(`/service/${s.slug}`)}
-          >
+          <div className="service-card" key={i}>
             <div className="service-card__header">
               <div className="service-card__icon">
                 <s.Icon size={32} />

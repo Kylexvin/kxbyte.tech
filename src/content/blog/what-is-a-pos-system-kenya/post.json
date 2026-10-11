@@ -1,0 +1,49 @@
+{
+  "title": "What Is a POS System? A Practical Guide for Kenyan Businesses",
+  "excerpt": "A POS system does more than ring up sales. It tracks stock across branches, records every transaction, and tells you what's actually happening in your business. Here's what Kenyan business owners should know before choosing one.",
+  "date": "2026-10-11",
+  "category": "business-technology",
+  "tags": ["POS", "Retail", "Kenya", "KxTill"],
+  "keywords": [
+    "pos system in kenya",
+    "pos software kenya",
+    "retail management system",
+    "point of sale kenya"
+  ],
+  "author": "kxbyte",
+  "readTime": 7,
+"cover": {
+  "src": "/blog/what-is-a-pos-system-kenya/cover.jpg",
+  "alt": "What is a POS system — practical guide for Kenyan businesses"
+},
+"thumbnail": {
+  "src": "/blog/fefo-expiry-guide/cover.jpg",
+  "alt": "What is a POS system — KXBYTE"
+},
+  "featured": true,
+  "product": "kxtill",
+  "draft": false,
+  "toc": [
+    { "id": "what-a-pos-actually-does", "text": "What a POS system actually does", "level": 2 },
+    { "id": "beyond-the-cash-register", "text": "Beyond the cash register", "level": 2 },
+    { "id": "multi-branch", "text": "Multi-branch: where spreadsheets break", "level": 2 },
+    { "id": "offline-first", "text": "Why offline-first matters in Kenya", "level": 2 },
+    { "id": "what-to-look-for", "text": "What to look for before choosing", "level": 2 },
+    { "id": "where-kxtill-fits", "text": "Where KxTill fits", "level": 2 },
+    { "id": "faq", "text": "Frequently asked questions", "level": 2 }
+  ],
+  "faq": [
+    {
+      "q": "What is a POS system?",
+      "a": "A POS (Point of Sale) system is the software and hardware used to complete a sale and record what was sold. In modern use, it also tracks stock, staff activity, payments, and reporting across branches."
+    },
+    {
+      "q": "Do I need a POS system for a small shop in Kenya?",
+      "a": "A single-till shop can work with a simple cash register, but a POS system pays for itself quickly if you sell more than a few hundred items a day, carry stock that expires, or run more than one location."
+    },
+    {
+      "q": "Does a POS system work without internet in Kenya?",
+      "a": "It depends on the system. Offline-first POS software keeps selling during outages and syncs when the connection returns. Cloud-only systems stop working when the internet is down, which is a real risk in many parts of Kenya."
+    }
+  ]
+}

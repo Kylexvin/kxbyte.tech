@@ -1,10 +1,17 @@
 // src/components/products/kxtill/Hero.jsx
 import Link from "next/link";
-import { ArrowUpRight, ArrowDown, ArrowRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  ArrowRight,
+  ShoppingBasket,
+  Pill,
+} from "lucide-react";
 import "@/styles/products/kxtill/Hero.css";
 
+const PHARMACY_URL = "https://pharmacy.kxbyte.co.ke";
+
 export default function Hero({ product }) {
-  const { hero, screenshots, logo, name, status } = product;
+  const { hero, screenshots, logo, status } = product;
 
   return (
     <section className="kt-hero">
@@ -21,20 +28,9 @@ export default function Hero({ product }) {
               <h1 className="kt-hero__headline">{hero.headline}</h1>
               <p className="kt-hero__description">{hero.description}</p>
 
-              <HeroActions hero={hero} />
+              <HeroInstances retailUrl={hero.ctaPrimary?.url} />
 
-              <div className="kt-hero__links">
-                <Link href="/kxtill/pricing" className="kt-hero__link">
-                  See pricing
-                  <ArrowRight size={13} />
-                </Link>
-                <Link href="/kxtill/faq" className="kt-hero__link">
-                  FAQ
-                  <ArrowRight size={13} />
-                </Link>
-              </div>
-
-              <HeroProof items={hero.proofStrip} />
+              <HeroActions />
             </div>
 
             <div className="kt-hero__media">
@@ -61,6 +57,7 @@ export default function Hero({ product }) {
         <div className="kt-hero__mobile-content">
           <h1 className="kt-hero__mobile-headline">{hero.headline}</h1>
           <p className="kt-hero__mobile-description">{hero.description}</p>
+          <HeroInstances retailUrl={hero.ctaPrimary?.url} />
         </div>
 
         <div className="kt-hero__mobile-media">
@@ -76,22 +73,20 @@ export default function Hero({ product }) {
             <div className="kt-hero__mobile-fade" aria-hidden="true" />
 
             <div className="kt-hero__mobile-actions">
-              <a
-                href={hero.ctaPrimary.url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/kxtill/pricing"
                 className="kt-hero__mobile-btn kt-hero__mobile-btn--primary"
               >
-                {hero.ctaPrimary.label}
-                <ArrowUpRight size={14} />
-              </a>
-              <a
-                href={`#${hero.ctaSecondary.anchor}`}
+                See pricing
+                <ArrowRight size={14} />
+              </Link>
+              <Link
+                href="/kxtill/faq"
                 className="kt-hero__mobile-btn kt-hero__mobile-btn--ghost"
               >
-                {hero.ctaSecondary.label}
-                <ArrowDown size={14} />
-              </a>
+                FAQ
+                <ArrowRight size={14} />
+              </Link>
             </div>
           </div>
         </div>
@@ -120,47 +115,64 @@ function HeroIdentity({ logo, hero, status }) {
   );
 }
 
-function HeroActions({ hero }) {
+function HeroInstances({ retailUrl }) {
+  const items = [
+    {
+      key: "retail",
+      Icon: ShoppingBasket,
+      name: "KxTill Retail",
+      desc: "Shops, minimarts, general retail",
+      url: retailUrl,
+    },
+    {
+      key: "pharmacy",
+      Icon: Pill,
+      name: "KxTill Pharmacy",
+      desc: "Batches, expiry, FEFO dispensing",
+      url: PHARMACY_URL,
+    },
+  ];
+
   return (
-    <div className="kt-hero__actions">
-      {hero.ctaPrimary?.url && (
+    <div className="kt-hero__instances">
+      {items.map((item) => (
         <a
-          href={hero.ctaPrimary.url}
+          key={item.key}
+          href={item.url || "#"}
           target="_blank"
           rel="noopener noreferrer"
-          className="kt-hero__btn kt-hero__btn--primary"
+          className="kt-hero__instance"
         >
-          {hero.ctaPrimary.label}
-          <ArrowUpRight size={15} />
+          <span
+            className={`kt-hero__instance-icon kt-hero__instance-icon--${item.key}`}
+          >
+            <item.Icon size={18} />
+          </span>
+          <span className="kt-hero__instance-copy">
+            <span className="kt-hero__instance-name">{item.name}</span>
+            <span className="kt-hero__instance-desc">{item.desc}</span>
+          </span>
+          <ArrowUpRight size={15} className="kt-hero__instance-arrow" />
         </a>
-      )}
-      {hero.ctaSecondary?.anchor && (
-        <a
-          href={`#${hero.ctaSecondary.anchor}`}
-          className="kt-hero__btn kt-hero__btn--ghost"
-        >
-          {hero.ctaSecondary.label}
-          <ArrowDown size={15} />
-        </a>
-      )}
+      ))}
     </div>
   );
 }
 
-function HeroProof({ items = [] }) {
-  if (items.length === 0) return null;
+function HeroActions() {
   return (
-    <ul className="kt-hero__proof">
-      {items.map((item, i) => (
-        <li key={item}>
-          {item}
-          {i < items.length - 1 && (
-            <span className="kt-hero__proof-sep" aria-hidden="true">
-              ·
-            </span>
-          )}
-        </li>
-      ))}
-    </ul>
+    <div className="kt-hero__actions">
+      <Link
+        href="/kxtill/pricing"
+        className="kt-hero__btn kt-hero__btn--primary"
+      >
+        See pricing
+        <ArrowRight size={15} />
+      </Link>
+      <Link href="/kxtill/faq" className="kt-hero__btn kt-hero__btn--ghost">
+        FAQ
+        <ArrowRight size={15} />
+      </Link>
+    </div>
   );
 }

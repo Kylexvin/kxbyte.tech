@@ -1,0 +1,49 @@
+{
+  "title": "What Is FEFO? First-Expired, First-Out Explained for Pharmacies",
+  "excerpt": "FEFO (First-Expired, First-Out) is a stock rotation rule that ships the batch closest to expiry first. This guide explains how it works, why it matters, and how to run it in a Kenyan pharmacy without spreadsheets.",
+  "date": "2026-02-14",
+  "updated": "2026-10-11",
+  "category": "pharmacy",
+  "tags": ["FEFO", "Expiry tracking", "Inventory", "Pharmacy"],
+  "keywords": [
+    "what is fefo",
+    "fefo pharmacy",
+    "first expired first out",
+    "expiry tracking kenya"
+  ],
+  "author": "kxbyte",
+  "readTime": 5,
+  "cover": {
+  "src": "/blog/fefo-expiry-guide/cover.jpg",
+  "alt": "Pharmacist checking expiry dates on medicine boxes"
+},
+  "thumbnail": {
+    "src": "/blog/fefo-expiry-guide/cover.jpg",
+    "alt": "FEFO — First-Expired, First-Out"
+  },
+  "featured": true,
+  "product": "kxtill",
+  "draft": false,
+  "toc": [
+    { "id": "what-is-fefo", "text": "What is FEFO?", "level": 2 },
+    { "id": "fefo-vs-fifo", "text": "FEFO vs FIFO", "level": 2 },
+    { "id": "why-it-matters", "text": "Why FEFO matters in a pharmacy", "level": 2 },
+    { "id": "how-to-run-fefo", "text": "How to run FEFO day to day", "level": 2 },
+    { "id": "fefo-without-spreadsheets", "text": "Running FEFO without spreadsheets", "level": 2 },
+    { "id": "faq", "text": "Frequently asked questions", "level": 2 }
+  ],
+  "faq": [
+    {
+      "q": "What does FEFO stand for?",
+      "a": "FEFO stands for First-Expired, First-Out. It is a stock rotation rule where the batch with the earliest expiry date is sold or used first."
+    },
+    {
+      "q": "Is FEFO the same as FIFO?",
+      "a": "No. FIFO rotates by arrival date — the oldest stock leaves first. FEFO rotates by expiry date — the batch closest to expiring leaves first. In a pharmacy, FEFO is safer because a newer batch can expire sooner than an older one."
+    },
+    {
+      "q": "Does FEFO apply to non-medicine products?",
+      "a": "Yes. Any product with a shelf life benefits from FEFO — food, cosmetics, chemicals, and laboratory reagents included."
+    }
+  ]
+}
