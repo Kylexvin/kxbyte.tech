@@ -76,8 +76,8 @@ const Navbar = () => {
 
           <div className="navbar__right">
             <a
-              href="https://kxtill.kxbyte.co.ke"
-              target="_blank"
+              href="/kxtill"
+              // target="_blank"
               rel="noopener noreferrer"
               className="navbar__cta"
             >
@@ -156,9 +156,9 @@ const Navbar = () => {
           </div>
 
           <a
-            href="https://kxtill.kxbyte.co.ke"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/kxtill"
+            // target="_blank"
+            // rel="noopener noreferrer"
             className="mobile-drawer__cta"
             onClick={() => setMenuOpen(false)}
           >
