@@ -22,7 +22,7 @@ const SITE_URL = "https://kxbyte.co.ke";
 
 /* Edit these if your routes change */
 const KXTILL_PAGE = "/kxtill";
-const RETAIL_URL = "https://kxbyte.co.ke/products/kxtill";
+const RETAIL_URL = "/products/kxtill";
 const PHARMACY_URL = "https://pharmacy.kxbyte.co.ke";
 const SUITE_URL = "https://suite.kxbyte.co.ke";
 
@@ -295,10 +295,13 @@ export default function ProductsPage() {
                       <ArrowUpRight size={15} />
                     </a>
                   ) : (
-                    <a href={inst.href} className="kx-btn kx-btn--primary kx-btn--block">
+                    <Link
+                      href={inst.href}
+                      className="kx-btn kx-btn--primary kx-btn--block"
+                    >
                       {inst.cta}
                       <ArrowUpRight size={15} />
-                    </a>
+                    </Link>
                   )}
                 </div>
               </article>
