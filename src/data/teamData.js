@@ -1,42 +1,42 @@
 // src/data/teamData.js
 import vinny from '../assets/team/vinny_.jpg';
 import baza from '../assets/team/baz.jpeg';
-import cecilia from '../assets/team/cecilia.jpeg';
+import lucy from '../assets/team/lucy.jpeg';
 import joseph from '../assets/team/sejjo.png';
 import john from '../assets/team/maina.jpeg';
 
 export const team = [
-  // {
-  //   slug: 'cecilia-ndirangu',
-  //   name: 'Cecilia Ndirangu',
-  //   role: 'User Onboarding',
-  //   tag: 'Onboarding • Support',
-  //   image: cecilia.src,
+  {
+    slug: 'Lucy Wanjiku',
+    name: 'Lucy Wanjiku',
+    role: 'User Onboarding',
+    tag: 'Onboarding • Support',
+    image: lucy.src,
 
-  //   bio: 'Cecilia welcomes new users to KXBYTE products and makes sure they get running quickly. She handles the first conversations, walks people through setup, and stays close to the questions and friction that come up as businesses start using the software.',
+    bio: 'Lucy welcomes new users to KXBYTE products and makes sure they get running quickly. She handles the first conversations, walks people through setup, and stays close to the questions and friction that come up as businesses start using the software.',
 
-  //   skills: [
-  //     'User Onboarding',
-  //     'Product Support',
-  //     'User Communication',
-  //     'Relationship Management',
-  //   ],
+    skills: [
+      'User Onboarding',
+      'Product Support',
+      'User Communication',
+      'Relationship Management',
+    ],
 
-  //   focus: [
-  //     'User onboarding',
-  //     'Product support',
-  //     'First-use experience',
-  //   ],
+    focus: [
+      'User onboarding',
+      'Product support',
+      'First-use experience',
+    ],
 
-  //   email: 'cecilia@kxbyte.co.ke',
-  //   location: 'Nairobi, Kenya',
-  //   joined: null,
+    email: 'lucy@kxbyte.co.ke',
+    location: 'Nairobi, Kenya',
+    joined: null,
 
-  //   socials: {
-  //     linkedin: 'https://www.linkedin.com/in/cecilia-ndirangu-05523b2b0',
-  //     github: null,
-  //   },
-  // },
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/lucy-wanjiku-05523b2b0',
+      github: null,
+    },
+  },
   {
     slug: 'kylex-vinny',
     name: 'Kylex Vinny',
