@@ -177,7 +177,7 @@ function KxTillActions() {
       </Link>
 
       <a
-        href="https://kxbyte.co.ke/products/kxtill"
+        href="https://kxtill.kxbyte.co.ke"
         className="card__cta card__cta--secondary"
       >
         <ShoppingBasket size={15} />
