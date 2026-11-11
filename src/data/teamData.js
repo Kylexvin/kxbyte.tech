@@ -7,7 +7,7 @@ import john from '../assets/team/maina.jpeg';
 
 export const team = [
   {
-    slug: 'Lucy Wanjiku',
+    slug: 'Lucy-wanjiku',
     name: 'Lucy Wanjiku',
     role: 'User Onboarding',
     tag: 'Onboarding • Support',
