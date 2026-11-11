@@ -1,7 +1,7 @@
 // src/data/teamData.js
 import vinny from '../assets/team/vinny_.jpg';
 import baza from '../assets/team/baz.jpeg';
-import lucy from '../assets/team/lucy.jpeg';
+import lucy from '../assets/team/lucy.png';
 import joseph from '../assets/team/sejjo.png';
 import john from '../assets/team/maina.jpeg';
 
