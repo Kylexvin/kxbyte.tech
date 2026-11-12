@@ -150,9 +150,10 @@ const Footer = () => {
         <div className="footer__bottom-content">
           <p>&copy; {currentYear} KXBYTE. All rights reserved.</p>
           <div className="footer__bottom-links">
-            <Link href="/privacy-policy">Privacy</Link>
-            <Link href="/terms-of-service">Terms</Link>
-          </div>
+  <Link href="/privacy-policy">Privacy</Link>
+  <Link href="/account-deletion">Delete account</Link>
+  <Link href="/terms-of-service">Terms</Link>
+</div>
         </div>
       </div>
     </footer>

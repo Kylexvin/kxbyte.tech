@@ -1,0 +1,233 @@
+/* src/styles/AccountDeletion.css */
+
+.account-deletion {
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding: 8rem 1.5rem 6rem;
+}
+
+.account-deletion__container {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.account-deletion__header {
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.account-deletion__badge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  background-color: #f0f4ff;
+  color: #1e40af;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+
+.account-deletion__header h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+  margin: 0 0 0.85rem;
+  letter-spacing: -0.02em;
+}
+
+.account-deletion__date {
+  color: #64748b;
+  font-size: 0.925rem;
+  margin: 0 0 1.75rem;
+}
+
+.account-deletion__line {
+  height: 1px;
+  background: linear-gradient(to right, #e2e8f0, transparent);
+  width: 100%;
+}
+
+/* ── Content ────────────────────────────────────────── */
+.account-deletion__content {
+  color: #334155;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.account-deletion__intro {
+  font-size: 1.125rem;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.account-deletion__content > p {
+  margin: 0 0 1.15rem;
+}
+
+.account-deletion__content a {
+  color: #1e40af;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(30, 64, 175, 0.25);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.account-deletion__content a:hover {
+  color: #1d4ed8;
+  border-bottom-color: #1d4ed8;
+}
+
+/* ── Sections ───────────────────────────────────────── */
+.deletion-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.deletion-section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.deletion-section h2 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 1rem;
+  letter-spacing: -0.01em;
+}
+
+.deletion-section h3 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 1.75rem 0 0.65rem;
+}
+
+.deletion-section p {
+  margin: 0 0 1.15rem;
+}
+
+/* ── Lists ──────────────────────────────────────────── */
+.deletion-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+}
+
+.deletion-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.55rem;
+  line-height: 1.7;
+}
+
+.deletion-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.35rem;
+  top: 0.7rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #1e40af;
+}
+
+.deletion-list--ordered {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+
+.deletion-list--ordered li {
+  padding-left: 0;
+  margin-bottom: 0.65rem;
+}
+
+.deletion-list--ordered li::before {
+  content: none;
+}
+
+/* ── Contact block ──────────────────────────────────── */
+.deletion-contact {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  margin-top: 1rem;
+}
+
+.deletion-contact p {
+  margin: 0 0 0.5rem;
+  color: #334155;
+}
+
+.deletion-contact p:last-child {
+  margin-bottom: 0;
+}
+
+.deletion-contact strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+/* ── Final note ─────────────────────────────────────── */
+.deletion-final {
+  margin-top: 3.5rem;
+}
+
+.deletion-final-note {
+  background-color: #f0f4ff;
+  border-left: 3px solid #1e40af;
+  border-radius: 8px;
+  padding: 1.75rem 2rem;
+}
+
+.deletion-final-note h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.deletion-final-note p {
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.deletion-final-note p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 640px) {
+  .account-deletion {
+    padding: 6rem 1.25rem 4rem;
+  }
+
+  .account-deletion__header h1 {
+    font-size: 1.875rem;
+  }
+
+  .account-deletion__content {
+    font-size: 0.95rem;
+  }
+
+  .account-deletion__intro {
+    font-size: 1.05rem;
+  }
+
+  .deletion-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .deletion-contact {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .deletion-final-note {
+    padding: 1.5rem 1.25rem;
+  }
+}
